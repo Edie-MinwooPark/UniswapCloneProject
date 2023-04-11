@@ -55,24 +55,35 @@
     left: 110px;
 }
 
+/* 버튼 설정 */
 .id-check,
-.name-check{
-    width: 70px;
-    height: 40px;
+.pw-check,
+.pw-samecheck,
+.nickname-check{
+    width: 80px;
+    height: 50px;
     position: absolute;
     right: 50px;
     border-radius: 10px;
 }
 
 .id-check{
-    top: 12px;    
+    top: 8px;    
 }
 
-.name-check{
-    top: 373px;
+.pw-check{
+    top: 127px;
 }
 
-.join-end{
+.pw-samecheck{
+    top: 247px;
+}
+
+.nickname-check{
+    top: 368px;
+}
+
+.join-btn{
     width: 150px;
     height: 80px;
     position: absolute;

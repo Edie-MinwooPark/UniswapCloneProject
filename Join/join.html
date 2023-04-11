@@ -9,30 +9,33 @@
 </head>
 <body>
     <div class="join-title">JOIN US!</div>
+    <!-- 가입 내용 작성 창 -->
     <div class="join-list">
         <div>
             <label for="">ID</label>
-            <input type="text">
-            <p class="id-result">3자리 이상 영문 및 숫자로 작성해주세요.</p>
+            <input type="text" class="user-id">
+            <p class="id-result">Please use alphabets and numbers. <br> (3~10 letters)</p>
         </div>
-        <button class="id-check">same id</button>
+        <button class="id-check">Check Id</button>
         <div>
             <label for="">P/W</label>
-            <input type="text">
-            <p class="pw-check">5~10자리 영문 및 숫자로 작성해주세요.</p>
+            <input type="password" class="user-pw">
+            <p class="pw-result">Please use alphabets and numbers. <br> (5~10 letters)</p>
         </div>
+        <button class="pw-check">Check Password</button>
         <div>
             <label for="">P/W CHECK</label>
-            <input type="text">
-            <p class="pw-same">설정한 비밀번호와 다릅니다.</p>
+            <input type="password" class="user-pw-check">
+            <p class="pw-same">Please write password again.</p>
         </div>
+        <button class="pw-samecheck">Check Password Correct</button>
         <div>
-            <label for="">NICK NAME</label>
-            <input type="text">
-            <p class="name-same">닉네임이 중복됩니다.</p>
+            <label for="">NICKNAME</label>
+            <input type="text" class="user-nickname">
+            <p class="nickname-same">Please use alphabets and numbers.</p>
         </div>
-        <button class="name-check">same name</button>
-        <button class="join-end">JOIN</button>
+        <button class="nickname-check">Check Nickname</button>
+        <button class="join-btn">JOIN</button>
     </div>
 </body>
 <script src="./join.js"></script>
