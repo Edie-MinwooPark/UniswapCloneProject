@@ -207,3 +207,164 @@ celochain.addEventListener('click',function(){
     }
 })
 
+// 시간 리스트들 전역변수 선언
+let hourcheck = document.querySelector('.hourcheck');
+let daycheck = document.querySelector('.daycheck');
+let weekcheck = document.querySelector('.weekcheck');
+let monthcheck = document.querySelector('.monthcheck');
+let yearcheck = document.querySelector('.yearcheck');
+let tokenhour = document.querySelector('.token-hour');
+let tokenday = document.querySelector('.token-day');
+let tokenweek = document.querySelector('.token-week');
+let tokenmonth = document.querySelector('.token-month');
+let tokenyear = document.querySelector('.token-year');
+let tokenhourshow = document.querySelector('.token-hour-show');
+let tokendayshow = document.querySelector('.token-day-show');
+let tokenweekshow = document.querySelector('.token-week-show');
+let tokenmonthshow = document.querySelector('.token-month-show');
+let tokenyearshow = document.querySelector('.token-year-show');
+let showdate = document.querySelector('.show-date');
+
+// 1D 초기 체크되게 하는 식
+daycheck.classList.add('active');
+
+
+// 1D 클릭시 함수
+tokenday.addEventListener('click',function(){
+    hourcheck.style.display = 'none'
+    hourcheck.classList.remove('active');
+    weekcheck.style.display = 'none'
+    weekcheck.classList.remove('active');
+    monthcheck.style.display = 'none'
+    monthcheck.classList.remove('active');
+    yearcheck.style.display = 'none'
+    yearcheck.classList.remove('active');
+
+    uparrow1.style.display = 'block'
+    downarrow1.style.display = 'none'
+    if(daycheck.classList.contains('active')){
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }else{
+        // 버튼에 이모티콘,이름 바꿔주기
+        showdate.innerHTML = '1D'
+        daycheck.classList.add('active');
+        daycheck.style.display = 'inline'
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }
+});
+
+// 1H 클릭시 함수
+tokenhour.addEventListener('click',function(){
+    daycheck.style.display = 'none'
+    daycheck.classList.remove('active');
+    weekcheck.style.display = 'none'
+    weekcheck.classList.remove('active');
+    monthcheck.style.display = 'none'
+    monthcheck.classList.remove('active');
+    yearcheck.style.display = 'none'
+    yearcheck.classList.remove('active');
+
+    uparrow1.style.display = 'block'
+    downarrow1.style.display = 'none'
+
+    if(!hourcheck.classList.contains('active')){
+        // 버튼에 이모티콘, 이름 바꿔주기
+        showdate.innerHTML = '1H'
+        hourcheck.classList.add('active')
+        hourcheck.style.display = 'inline'
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }else{
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }
+
+});
+
+// 1W 클릭시 함수
+tokenweek.addEventListener('click',function(){
+    daycheck.style.display = 'none'
+    daycheck.classList.remove('active');
+    hourcheck.style.display = 'none'
+    hourcheck.classList.remove('active');
+    monthcheck.style.display = 'none'
+    monthcheck.classList.remove('active');
+    yearcheck.style.display = 'none'
+    yearcheck.classList.remove('active');
+
+    uparrow1.style.display = 'block'
+    downarrow1.style.display = 'none'
+
+    if(!hourcheck.classList.contains('active')){
+        // 버튼에 이모티콘, 이름 바꿔주기
+        showdate.innerHTML = '1W'
+        weekcheck.classList.add('active')
+        weekcheck.style.display = 'inline'
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }else{
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }
+
+});
+
+// 1M 클릭시 함수
+
+tokenmonth.addEventListener('click',function(){
+    daycheck.style.display = 'none'
+    daycheck.classList.remove('active');
+    hourcheck.style.display = 'none'
+    hourcheck.classList.remove('active');
+    weekcheck.style.display = 'none'
+    weekcheck.classList.remove('active');
+    yearcheck.style.display = 'none'
+    yearcheck.classList.remove('active');
+
+    uparrow1.style.display = 'block'
+    downarrow1.style.display = 'none'
+
+    if(!hourcheck.classList.contains('active')){
+        // 버튼에 이모티콘, 이름 바꿔주기
+        showdate.innerHTML = '1M'
+        monthcheck.classList.add('active')
+        monthcheck.style.display = 'inline'
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }else{
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }
+
+});
+
+// 1Y 클릭시 함수
+
+tokenyear.addEventListener('click',function(){
+    daycheck.style.display = 'none'
+    daycheck.classList.remove('active');
+    hourcheck.style.display = 'none'
+    hourcheck.classList.remove('active');
+    weekcheck.style.display = 'none'
+    weekcheck.classList.remove('active');
+    monthcheck.style.display = 'none'
+    monthcheck.classList.remove('active');
+
+    uparrow1.style.display = 'block'
+    downarrow1.style.display = 'none'
+
+    if(!hourcheck.classList.contains('active')){
+        // 버튼에 이모티콘, 이름 바꿔주기
+        showdate.innerHTML = '1Y'
+        yearcheck.classList.add('active')
+        yearcheck.style.display = 'inline'
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }else{
+        tokentimeSelectlist.classList.remove('active');
+        tokentimeSelectlist.style.display = 'none';
+    }
+
+});
