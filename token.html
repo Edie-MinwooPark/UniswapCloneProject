@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="token.css">
+</head>
+<body>
+    <!--  이 위치에 헤더 붙이면 됨 -->
+    <!-- 메인 div 안에 텍스트div, 텍스트 아래 div, 그리고 리스트 div 생성 -->
+    <div class="token-main-wrap">
+        <div class="token-main">
+            <div class="token-text">Top tokens on Uniswap</div>
+            <div class="token-subtext">
+                <button class="token-chain-select">
+                    <div class="token-chain-select-wrap">
+                        <div class="ether-img"></div>
+                        <div class="boldtext ethertext">Ethereum</div>
+                        <div class="up-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 -1 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="down-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        </div>
+                    </div>
+                </button>
+                <button class="token-time-select">
+                    <div class="token-time-select-wrap">
+                        <div class="boldtext">1D</div>
+                        <div class="up-arrow1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 -1 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="down-arrow1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </button>
+                <input type="" placeholder="Filter tokens" class="filter-input">
+            </div>
+            <div class="token-chain-select-list">
+                <div class="token-chain-select-list-wrap">
+                    <div class="etherchain">
+                        <div class="ether-img"></div>
+                        <span>Ethereum</span>
+                        <svg class="check ethercheck" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB118E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="polygonchain">
+                        <div class="polygon-img"></div>
+                        <span>Polygon</span>
+                        <svg class="check polygoncheck" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB118E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="optimismchain">
+                        <div class="optimism-img"></div>
+                        <span>Optimism</span>
+                        <svg class="check optimismcheck" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB118E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="arbitrumchain">
+                        <div class="arbitrum-img"></div>
+                        <span>Arbitrum</span>
+                        <svg class="check arbitrumcheck" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB118E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="celochain">
+                        <div class="celo-img"></div>
+                        <span>Celo</span>
+                        <svg class="check celocheck" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB118E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="bnb-sector">
+                        <div class="bnb-img"></div>
+                        <span>BNB Chain</span>
+                        <span class="comingsoon">Coming soon</span>
+                    </div>
+                </div>
+            </div>
+            <div class="token-time-select-list">
+                    <div>1H</div>
+                    <div>1D</div>
+                    <div>1W</div>
+                    <div>1M</div>
+                    <div>1Y</div>
+            </div>
+            <div class="token-list"></div>
+        </div>
+    </div>
+</body>
+<script src="./token.js"></script>
+</html>
