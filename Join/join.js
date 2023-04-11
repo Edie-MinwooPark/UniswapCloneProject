@@ -8,7 +8,7 @@ let checkArr = {};
 
 // 아이디 정규식 검사 함수
 function isId(asValue) {
-    let regExp = /^[a-z]+[a-z0-9]{2,9}$/g;    
+    let regExp = /^[a-z0-9]{3,10}$/g;    
 	return regExp.test(asValue);
 }
 
@@ -79,14 +79,14 @@ nickBtn.addEventListener("click",function(){
     console.log(checkArr.nick);
 })
 
-// window.localStorage.clear();
+window.localStorage.clear();
 
 // 가입 신청 버튼
 joinBtn.addEventListener("click",function(){
     if(isCorrect[0] && isCorrect[1] && isCorrect[2]){
         let inputs = document.querySelectorAll("input");
         let value = window.localStorage.getItem("JoinInfo");
-        
+
         if(inputs[0].value !== checkArr.id){
             alert("Id incorrect. Check your id again please.");
         }else if(inputs[1].value !== checkArr.pw || inputs[2].value !== checkArr.pw){
