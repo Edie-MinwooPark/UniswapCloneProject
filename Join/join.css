@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .join-title{
     font-size: 100px;
     position: absolute;

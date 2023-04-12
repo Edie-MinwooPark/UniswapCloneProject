@@ -1,6 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .my-title{
     position: absolute;
     top: 100px;
+    left: 20px;
     font-size: 50px;
     font-weight: bold;
 }
@@ -49,8 +55,20 @@
     height: 30px;
     font-size: 12px;
     position: absolute;
-    top: 50px;
     left: 110px;
+}
+
+.my-info .current-nick{
+    top: 50px;
+}
+
+.my-info .nickname-same{
+    top: 80px;
+    color: red;
+}
+
+.my-info .user-cash{
+    top: 50px;
 }
 
 .nickname-change,
