@@ -368,3 +368,59 @@ tokenyear.addEventListener('click',function(){
     }
 
 });
+
+// 테이블에 코인 이름 검색 기능 넣기
+
+let search = document.querySelector('.filter-input');
+let table_rows = document.querySelectorAll('tbody tr');
+
+search.addEventListener('input',searchTable);
+
+function searchTable() {
+    table_rows.forEach(function(row,i){
+        let table_data = row.textContent.toLowerCase();
+        let search_data = search.value.toLowerCase();
+
+        row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+    })
+    
+}
+
+// 테이블 헤더 누르면 정렬하는 기능 넣기
+let table_headings = document.querySelectorAll('thead th');
+
+table_headings.forEach((head, i)=>{
+    let sort_asc = true;
+    head.onclick = ()=>{
+        table_headings.forEach(head => head.classList.remove('sortactive'));
+        head.classList.add('sortactive');
+        
+        document.querySelectorAll('td').forEach(td => td.classList.remove('sortactive')) 
+        table_rows.forEach(row =>{
+            row.querySelectorAll('td')[i].classList.add('sortactive')
+        })
+
+        head.classList.toggle('asc',sort_asc);
+        sort_asc = head.classList.contains('asc') ? false : true;
+        sortTable(i,sort_asc);
+    }
+})
+
+function sortTable(column,sort_asc){
+    let bb =[...table_rows].sort((a,b) => {
+        let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase()
+        let second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
+        
+        
+        first_row = first_row.match(/[\d\.]+/g).join("");
+        second_row = second_row.match(/[\d\.]+/g).join("");
+        Number(first_row);
+        Number(second_row);
+        console.log(first_row,second_row);
+        console.log(first_row - second_row);
+        return sort_asc ? (first_row - second_row) : (second_row - first_row) ;
+    })
+    bb.map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
+};
+
+
