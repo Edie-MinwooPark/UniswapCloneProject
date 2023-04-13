@@ -1,0 +1,99 @@
+/* 큰 틀 작업 시작 */
+
+* {
+    box-sizing: border-box;
+  }
+  
+/* body 속성 */
+.body{
+    padding: 0;
+    border: 0;
+}
+/* 가장 큰 "틀" 속성 */
+.nfts-main-wrap{
+    width: 100%;
+    height: 300vh;
+}
+/* 스와이퍼 div랑 그 아래 main div(nfts리스트로 보여주는곳) "틀" 속성 */
+.nfts-main,
+.nfts-swiper{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border: 1px solid;
+    display: flex;
+}
+.nfts-swiper{
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nfts-main div{
+    margin: auto;
+}
+/*  큰 틀 작업 끝 */
+
+/* 스와이퍼 부분 속성 시작 */
+
+/* 스와이퍼 부분 "틀" 작성 */
+
+
+/* 스와이퍼 옆 글씨속성 */
+.swiper-letter-wrap{
+    font-size: 3.6rem;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+/* 스와이퍼 부분  */
+.swiper-wrap{
+    width: 452px;
+    height: 100%;
+    display: flex;
+}
+
+.swiper{
+    width: 420px;
+    height: 285px;
+    border: 1px solid;
+    border-radius: 20px;
+    margin: auto;
+    position: relative;
+    pointer-events: none;
+    /* overflow: hidden; */
+}
+
+/* 스와이퍼 버튼 */
+.left-btn{
+    height: 100%;
+}
+.left-btn svg{
+    transform: translateY(150px);
+}
+.right-btn {
+    transform: rotate(180deg) translateY(148px);
+}
+
+/* 스와이퍼 div 여러개 만들기 */
+.swiper ul{
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    height: 285px;
+    list-style: none;
+    position: absolute;
+    transition: 1s;
+    
+    
+}
+.swiper ul li{
+    float: left;
+    width: 420px;
+    height: 285px;
+    border: 1px solid;
+    margin: 0;
+}
