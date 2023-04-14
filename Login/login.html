@@ -8,14 +8,81 @@
     <link rel="stylesheet" href="./login.css">
 </head>
 <body>
-    <div class="header-bar">
-        <div class="main-btn">
-            <span class="logo"></span>
-            <div class="swap-btn">스왑</div>
-            <div class="tokenchart-btn">토큰</div>
-            <div class="nftchart-btn">NFTs</div>
+    <div class="topBar">
+        <ul>
+            <li><a href="#HomeBtn">
+                    <img width="35px" height="35px" src="./KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
+                </a></li>
+            <li><a href="#HomeBtn">스왑</a></li>
+            <li><a href="#aboutBtn">토큰</a></li>
+            <li><a href="#EducationBtn">NFTs</a></li>
+            <li><a href="#ProjectsBtn">Pools</a></li>
+            <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
+        </ul>
+        <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
+
+        <div class="searchBar">
+            <div><img style="width: 16px; height: 16px;" src="./magnifying-glass-solid.svg" alt="glass"></div>
+
+            <div class="inputBox">
+                <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
+            </div>
+
+            <div class="box3"> / </div>
+        </div>
+
+        <div class="iconConnect">
+            <div class="arrowBox">
+                <div><img style="width: 20px; height: 20px;" src="./topBar_icon.png" alt=""></div>
+                <div style="color: white;">화살표</div>
+            </div>
+            <div class="Connect">
+                <button tabindex="-1" class="drawer-opener">
+                    Connect
+                </button>
+                <div class="drawer">
+                    <div class="content">
+                        <h3>Connect a wallet</h3>
+                        <div class="login">LOGIN</div>
+                        <!-- 로그인이 되면 mypage로 바뀌어야함. -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+            <!-- ...버튼 팝업 -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="bg"></div>
+            <div class="popfirst">
+                <div class="popfirstdiv" style="display: flex;">
+                    <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="./image/pinkBook.png" alt="doc"></div>
+                    <div>Vote in governance</div>    
+                </div>
+
+                <div class="popfirstdiv" style="display: flex;">
+                    <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="./image/pinkGraph.png" alt="doc"></div>
+                    <div>View more analytics</div>    
+                </div>
+            </div>
+        </div>
+        <div class="popsecond">
+            <div>Help center ↗</div>
+            <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://docs.uniswap.org/">
+                <div>Documentation ↗</div>
+            </a>
+            <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://uniswap.canny.io/feature-requests">
+                <div>Feedback ↗</div>
+            </a>
+            <div>Legal & Privacy ↗</div>
+        </div>
+        <div style="display: flex;"> 
+            <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="./image/dis.png" alt="dis2"></div>
+            <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="./image/tw.png" alt="tw2"></div>
+            <div><img style="width: 24px; height: 24px;" src="./image/git.bp.png" alt="git2"></div>
+        </div>        
+    </div>
+
     <div class="login-title">LOG-IN</div>
     <div class="login-area">
         <div class="write-area">

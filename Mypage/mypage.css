@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(255, 205, 210);
 }
 
 .my-title{
@@ -24,6 +25,8 @@ body{
     align-items: center;
     border: 1px solid;
     border-radius: 20px;
+    color: rgb(255, 205, 210);
+    background-color: black;
 }
 
 .my-info div{
@@ -101,4 +104,5 @@ body{
 button{
     cursor: pointer;
     box-shadow: 2px 2px 0 0;
+    background-color: rgb(255, 205, 210);
 }
