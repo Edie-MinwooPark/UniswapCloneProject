@@ -209,7 +209,7 @@ joinBtn.addEventListener("click",function(){
     }
 })
 
-window.localStorage.clear();
+// window.localStorage.clear();
 
 console.log("user information : " + window.localStorage.getItem("UserInfo"));
 console.log("join information : " + window.localStorage.getItem("JoinInfo"));

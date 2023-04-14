@@ -36,6 +36,8 @@ loginBtn.addEventListener("click", function(){
     }
 })
 
+// window.localStorage.clear();
+
 console.log("user information : " + window.localStorage.getItem("UserInfo"));
 console.log("join information : " + window.localStorage.getItem("JoinInfo"));
 console.log("login information : " + window.localStorage.getItem("Login"));

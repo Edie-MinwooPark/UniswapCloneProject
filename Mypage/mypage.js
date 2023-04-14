@@ -89,11 +89,7 @@ function changeNick(){
     
     currentNickText.innerHTML = "Current nickname : " + userNick;
 
-    console.log(" 1 user information : " + userInfo);
-
     let _userInfo = userInfo.split("|");
-
-    console.log(_userInfo);
 
     window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
 
@@ -101,14 +97,11 @@ function changeNick(){
         if(JSON.parse(loginValue).id == JSON.parse(a).id){
 
             _userInfo.splice(i,1);
-            console.log(_userInfo);
 
             if(_userInfo.length == 0){
                 window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
             }else{
                 userInfo = _userInfo.join("|");
-                console.log(userInfo);
-                console.log(typeof userInfo);
                 window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
             }
             
