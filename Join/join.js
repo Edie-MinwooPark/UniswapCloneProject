@@ -176,13 +176,10 @@ function nickFilter(infomation){
     }
 }
 
-// window.localStorage.clear();
-
 // 가입 신청 버튼
 joinBtn.addEventListener("click",function(){
     if(isCorrect[0] && isCorrect[1] && isCorrect[2]){
         let inputs = document.querySelectorAll("input");
-        let value = window.localStorage.getItem("JoinInfo");
 
         if(inputs[0].value !== checkArr.id){
             alert("Id incorrect. Check your id again please.");
@@ -192,9 +189,9 @@ joinBtn.addEventListener("click",function(){
             alert("Nickname incorrect. Check your nickname again please.");
         }else{
             if(joinInfo == null){
-                window.localStorage.setItem("JoinInfo", `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}", "acount" : "0"}`);
+                window.localStorage.setItem("JoinInfo", `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}"}`);
             }else{
-                window.localStorage.setItem("JoinInfo", value + "|" + `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}", "acount" : "0"}`);
+                window.localStorage.setItem("JoinInfo", joinInfo + "|" + `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}"}`);
             }
             console.log(window.localStorage.getItem("JoinInfo"));
             
@@ -211,3 +208,9 @@ joinBtn.addEventListener("click",function(){
         }        
     }
 })
+
+window.localStorage.clear();
+
+console.log("user information : " + window.localStorage.getItem("UserInfo"));
+console.log("join information : " + window.localStorage.getItem("JoinInfo"));
+console.log("login information : " + window.localStorage.getItem("Login"));

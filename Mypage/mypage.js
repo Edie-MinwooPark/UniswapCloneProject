@@ -1,6 +1,4 @@
 let loginValue = window.localStorage.getItem("Login");
-let userInfo = window.localStorage.getItem("UserInfo");
-let joinInfo = window.localStorage.getItem("JoinInfo");
 let nickChangeBtn = document.querySelector(".nickname-change");
 
 // 로그인 후 마이 페이지 방문 시 표시
@@ -12,11 +10,11 @@ function loginInfo(){
 
         let nickText = document.querySelector(".current-nick");
     
-        nickText.innerHTML = "Current nickname" + JSON.parse(loginValue).nickText;
+        nickText.innerHTML = "Current nickname : " + JSON.parse(loginValue).nick;
     
         let acountText = document.querySelector(".user-cash");
     
-        acountText.innerHTML = JSON.parse(loginValue).acount + "won";
+        acountText.innerHTML = JSON.parse(loginValue).acount + " won";
     }
 }
 
@@ -30,8 +28,11 @@ function isNick(asValue) {
 
 // 닉네임 형식 검사 함수
 nickChangeBtn.addEventListener("click",function(){
+    let userInfo = window.localStorage.getItem("UserInfo");
+    let joinInfo = window.localStorage.getItem("JoinInfo");
     let userNick = document.querySelector(".change-nick").value;
     let nickText = document.querySelector(".nickname-same");
+    
 
     if(userNick != 0){
         if(!isNick(userNick)){
@@ -56,6 +57,9 @@ nickChangeBtn.addEventListener("click",function(){
 
 // 닉네임 존재 유무 검사 함수
 function nickFilter(infomation){
+    let userNick = document.querySelector(".change-nick").value;
+    let nickText = document.querySelector(".nickname-same");
+
     infomation = infomation.split("|");  // 로컬스토리지 데이터 배열화
     let infoFilter = [];   // 검사용 배열 생성
 
@@ -79,15 +83,42 @@ function nickFilter(infomation){
 }
 
 function changeNick(){
+    let userInfo = window.localStorage.getItem("UserInfo");
+    let userNick = document.querySelector(".change-nick").value;
+    let currentNickText = document.querySelector(".current-nick");
+    
+    currentNickText.innerHTML = "Current nickname : " + userNick;
+
+    console.log(" 1 user information : " + userInfo);
+
     let _userInfo = userInfo.split("|");
-    JSON.parse(loginValue).nick = userNick;
+
+    console.log(_userInfo);
+
+    window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
 
     _userInfo.forEach(function(a,i){
         if(JSON.parse(loginValue).id == JSON.parse(a).id){
-            a = loginValue;
+
             _userInfo.splice(i,1);
-            userInfo = _userInfo.join("|");
-            window.localStorage.setItem("UserInfo", userInfo + "|" + a);
+            console.log(_userInfo);
+
+            if(_userInfo.length == 0){
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
+            }else{
+                userInfo = _userInfo.join("|");
+                console.log(userInfo);
+                console.log(typeof userInfo);
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
+            }
+            
+            console.log(" 2 user information : " + window.localStorage.getItem("UserInfo"));
         }
     })
+
+    console.log("login information : " + window.localStorage.getItem("Login"));
 }
+
+console.log("user information : " + window.localStorage.getItem("UserInfo"));
+console.log("join information : " + window.localStorage.getItem("JoinInfo"));
+console.log("login information : " + window.localStorage.getItem("Login"));

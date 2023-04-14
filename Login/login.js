@@ -1,5 +1,5 @@
 let loginBtn = document.querySelector(".login-btn");
-window.localStorage.setItem("Login",null);
+
 
 loginBtn.addEventListener("click", function(){
     let userId = document.querySelector(".user-id").value;
@@ -35,3 +35,7 @@ loginBtn.addEventListener("click", function(){
         });
     }
 })
+
+console.log("user information : " + window.localStorage.getItem("UserInfo"));
+console.log("join information : " + window.localStorage.getItem("JoinInfo"));
+console.log("login information : " + window.localStorage.getItem("Login"));

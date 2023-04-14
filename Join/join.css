@@ -93,6 +93,7 @@ body{
     height: 80px;
     position: absolute;
     bottom: 10px;
+    transform: translate(-50%,0);
     border-radius: 20px;
     font-size: 24px;
 }
