@@ -206,3 +206,98 @@ body{
     background-image: url(https://i.seadn.io/gae/lHexKRMpw-aoSyB1WdFBff5yfANLReFxHzt1DOj_sg7mS14yARpuvYcUtsyyx-Nkpk6WTcUPFoG53VnLJezYi8hAs0OxNZwlw6Y-dmI?w=500&auto=format);
     background-size: cover;
 }
+
+
+/* nfts 리스트들 복붙 */
+.token-list{
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+th{
+    border-bottom: 1px solid;
+    height: 30px;
+}
+td{
+    height: 50px;
+}
+
+#listnum{
+    width: 5%;
+}
+#listname{
+    width: 30%;
+}
+#listprice{
+    width: 15%;
+}
+#listchange{
+    width: 20%;
+}
+#listtvl{
+    width: 15%;
+}
+#listvolume{
+    width: 30%;
+}
+
+/* 리스트 안 이미지 크기 조절 */
+
+td img{
+    width: 24px;
+    height: 24px;
+}
+
+
+.tokenlistnumber{
+    color: #919191;
+}
+
+.changeup svg,
+.changedown svg{
+    width: 16px;
+    height: 16px;
+}
+
+.changeup{
+    color: #40b66b;
+}
+.changedown{
+    color: #fa2b39;
+}
+
+/* 리스트 호버시 백그라운드 색 바뀌게 */
+tbody tr:hover{
+    background-color: #D3D3D3;
+}
+
+
+/* 리스트 코인이름 검색시 그외 리스트 삭제 */
+
+
+tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .5s ease-in-out;
+    /* 교수님 여쭤보기 */
+    display: none;
+}
+
+/* 테이블 헤더 클릭하면 해당 줄 폰트 두껍게 만들기 */
+th.sortactive,
+td.sortactive{
+    font-weight: bold;
+}
+
+.nfts-list-wrap{
+    width: 68%;
+    margin: auto;
+}
+
