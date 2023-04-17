@@ -592,7 +592,7 @@ html{
 }
 
 /* 헤더부분 체인선택 추가버튼 by 민우 */
-.up-arrow{
+.header-up-arrow{
     display: none;
 }
 
@@ -661,7 +661,7 @@ html{
     justify-content: space-between;
 }
 
-.token-chain-select-list{
+.header-token-chain-select-list{
     margin-top: .5rem;
     flex: none;
     width: 14rem;
@@ -681,7 +681,7 @@ html{
     display: block;
 }
 
-.token-chain-select-list-wrap{
+.header-token-chain-select-list-wrap{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -702,17 +702,17 @@ html{
 }
 
 /* 호버링 효과 */
-.token-chain-select-list-wrap div{
+.header-token-chain-select-list-wrap div{
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 5px;
 }
 
-.token-chain-select-list-wrap div:hover{
+.header-token-chain-select-list-wrap div:hover{
     background-color: #D3D3D3;
 }
 
-.token-chain-select-list-wrap div:last-child:hover{
+.header-token-chain-select-list-wrap div:last-child:hover{
     background-color: white;
 }
 
