@@ -412,7 +412,7 @@ html{
     flex-direction: column;
     -webkit-box-pack: justify;
     box-shadow: rgba(51, 53, 72, 0.04) 0px 10px 24px 0px;
-    background: url(./swap_back.png) right center / auto 100% no-repeat border-box black;
+    background: url(./image/swap_back.png) right center / auto 100% no-repeat border-box black;
     background-position: right center;
     background-repeat: no-repeat;
     text-decoration: none;
@@ -430,7 +430,7 @@ html{
     flex-direction: column;
     -webkit-box-pack: justify;
     box-shadow: rgba(51, 53, 72, 0.04) 0px 10px 24px 0px;
-    background: url(./NFTs_back.png) right center / auto 100% no-repeat border-box black;
+    background: url(./image/NFTs_back.png) right center / auto 100% no-repeat border-box black;
     background-position: right center;
     background-repeat: no-repeat;
     text-decoration: none;
