@@ -25,8 +25,8 @@
     <div class="container">
         <div class="topBar">
             <ul>
-                <li><a href="#HomeBtn">
-                        <img width="35px" height="35px" src="./KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
+                <li><a href="http://127.0.0.1:5501/index.html">
+                        <img width="35px" height="35px" src="./image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
                     </a></li>
                 <li><a href="#HomeBtn">스왑</a></li>
                 <li><a href="#aboutBtn">토큰</a></li>
@@ -37,7 +37,7 @@
             <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
 
             <div class="searchBar">
-                    <div><img style="width: 16px; height: 16px;" src="./magnifying-glass-solid.svg" alt="glass"></div>
+                    <div><img style="width: 16px; height: 16px;" src="./image/magnifying-glass-solid.svg" alt="glass"></div>
     
                     <div class="inputBox">
                         <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
@@ -118,10 +118,100 @@
         </div>
                 <!-- ... 버튼 팝업 -->
 
+                <!--  ------------------검색창 팝업---------------- -->
+                <div class="searchpopup">
+                    <div class="dg"></div>
+                    <div class="grayline">
+                        <div> <img style="width: 20px;;" src="./image/grayclockImg.png" alt="clock"></div>
+                        <div class="imgnameBox">최근 검색</div>
+                    </div>
+                    <a style="text-decoration: none;" href="https://app.uniswap.org/#/tokens/ethereum/NATIVE">
+                       <!--       ????  검색하기 전에 display:none으로 해둘건지 ????       -->
+                        <div class="imgline">
+                            <div style="display: flex;">
+                                <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                                <div class="imgnameBox">
+                                    <div style="font-weight: 700; color: black;">Ether</div>
+                                    <div style="font-weight: 900; color: gray;">ETH</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="color: black;">$2,109.55</div>
+                                <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.58%</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="grayline">
+                        <div> <img style="width: 20px;" src="./image/like a graph.png" alt="graph"></div>
+                        <div class="imgnameBox">인기있는 토큰</div>
+                    </div>
+                    <div class="imgline">
+                        <div style="display: flex;">
+                            <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                            <div class="imgnameBox">
+                                <div style="font-weight: 700;">Ether</div>
+                                <div style="font-weight: 900; color: gray;">ETH</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>$2,109.55</div>
+                            <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.97%</div>
+                        </div>
+                    </div>
+                    <div class="imgline">
+                        <div style="display: flex;">
+                            <div><img style="width: 40px; ;" src="./image/USDcoin_icon.png" alt="usdcoin"></div>
+                            <div class="imgnameBox">
+                                <div style="font-weight: 700;">USD Coin</div>
+                                <div style="font-weight: 900; color: gray; font-size: 14px;">USDC</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="padding-left: 16px;">$1,000</div>
+                            <div style="color: red; font-weight: 700;font-size: 14px; padding-left: 8px;">↘ 0.01%</div>
+                        </div>
+                    </div>
+                    <div class="grayline">
+                        <div> <img style="width: 20px;" src="./image/like a graph.png" alt="graph"></div>
+                        <div class="imgnameBox">인기있는 NFT 컬렉션</div>
+                    </div>
+
+                    <div class="imgline">
+                        <div style="display: flex;">
+                            <div><img style="width: 40px; ;" src="./image/boredape_icon.avif" alt="boredicon"></div>
+                            <div class="imgnameBox">
+                                <div style="font-weight: 700;">Bored Ape Yacht Club</div>
+                                <div style="font-weight: 900; color: gray;"> 9,998 items</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div> 54.99 ETH </div>
+                            <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;"> Floor</div>
+                        </div>
+                    </div>
+                    <div class="imgline">
+                        <div style="display: flex;">
+                            <div><img style="width: 40px; ;" src="./image/wrapped_icon.avif" alt="wrapicon"></div>
+                            <div class="imgnameBox">
+                                <div style="font-weight: 700;">Wrapped Cryptopunks</div>
+                                <div style="font-weight: 900; color: gray;">783 items</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>74.83 ETH</div>
+                            <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;">Floor</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--  ------------------검색창 팝업---------------- -->
+
         <div id="homeId" class="Home">
             <div class="homeUp">
                 <div class="homeswap">
-                    <img class="swapImg" src="./SwapImg.png" alt="스왑이미지">
+                    <img class="swapImg" src="./image/SwapImg.png" alt="스왑이미지">
                 </div class>
                 <div class="token-chain-select-list">
                     <div class="token-chain-select-list-wrap">
@@ -223,6 +313,7 @@
                     </div>
                   </div>
             </div>
+            <!-- 스왑페이지 만들고 여기에 a링크 걸기 -->
 
             <div class="homeDown">
                 <h1 class="tradecrypto">Trade crypto and NFTs <br> with confidence</h1>
@@ -238,7 +329,7 @@
                         Learn more
                         <span>
                             <img style="width: 20px; height: 20px; padding-left: 5px; padding-top: 6px;"
-                                src="./Arrow.png" alt="arrow">
+                                src="./image/Arrow.png" alt="arrow">
                         </span>
                     </div>
                 </a>
@@ -278,7 +369,7 @@
                     <div class="cryptoBox">
                         <div class="crytitle">
                             <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Buy crypto</div>
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px;">$
+                            <div style="font-size: 40px; line-height: 36px; font-weight: 600; padding-right: 20px; color: rgb(121, 140, 154);">$
                             </div>
                         </div>
 
@@ -295,7 +386,7 @@
                             <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Earn</div>
                             <div
                                 style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px; color: rgb(255,205,210);">
-                                <img src="./like a graph.png" alt="graph">
+                                <img src="./image/like a graph.png" alt="graph">
                             </div>
                         </div>
 
@@ -310,7 +401,7 @@
                     <div class="cryptoBox">
                         <div class="crytitle">
                             <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Build dApps</div>
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px;"> >__
+                            <div style="font-size: 40px; line-height: 36px; font-weight: 600; padding-right: 20px; color: rgb(121, 140, 154);"> >__
                             </div>
                         </div>
 
