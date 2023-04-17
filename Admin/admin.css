@@ -293,7 +293,7 @@ body{
     border-radius: 20px;
 }
 
-button{
+.list-up, .gotoLogin{
     cursor: pointer;
     box-shadow: 2px 2px 0 0;
     background-color: black;

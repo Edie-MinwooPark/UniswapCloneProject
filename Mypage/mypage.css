@@ -318,7 +318,7 @@ body{
     border-radius: 20px;
 }
 
-button{
+.my-info button{
     cursor: pointer;
     box-shadow: 2px 2px 0 0;
     background-color: rgb(255, 205, 210);

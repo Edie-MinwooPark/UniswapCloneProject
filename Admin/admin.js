@@ -70,7 +70,7 @@ function render(){
 
     list.innerHTML = ``;  // ul 초기화
     
-    if(joinValue == "null"){
+    if(joinValue == null){
         let _ul = document.createElement("ul");
         let _li = document.createElement("li");
         let _div1 = document.createElement("div");
@@ -132,9 +132,9 @@ function render(){
                 let userValue = window.localStorage.getItem("UserInfo");
 
                 if(userValue == null){
-                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "acount" : 0}`);
+                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : 0, "bit" : 0, "eth" : 0}`);
                 }else{
-                    window.localStorage.setItem("UserInfo", userValue + "|" + `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "acount" : 0}`);
+                    window.localStorage.setItem("UserInfo", userValue + "|" + `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : 0, "bit" : 0, "eth" : 0}`);
                 }
                 
                 _value.splice(i,1);

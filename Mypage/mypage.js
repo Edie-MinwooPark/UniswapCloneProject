@@ -69,7 +69,7 @@ function loginInfo(){
     
         let acountText = document.querySelector(".user-cash");
     
-        acountText.innerHTML = JSON.parse(loginValue).acount + " won";
+        acountText.innerHTML = JSON.parse(loginValue).dollar + " $";
     }
 }
 
@@ -146,7 +146,7 @@ function changeNick(){
 
     let _userInfo = userInfo.split("|");
 
-    window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
+    window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
 
     _userInfo.forEach(function(a,i){
         if(JSON.parse(loginValue).id == JSON.parse(a).id){
@@ -154,17 +154,13 @@ function changeNick(){
             _userInfo.splice(i,1);
 
             if(_userInfo.length == 0){
-                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
             }else{
                 userInfo = _userInfo.join("|");
-                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "acount" : ${JSON.parse(loginValue).acount}}`);
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
             }
-            
-            console.log(" 2 user information : " + window.localStorage.getItem("UserInfo"));
         }
     })
-
-    console.log("login information : " + window.localStorage.getItem("Login"));
 }
 
 console.log("user information : " + window.localStorage.getItem("UserInfo"));
