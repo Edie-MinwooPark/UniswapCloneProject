@@ -1,0 +1,303 @@
+/* 큰 틀 작업 시작 */
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+/* body 속성 */
+body{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+/* 가장 큰 "틀" 속성 */
+.nfts-main-wrap{
+    width: 100%;
+    height: 150vh;
+}
+/* 스와이퍼 div랑 그 아래 main div(nfts리스트로 보여주는곳) "틀" 속성 */
+.nfts-main,
+.nfts-swiper{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    /* border: 1px solid; */
+    display: flex;
+}
+.nfts-swiper{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to top, white, pink);
+
+}
+
+.nfts-main div{
+    margin: auto;
+}
+/*  큰 틀 작업 끝 */
+
+/* 스와이퍼 부분 속성 시작 */
+
+/* 스와이퍼 부분 "틀" 작성 */
+
+
+/* 스와이퍼 옆 글씨속성 */
+.swiper-letter-wrap{
+    font-size: 3.6rem;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+/* 스와이퍼 부분  */
+.swiper-wrap{
+    width: 452px;
+    height: 100%;
+    display: flex;
+}
+
+.swiper{
+    width: 420px;
+    height: 285px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 스와이퍼 버튼 */
+.left-btn{
+    height: 100%;
+}
+.left-btn svg{
+    transform: translateY(150px);
+}
+.right-btn {
+    transform: rotate(180deg) translateY(148px);
+}
+
+/* 스와이퍼 div 여러개 만들기 */
+.swiper ul{
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    height: 285px;
+    list-style: none;
+    position: absolute;
+    transition: 1s;
+    
+    
+}
+.swiper ul li{
+    float: left;
+    width: 420px;
+    height: 285px;
+    /* border: 1px solid; */
+    margin: 0;
+}
+
+/*  스와이퍼 리스트 안 '틀'*/
+.swiper-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-img,
+.swiper-text{
+    width: 100%;
+    height: 55%;
+    /* border: 1px solid; */
+}
+.swiper-text{
+    height: 45%;
+}
+.swiper-img{
+    background-image: url(https://i.seadn.io/gcs/files/8cc7558e77154bfa99bc568f05e97253.png);
+    background-repeat: no-repeat;
+    background-position-y: 60%;
+}
+.swiper-img div{
+    color: white;
+    font-weight: bold;
+}
+.swiper-img-icon{
+    width: 76px;
+    height: 76px;
+    background-image: url(https://i.seadn.io/gcs/files/89e91706142a1003abab1d864370fe62.png?w=500&auto=format);
+    border-radius: 50%;
+    background-size: cover;
+    border: 2px solid white;
+}
+
+/* 스와이퍼 그림 아래 글씨 특성 */
+.swiper-text{
+    font-size: 13px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+.swiper-text div{
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    color: gray;
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+
+
+/* 스와이퍼 그림 아래 글씨에 아이콘 넣기 */
+
+
+.uniswap-icon{
+    background-image: url(https://app.uniswap.org/nft/svgs/marketplaces/uniswap-magenta.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position-x: 15px;
+}
+.opensea-icon{
+    background-image: url(https://app.uniswap.org/nft/svgs/marketplaces/opensea-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position-x: 15px;
+}
+.x2y2-icon{
+    background-image: url(https://app.uniswap.org/nft/svgs/marketplaces/looksrare-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position-x: 15px;
+}
+
+
+/* Azuki 그림변경 */
+ 
+.azuki{
+        background-image: url(https://i.seadn.io/gae/O0XkiR_Z2--OPa_RA6FhXrR16yBOgIJqSLdHTGA0-LAhyzjSYcb3WEPaCYZHeh19JIUEAUazofVKXcY2qOylWCdoeBN6IfGZLJ3I4A);
+    }
+.azuki-icon{
+    background-image: url(https://i.seadn.io/gae/H8jOCJuQokNqGBpkBN5wk1oZwO7LM8bNnrHCaekV2nKjnCqw6UB5oaH8XyNeBDj6bA_n1mjejzhFQUP3O1NfjFLHr3FOaeHcTOOT?w=500&auto=format);
+}
+
+/* BAYC 그림변경 */
+.bayc{
+        background-image: url(https://i.seadn.io/gae/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs);
+    }
+.bayc-icon{
+    background-image: url(https://i.seadn.io/gae/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB?w=500&auto=format);
+}
+
+/* 뮤턴트 그림변경 */
+.wc{
+        background-image: url(https://i.seadn.io/gae/5c-HcdLMinTg3LvEwXYZYC-u5nN22Pn5ivTPYA4pVEsWJHU1rCobhUlHSFjZgCHPGSmcGMQGCrDCQU8BfSfygmL7Uol9MRQZt6-gqA);
+        background-size: cover;
+    }
+.wc-icon{
+    background-image: url(https://i.seadn.io/gae/lHexKRMpw-aoSyB1WdFBff5yfANLReFxHzt1DOj_sg7mS14yARpuvYcUtsyyx-Nkpk6WTcUPFoG53VnLJezYi8hAs0OxNZwlw6Y-dmI?w=500&auto=format);
+    background-size: cover;
+}
+
+
+/* nfts 리스트들 복붙 */
+.token-list{
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+th{
+    border-bottom: 1px solid;
+    height: 30px;
+}
+td{
+    height: 50px;
+}
+
+#listnum{
+    width: 5%;
+}
+#listname{
+    width: 30%;
+}
+#listprice{
+    width: 15%;
+}
+#listchange{
+    width: 20%;
+}
+#listtvl{
+    width: 15%;
+}
+#listvolume{
+    width: 30%;
+}
+
+/* 리스트 안 이미지 크기 조절 */
+
+td img{
+    width: 24px;
+    height: 24px;
+}
+
+
+.tokenlistnumber{
+    color: #919191;
+}
+
+.changeup svg,
+.changedown svg{
+    width: 16px;
+    height: 16px;
+}
+
+.changeup{
+    color: #40b66b;
+}
+.changedown{
+    color: #fa2b39;
+}
+
+/* 리스트 호버시 백그라운드 색 바뀌게 */
+tbody tr:hover{
+    background-color: #D3D3D3;
+}
+
+
+/* 리스트 코인이름 검색시 그외 리스트 삭제 */
+
+
+tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .5s ease-in-out;
+    /* 교수님 여쭤보기 */
+    display: none;
+}
+
+/* 테이블 헤더 클릭하면 해당 줄 폰트 두껍게 만들기 */
+th.sortactive,
+td.sortactive{
+    font-weight: bold;
+}
+
+.nfts-list-wrap{
+    width: 68%;
+    margin: auto;
+}
+
