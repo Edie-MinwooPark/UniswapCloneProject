@@ -2,6 +2,7 @@ body{
     padding: 0;
     border: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 .token-main-wrap{
     width: 100%;
@@ -198,7 +199,9 @@ body{
 }
 
 .down-arrow,
-.down-arrow1{
+.down-arrow1,
+.header,
+.header-down-arrow{
     display: none;
 }
 
