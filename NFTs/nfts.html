@@ -1,15 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./nfts.css">
-</head>
-<body>
-    <!-- 이 위치에 헤더 붙이면 됩니다 -->
+    <link rel="stylesheet" href="./nfts.css" />
+    <style>
+              .drawer .content {
+            width: 100%;
+            height: 97%;
+            position: absolute;
+            top: 0;
+            background-color: rgb(255, 205, 210);
+            border: 1px solid white;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <!--  이 위치에 헤더 붙이면 됨 -->
+    <div class="container">
+      <div class="topBar">
+          <ul>
+              <li><a href="http://127.0.0.1:5501/index.html">
+                      <img width="35px" height="35px" src="../image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
+                  </a></li>
+              <li><a href="#HomeBtn">스왑</a></li>
+              <li><a href="#aboutBtn">토큰</a></li>
+              <li><a href="#EducationBtn">NFTs</a></li>
+              <li><a href="#ProjectsBtn">Pools</a></li>
+              <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
+          </ul>
+          <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
 
+          <div class="searchBar">
+                  <div><img style="width: 16px; height: 16px;" src="../image/magnifying-glass-solid.svg" alt="glass"></div>
+  
+                  <div class="inputBox">
+                      <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
+                  </div>
+  
+                  <div class="box3"> / </div>
+          </div>
+          <!-- 지우 작업물에 체인 넣는 기능 추가 -->
+          <div class="iconConnect">
+              <div class="arrowBox">
+                  <div class="ether-img"></div>
+                  <div class="header-up-arrow">
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="15"
+                      viewBox="0 -1 24 20"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="header-down-arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  </div>
+                  <div></div>
+              </div>
+              <div class="Connect">
+                  <button tabindex="-1" class="drawer-opener">
+                      Connect
+                  </button>
+                  <div class="drawer">
+                      <div class="content">
+                          <h3>Connect a wallet</h3>
+                          <div class="login">LOGIN</div>
+                          <!-- 로그인이 되면 mypage로 바뀌어야함. -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+              <!-- ...버튼 팝업 -->
+      <div id="popup" class="popup">
+              <div class="popup-content">
+                  <div class="bg"></div>
+                  <div class="popfirst">
+                      <div class="popfirstdiv" style="display: flex;">
+                          <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="../image/pinkBook.png" alt="doc"></div>
+                          <div>Vote in governance</div>    
+                      </div>
+
+                      <div class="popfirstdiv" style="display: flex;">
+                          <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="../image/pinkGraph.png" alt="doc"></div>
+                          <div>View more analytics</div>    
+                      </div>
+                  </div>
+              <div class="popsecond">
+                  <div>Help center ↗</div>
+                  <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://docs.uniswap.org/">
+                      <div>Documentation ↗</div>
+                  </a>
+                  <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://uniswap.canny.io/feature-requests">
+                      <div>Feedback ↗</div>
+                  </a>
+                  <div>Legal & Privacy ↗</div>
+              </div>
+              <div style="display: flex;"> 
+                  <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="../image/dis.png" alt="dis2"></div>
+                  <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="../image/tw.png" alt="tw2"></div>
+                  <div><img style="width: 24px; height: 24px;" src="../image/git.bp.png" alt="git2"></div>
+              </div>
+          </div>
+      </div>
+              <!-- ... 버튼 팝업 -->
+
+              <!--  ------------------검색창 팝업---------------- -->
+      <div class="searchpopup">
+                  <div class="dg"></div>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;;" src="../image/grayclockImg.png" alt="clock"></div>
+                      <div class="imgnameBox">최근 검색</div>
+                  </div>
+                  <a style="text-decoration: none;" href="https://app.uniswap.org/#/tokens/ethereum/NATIVE">
+                     <!--       ????  검색하기 전에 display:none으로 해둘건지 ????       -->
+                      <div class="imgline">
+                          <div style="display: flex;">
+                              <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                              <div class="imgnameBox">
+                                  <div style="font-weight: 700; color: black;">Ether</div>
+                                  <div style="font-weight: 900; color: gray;">ETH</div>
+                              </div>
+                          </div>
+                          <div>
+                              <div style="color: black;">$2,109.55</div>
+                              <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.58%</div>
+                          </div>
+                      </div>
+                  </a>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;" src="../image/like a graph.png" alt="graph"></div>
+                      <div class="imgnameBox">인기있는 토큰</div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Ether</div>
+                              <div style="font-weight: 900; color: gray;">ETH</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div>$2,109.55</div>
+                          <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.97%</div>
+                      </div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/USDcoin_icon.png" alt="usdcoin"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">USD Coin</div>
+                              <div style="font-weight: 900; color: gray; font-size: 14px;">USDC</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div style="padding-left: 16px;">$1,000</div>
+                          <div style="color: red; font-weight: 700;font-size: 14px; padding-left: 8px;">↘ 0.01%</div>
+                      </div>
+                  </div>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;" src="../image/like a graph.png" alt="graph"></div>
+                      <div class="imgnameBox">인기있는 NFT 컬렉션</div>
+                  </div>
+
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/boredape_icon.avif" alt="boredicon"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Bored Ape Yacht Club</div>
+                              <div style="font-weight: 900; color: gray;"> 9,998 items</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div> 54.99 ETH </div>
+                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;"> Floor</div>
+                      </div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/wrapped_icon.avif" alt="wrapicon"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Wrapped Cryptopunks</div>
+                              <div style="font-weight: 900; color: gray;">783 items</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div>74.83 ETH</div>
+                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;">Floor</div>
+                      </div>
+                  </div>
+      </div>
+
+
+
+              <!--  ------------------검색창 팝업---------------- -->
+
+      <div id="homeId" class="Home">
+          <div class="homeUp">
+
+              <div class="header-token-chain-select-list">
+                  <div class="header-token-chain-select-list-wrap">
+                    <div class="header-etherchain">
+                      <div class="ether-img-list"></div>
+                      <span>Ethereum</span>
+                      <svg
+                        class="headercheck header-ethercheck"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FB118E"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="header-polygonchain">
+                      <div class="polygon-img"></div>
+                      <span>Polygon</span>
+                      <svg
+                        class="headercheck header-polygoncheck"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FB118E"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="header-optimismchain">
+                      <div class="optimism-img"></div>
+                      <span>Optimism</span>
+                      <svg
+                        class="headercheck header-optimismcheck"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FB118E"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="header-arbitrumchain">
+                      <div class="arbitrum-img"></div>
+                      <span>Arbitrum</span>
+                      <svg
+                        class="headercheck header-arbitrumcheck"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FB118E"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="header-celochain">
+                      <div class="celo-img"></div>
+                      <span>Celo</span>
+                      <svg
+                        class="headercheck header-celocheck"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FB118E"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="bnb-sector">
+                      <div class="bnb-img"></div>
+                      <span>BNB Chain</span>
+                      <span class="comingsoon">Coming soon</span>
+                    </div>
+                  </div>
+                </div>
+          </div>
+    <!-- 메인 div 안에 텍스트div, 텍스트 아래 div, 그리고 리스트 div 생성 -->
     <div class="nfts-main-wrap">
         <div class="nfts-swiper">
             <div class="swiper-letter-wrap">
@@ -145,351 +446,455 @@
                 </div>
             </div>
         </div>
-        <div class="nfts-list-wrap">
-          <h1>Trending NFT collections</h1>
-          <div class="token-list">
-            <table id="tokentable">
-              <thead>
-                <tr>
-                  <th id="listnum">#</th>
-                  <th id="listname">Collection name</th>
-                  <th id="listprice">Floor</th>
-                  <th id="listchange">Floor change</th>
-                  <th id="listtvl">Volume</th>
-                  <th id="listvolume">Items</th>
-                  <th id="listowners">Owners</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tokenlistnumber">1</td>
-                  <td>
-                    <img
-                      src="https://i.seadn.io/gae/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB?w=500&auto=format"
-                    />
-                    <span>Bored Ape Yacht Club</span>
-                  </td>
-                  <td>53.95 ETH</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>1%</span>
-                  </td>
-                  <td>4,783 ETH</td>
-                  <td>10K</td>
-                  <td>
-                    5.7K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">2</td>
-                  <td>
-                    <img src="https://i.seadn.io/gae/lHexKRMpw-aoSyB1WdFBff5yfANLReFxHzt1DOj_sg7mS14yARpuvYcUtsyyx-Nkpk6WTcUPFoG53VnLJezYi8hAs0OxNZwlw6Y-dmI?w=500&auto=format" alt="">
-                    <span>Mutant Ape Yacht Club</span>
-                  </td>
-                  <td>12.05 ETH</td>
-                  <td class="changedown">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-label="down"
-                    class="sc-1nu6e54-1 lbxvhe"
-                  >
-                    <line x1="7" y1="7" x2="17" y2="17"></line>
-                    <polyline points="17 7 17 17 7 17"></polyline>
-                  </svg>
-                    <span>3%</span>
-                  </td>
-                  <td>2,772 ETH</td>
-                  <td>19.5K</td>
-                  <td>
-                    11.2K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">3</td>
-                  <td>
-                    <img src="https://i.seadn.io/gcs/files/7ed181433ee09174f09a0e31b563d313.png?w=500&auto=format" alt="">
-                    <span>Gemesis</span>
-                  </td>
-                  <td>0.02 ETH</td>
-                  <td class="changedown">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-label="down"
-                    class="sc-1nu6e54-1 lbxvhe"
-                  >
-                    <line x1="7" y1="7" x2="17" y2="17"></line>
-                    <polyline points="17 7 17 17 7 17"></polyline>
-                  </svg>
-                    <span>1%</span>
-                  </td>
-                  <td>916 ETH</td>
-                  <td>91.9K</td>
-                  <td>
-                    10K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">4</td>
-                  <td>
-                    <img src="https://i.seadn.io/gae/yNi-XdGxsgQCPpqSio4o31ygAV6wURdIdInWRcFIl46UjUQ1eV7BEndGe8L661OoG-clRi7EgInLX4LPu9Jfw4fq0bnVYHqg7RFi?w=500&auto=format" alt="">
-                    <span>Pudgy Penguins</span>
-                  </td>
-                  <td>3.89 ETH</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>3%</span>
-                  </td>
-                  <td>797 ETH</td>
-                  <td>8.9K</td>
-                  <td>
-                    47.8K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">5</td>
-                  <td>
-                    <img src="https://i.seadn.io/gcs/files/e0972d771af4d633e70e00338aa38e34.png?w=500&auto=format" alt="">
-                    <span>Wrapped Cryptopunks</span>
-                  </td>
-                  <td>74.83 ETH</td>
-                  <td class="changeup">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="up"
-                      class="sc-1nu6e54-0 eFTjTe"
-                    >
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                    <span>3%</span>
-                  </td>
-                  <td>796 ETH</td>
-                  <td>0.7K</td>
-                  <td>
-                    4.6K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">6</td>
-                  <td>
-                    <img src="https://i.seadn.io/gae/H8jOCJuQokNqGBpkBN5wk1oZwO7LM8bNnrHCaekV2nKjnCqw6UB5oaH8XyNeBDj6bA_n1mjejzhFQUP3O1NfjFLHr3FOaeHcTOOT?w=500&auto=format" alt="">
-                    <span>Azuki</span>
-                  </td>
-                  <td>15.3 ETH</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>4%</span>
-                  </td>
-                  <td>775 ETH</td>
-                  <td>10K</td>
-                  <td>
-                    4.7K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">7</td>
-                  <td>
-                    <img src="https://i.seadn.io/gae/_R4fuC4QGYd14-KwX2bD1wf-AWjDF2VMabfqWFJhIgiN2FnAUpnD5PLdJORrhQ8gly7KcjhQZZpuzYVPF7CDSzsqmDh97z84j2On?w=500&auto=format" alt="">
-                    <span>BEANZ Official</span>
-                  </td>
-                  <td>1.55 ETH</td>
-                  <td class="changeup">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="up"
-                      class="sc-1nu6e54-0 eFTjTe"
-                    >
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                    <span>5%</span>
-                  </td>
-                  <td>660 ETH</td>
-                  <td>20K</td>
-                  <td>
-                    7.4K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">8</td>
-                  <td>
-                    <img src="https://i.seadn.io/gcs/files/c4dfc6be4d9c5d4f073de2efe181416a.jpg?w=500&auto=format" alt="">
-                    <span>Bored Ape Kennel Club</span>
-                  </td>
-                  <td>5.1 ETH</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>9%</span>
-                  </td>
-                  <td>457 ETH</td>
-                  <td>9.6K</td>
-                  <td>
-                    5.5K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">9</td>
-                  <td>
-                    <img src="https://i.seadn.io/gcs/files/82a7f92df6d60e41327b69cdafea8831.jpg?w=500&auto=format" alt="">
-                    <span>HV-MTL</span>
-                  </td>
-                  <td>1.57</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>3.66%</span>
-                  </td>
-                  <td>439 ETH</td>
-                  <td>26.4K</td>
-                  <td>
-                    10K
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tokenlistnumber">10</td>
-                  <td>
-                    <img src="https://i.seadn.io/gcs/files/89e91706142a1003abab1d864370fe62.png?w=500&auto=format" alt="">
-                    <span>Outlaws</span>
-                  </td>
-                  <td>1.57 ETH</td>
-                  <td class="changedown">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-label="down"
-                      class="sc-1nu6e54-1 lbxvhe"
-                    >
-                      <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="17 7 17 17 7 17"></polyline>
-                    </svg>
-                    <span>3%</span>
-                  </td>
-                  <td>416 ETH</td>
-                  <td>10K</td>
-                  <td>
-                    3.1K
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="forgradient">
+            <div class="nfts-list-wrap">
+              <h1>Trending NFT collections</h1>
+              <div class="token-list">
+                <table id="tokentable">
+                  <thead>
+                    <tr>
+                      <th id="listnum">#</th>
+                      <th id="listname">Collection name</th>
+                      <th id="listprice">Floor</th>
+                      <th id="listchange">Floor change</th>
+                      <th id="listtvl">Volume</th>
+                      <th id="listvolume">Items</th>
+                      <th id="listowners">Owners</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="tokenlistnumber">1</td>
+                      <td>
+                        <img
+                          src="https://i.seadn.io/gae/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB?w=500&auto=format"
+                        />
+                        <span>Bored Ape Yacht Club</span>
+                      </td>
+                      <td>53.95 ETH</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>1%</span>
+                      </td>
+                      <td>4,783 ETH</td>
+                      <td>10K</td>
+                      <td>
+                        5.7K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">2</td>
+                      <td>
+                        <img src="https://i.seadn.io/gae/lHexKRMpw-aoSyB1WdFBff5yfANLReFxHzt1DOj_sg7mS14yARpuvYcUtsyyx-Nkpk6WTcUPFoG53VnLJezYi8hAs0OxNZwlw6Y-dmI?w=500&auto=format" alt="">
+                        <span>Mutant Ape Yacht Club</span>
+                      </td>
+                      <td>12.05 ETH</td>
+                      <td class="changedown">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-label="down"
+                        class="sc-1nu6e54-1 lbxvhe"
+                      >
+                        <line x1="7" y1="7" x2="17" y2="17"></line>
+                        <polyline points="17 7 17 17 7 17"></polyline>
+                      </svg>
+                        <span>3%</span>
+                      </td>
+                      <td>2,772 ETH</td>
+                      <td>19.5K</td>
+                      <td>
+                        11.2K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">3</td>
+                      <td>
+                        <img src="https://i.seadn.io/gcs/files/7ed181433ee09174f09a0e31b563d313.png?w=500&auto=format" alt="">
+                        <span>Gemesis</span>
+                      </td>
+                      <td>0.02 ETH</td>
+                      <td class="changedown">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-label="down"
+                        class="sc-1nu6e54-1 lbxvhe"
+                      >
+                        <line x1="7" y1="7" x2="17" y2="17"></line>
+                        <polyline points="17 7 17 17 7 17"></polyline>
+                      </svg>
+                        <span>1%</span>
+                      </td>
+                      <td>916 ETH</td>
+                      <td>91.9K</td>
+                      <td>
+                        10K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">4</td>
+                      <td>
+                        <img src="https://i.seadn.io/gae/yNi-XdGxsgQCPpqSio4o31ygAV6wURdIdInWRcFIl46UjUQ1eV7BEndGe8L661OoG-clRi7EgInLX4LPu9Jfw4fq0bnVYHqg7RFi?w=500&auto=format" alt="">
+                        <span>Pudgy Penguins</span>
+                      </td>
+                      <td>3.89 ETH</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>3%</span>
+                      </td>
+                      <td>797 ETH</td>
+                      <td>8.9K</td>
+                      <td>
+                        47.8K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">5</td>
+                      <td>
+                        <img src="https://i.seadn.io/gcs/files/e0972d771af4d633e70e00338aa38e34.png?w=500&auto=format" alt="">
+                        <span>Wrapped Cryptopunks</span>
+                      </td>
+                      <td>74.83 ETH</td>
+                      <td class="changeup">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="up"
+                          class="sc-1nu6e54-0 eFTjTe"
+                        >
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                        <span>3%</span>
+                      </td>
+                      <td>796 ETH</td>
+                      <td>0.7K</td>
+                      <td>
+                        4.6K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">6</td>
+                      <td>
+                        <img src="https://i.seadn.io/gae/H8jOCJuQokNqGBpkBN5wk1oZwO7LM8bNnrHCaekV2nKjnCqw6UB5oaH8XyNeBDj6bA_n1mjejzhFQUP3O1NfjFLHr3FOaeHcTOOT?w=500&auto=format" alt="">
+                        <span>Azuki</span>
+                      </td>
+                      <td>15.3 ETH</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>4%</span>
+                      </td>
+                      <td>775 ETH</td>
+                      <td>10K</td>
+                      <td>
+                        4.7K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">7</td>
+                      <td>
+                        <img src="https://i.seadn.io/gae/_R4fuC4QGYd14-KwX2bD1wf-AWjDF2VMabfqWFJhIgiN2FnAUpnD5PLdJORrhQ8gly7KcjhQZZpuzYVPF7CDSzsqmDh97z84j2On?w=500&auto=format" alt="">
+                        <span>BEANZ Official</span>
+                      </td>
+                      <td>1.55 ETH</td>
+                      <td class="changeup">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="up"
+                          class="sc-1nu6e54-0 eFTjTe"
+                        >
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                        <span>5%</span>
+                      </td>
+                      <td>660 ETH</td>
+                      <td>20K</td>
+                      <td>
+                        7.4K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">8</td>
+                      <td>
+                        <img src="https://i.seadn.io/gcs/files/c4dfc6be4d9c5d4f073de2efe181416a.jpg?w=500&auto=format" alt="">
+                        <span>Bored Ape Kennel Club</span>
+                      </td>
+                      <td>5.1 ETH</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>9%</span>
+                      </td>
+                      <td>457 ETH</td>
+                      <td>9.6K</td>
+                      <td>
+                        5.5K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">9</td>
+                      <td>
+                        <img src="https://i.seadn.io/gcs/files/82a7f92df6d60e41327b69cdafea8831.jpg?w=500&auto=format" alt="">
+                        <span>HV-MTL</span>
+                      </td>
+                      <td>1.57</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>3.66%</span>
+                      </td>
+                      <td>439 ETH</td>
+                      <td>26.4K</td>
+                      <td>
+                        10K
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tokenlistnumber">10</td>
+                      <td>
+                        <img src="https://i.seadn.io/gcs/files/89e91706142a1003abab1d864370fe62.png?w=500&auto=format" alt="">
+                        <span>Outlaws</span>
+                      </td>
+                      <td>1.57 ETH</td>
+                      <td class="changedown">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-label="down"
+                          class="sc-1nu6e54-1 lbxvhe"
+                        >
+                          <line x1="7" y1="7" x2="17" y2="17"></line>
+                          <polyline points="17 7 17 17 7 17"></polyline>
+                        </svg>
+                        <span>3%</span>
+                      </td>
+                      <td>416 ETH</td>
+                      <td>10K</td>
+                      <td>
+                        3.1K
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
         </div>
     </div>
-    <!-- 코인 리스트들 -->
+    <div class="token-main-wrap">
+      <div class="token-main">
+        <div class="token-chain-select-list">
+          <div class="token-chain-select-list-wrap">
+            <div class="etherchain">
+              <div class="ether-img-list"></div>
+              <span>Ethereum</span>
+              <svg
+                class="check ethercheck"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FB118E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="polygonchain">
+              <div class="polygon-img"></div>
+              <span>Polygon</span>
+              <svg
+                class="check polygoncheck"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FB118E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="optimismchain">
+              <div class="optimism-img"></div>
+              <span>Optimism</span>
+              <svg
+                class="check optimismcheck"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FB118E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="arbitrumchain">
+              <div class="arbitrum-img"></div>
+              <span>Arbitrum</span>
+              <svg
+                class="check arbitrumcheck"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FB118E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="celochain">
+              <div class="celo-img"></div>
+              <span>Celo</span>
+              <svg
+                class="check celocheck"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FB118E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="bnb-sector">
+              <div class="bnb-img"></div>
+              <span>BNB Chain</span>
+              <span class="comingsoon">Coming soon</span>
+            </div>
+          </div>
+        </div>
 
-</body>
-<script src="./nfts.js"></script>
+      </div>
+    </div>
+  </body>
+  <script src="./nfts.js"></script>
 </html>
