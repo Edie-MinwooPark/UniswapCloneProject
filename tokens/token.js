@@ -234,6 +234,8 @@ etherchain.addEventListener('click',function(){
 
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
     if(ethercheck.classList.contains('active')){
         tokenChainSelectlist.classList.remove('active');
         tokenChainSelectlist.style.display = 'none';
@@ -277,6 +279,8 @@ headeretherchain.addEventListener('click',function(){
 
     headeruparrow.style.display = 'block'
     headerdownarrow.style.display = 'none'
+    uparrow.style.display = 'block'
+    downarrow.style.display = 'none'
     if(headerethercheck.classList.contains('active')){
         tokenChainSelectlist.classList.remove('active');
         tokenChainSelectlist.style.display = 'none';
@@ -325,6 +329,9 @@ polygonchain.addEventListener('click',function(){
 
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
+    
 
     if(!polygoncheck.classList.contains('active')){
         // 버튼에 이모티콘, 이름 바꿔주기
@@ -366,6 +373,8 @@ headerpolygonchain.addEventListener('click',function(){
     arbitrumcheck.classList.remove('active');
     celocheck.style.display = 'none'
     celocheck.classList.remove('active');
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
 
@@ -413,6 +422,8 @@ optimismchain.addEventListener('click',function(){
 
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
 
     if(!optimismcheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -459,6 +470,8 @@ headeroptimismchain.addEventListener('click',function(){
 
     headeruparrow.style.display = 'block'
     headerdownarrow.style.display = 'none'
+    uparrow.style.display = 'block'
+    downarrow.style.display = 'none'
 
     if(!headeroptimismcheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -503,6 +516,8 @@ arbitrumchain.addEventListener('click',function(){
 
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
 
     if(!arbitrumcheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -548,6 +563,8 @@ headerarbitrumchain.addEventListener('click',function(){
 
     headeruparrow.style.display = 'block'
     headerdownarrow.style.display = 'none'
+    uparrow.style.display = 'block'
+    downarrow.style.display = 'none'
 
     if(!headerarbitrumcheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -592,6 +609,8 @@ celochain.addEventListener('click',function(){
 
     uparrow.style.display = 'block'
     downarrow.style.display = 'none'
+    headeruparrow.style.display = 'block'
+    headerdownarrow.style.display = 'none'
 
     if(!celocheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -635,6 +654,8 @@ headercelochain.addEventListener('click',function(){
 
     headeruparrow.style.display = 'block'
     headerdownarrow.style.display = 'none'
+    uparrow.style.display = 'block'
+    downarrow.style.display = 'none'
 
     if(!headercelocheck.classList.contains('active')){
         etherimg.forEach(i =>
@@ -866,10 +887,11 @@ function sortTable(column,sort_asc){
         second_row = second_row.match(/[\d\.]+/g).join("");
         Number(first_row);
         Number(second_row);
-        console.log(first_row,second_row);
-        console.log(first_row - second_row);
         return sort_asc ? (first_row - second_row) : (second_row - first_row) ;
     })
     bb.map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
+    
 };
+
+
 
