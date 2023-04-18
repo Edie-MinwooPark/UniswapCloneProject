@@ -15,8 +15,8 @@
                     <img width="35px" height="35px" src="../image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
                 </a></li>
             <li><a href="#HomeBtn">스왑</a></li>
-            <li><a href="#aboutBtn">토큰</a></li>
-            <li><a href="#EducationBtn">NFTs</a></li>
+            <li><a href="../tokens/token.html">토큰</a></li>
+            <li><a href="../NFTs/nfts.html">NFTs</a></li>
             <li><a href="#ProjectsBtn">Pools</a></li>
             <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
         </ul>
@@ -62,7 +62,15 @@
                 <div class="drawer">
                     <div class="content">
                         <h3>Connect a wallet</h3>
-                        <a href="../Login/login.html"><div class="login">LOGIN</div></a>
+                        <div class="login">
+                            <ul>
+                                <li class="nickname">Nickname : </li>
+                                <li class="cash">Cash : </li>
+                                <li class="bitcoin">Bitcoin : </li>
+                                <li class="ethereum">Ethereum : </li>
+                                <li><a href="/Mypage/mypage.html">My page</a><a href="/index.html" class="logout">Log out</a></li>
+                            </ul>
+                        </div>
                         <!-- 로그인이 되면 mypage로 바뀌어야함. -->
                     </div>
                 </div>
@@ -308,13 +316,20 @@
             <p class="nickname-same"></p>
         </div>
         <div>
-            <label for="">Acount</label>
+            <label for="">Cash</label>
             <input type="text" class="charge-acount">
-            <p class="user-cash">0 Dollars</p>
+            <p class="user-cash">0 $</p>
+        </div>
+        <div>
+            <label for="">From</label>
+            <input type="text">
+            <label for="">To</label>
+            <input type="text">
         </div>
         <button class="nickname-change">Change</button>
         <button class="acount-charge">Charge</button>
-        <a href="../Login/login.html"><button class="go-to-main">To Main</button></a>
+        <button class="acount-withdraw">Withdraw</button>
+        <a href="/index.html"><button class="go-to-main">To Main</button></a>
     </div>
 </body>
 <script src="./mypage.js"></script>

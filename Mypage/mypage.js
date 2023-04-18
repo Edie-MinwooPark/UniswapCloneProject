@@ -274,30 +274,59 @@ window.onload = function() {
   searchContent.style.display = "none";
 }
 
+// 로컬스토리지 저장 내용 확인
+console.log("user information : " + window.localStorage.getItem("UserInfo"));
+console.log("join information : " + window.localStorage.getItem("JoinInfo"));
+console.log("login information : " + window.localStorage.getItem("Login"));
+
 // 개인 정보 설정
 
-
-let loginValue = window.localStorage.getItem("Login");
 let nickChangeBtn = document.querySelector(".nickname-change");
+let logoutBtn = document.querySelector(".logout");
 
 // 로그인 후 마이 페이지 방문 시 표시
 function loginInfo(){
+    let loginValue = window.localStorage.getItem("Login");
+
     if(loginValue == null){
         return;
     }else{
-        loginValue = loginValue.split("|");
+        let loginValue = window.localStorage.getItem("Login");
 
         let nickText = document.querySelector(".current-nick");
-    
+        
         nickText.innerHTML = "Current nickname : " + JSON.parse(loginValue).nick;
-    
+        
         let acountText = document.querySelector(".user-cash");
-    
+        
         acountText.innerHTML = JSON.parse(loginValue).dollar + " $";
+        
+        // 사이드바 개인 정보 표기
+        let sideNickText = document.querySelector(".nickname");
+        let sideAcountText = document.querySelector(".cash");
+        let sideBitcoin = document.querySelector(".bitcoin");
+        let sideEthereum = document.querySelector(".ethereum");
+
+
+        sideNickText.innerHTML = "Nickname : " + JSON.parse(loginValue).nick;
+        sideAcountText.innerHTML = "Cash : " + JSON.parse(loginValue).dollar + " $";
+        sideBitcoin.innerHTML = "Bitcoin : " + JSON.parse(loginValue).bit;
+        sideEthereum.innerHTML = "Ethereum : " + JSON.parse(loginValue).eth;
     }
 }
 
 loginInfo();
+
+// 로그 아웃 버튼 설정
+logoutBtn.addEventListener("click", function(){
+    let loginValue = window.localStorage.getItem("Login");
+    
+    if(loginValue == null){
+        return;
+    }else{
+        window.localStorage.setItem("Login", null);
+    }
+})
 
 // 닉네임 정규식 검사 함수
 function isNick(asValue) {
@@ -362,11 +391,14 @@ function nickFilter(infomation){
 }
 
 function changeNick(){
+    let loginValue = window.localStorage.getItem("Login");
     let userInfo = window.localStorage.getItem("UserInfo");
     let userNick = document.querySelector(".change-nick").value;
     let currentNickText = document.querySelector(".current-nick");
+    let sideNickText = document.querySelector(".nickname");
     
     currentNickText.innerHTML = "Current nickname : " + userNick;
+    sideNickText.innerHTML = "Current nickname : " + userNick;
 
     let _userInfo = userInfo.split("|");
 
@@ -378,15 +410,98 @@ function changeNick(){
             _userInfo.splice(i,1);
 
             if(_userInfo.length == 0){
-                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
             }else{
                 userInfo = _userInfo.join("|");
-                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
             }
         }
     })
 }
 
-console.log("user information : " + window.localStorage.getItem("UserInfo"));
-console.log("join information : " + window.localStorage.getItem("JoinInfo"));
-console.log("login information : " + window.localStorage.getItem("Login"));
+let userCash = document.querySelector(".user-cash");
+let chargeBtn = document.querySelector(".acount-charge");
+
+chargeBtn.addEventListener("click", function(){
+    let chargeDollars = document.querySelector(".charge-acount").value;
+    let loginValue = window.localStorage.getItem("Login");
+    let userInfo = window.localStorage.getItem("UserInfo");
+    let userCash = document.querySelector(".user-cash");  
+    let sideAcountText = document.querySelector(".cash");  
+
+    let wontCharge = parseInt(chargeDollars);
+    let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
+
+    if(chargeDollars.length == 0 || isNaN(chargeDollars)){
+        return;
+    }else{
+            
+        let chargeResult = wontCharge + beforeDollars
+    
+        let _userInfo = userInfo.split("|");
+    
+        _userInfo.forEach(function(a,i){
+            if(JSON.parse(loginValue).id == JSON.parse(a).id){
+                
+                _userInfo.splice(i,1);
+    
+                if(_userInfo.length == 0){
+                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${chargeResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+                }else{
+                    userInfo = _userInfo.join("|");
+                    window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${chargeResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+                }
+            }
+            window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${chargeResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+    
+            console.log("login information : " + window.localStorage.getItem("Login"));
+            console.log("user information : " + window.localStorage.getItem("UserInfo"));
+            
+            userCash.innerHTML = chargeResult + " $";
+            sideAcountText.innerHTML = "Cash : " + chargeResult + " $";
+        })
+    }
+})
+
+let withdrawBtn = document.querySelector(".acount-withdraw");
+
+withdrawBtn.addEventListener("click",function(){
+    let chargeDollars = document.querySelector(".charge-acount").value;
+    let loginValue = window.localStorage.getItem("Login");
+    let userInfo = window.localStorage.getItem("UserInfo");
+    let userCash = document.querySelector(".user-cash");  
+    let sideAcountText = document.querySelector(".cash");  
+
+    let wontWithdraw = parseInt(chargeDollars);
+    let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
+
+    if(chargeDollars.length == 0 || isNaN(wontWithdraw) || wontWithdraw > beforeDollars){
+        return;
+    }else{
+            
+        let withdrawResult = beforeDollars - wontWithdraw;
+    
+        let _userInfo = userInfo.split("|");
+    
+        _userInfo.forEach(function(a,i){
+            if(JSON.parse(loginValue).id == JSON.parse(a).id){
+                
+                _userInfo.splice(i,1);
+    
+                if(_userInfo.length == 0){
+                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${withdrawResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+                }else{
+                    userInfo = _userInfo.join("|");
+                    window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${withdrawResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+                }
+            }
+            window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${withdrawResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+    
+            console.log("login information : " + window.localStorage.getItem("Login"));
+            console.log("user information : " + window.localStorage.getItem("UserInfo"));
+            
+            userCash.innerHTML = withdrawResult + " $";
+            sideAcountText.innerHTML = "Cash : " + withdrawResult + " $";
+        })
+    }
+})

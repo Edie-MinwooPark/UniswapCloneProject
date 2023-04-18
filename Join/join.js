@@ -458,18 +458,21 @@ function nickFilter(infomation){
 joinBtn.addEventListener("click",function(){
     if(isCorrect[0] && isCorrect[1] && isCorrect[2]){
         let inputs = document.querySelectorAll("input");
+        console.log(inputs);
 
-        if(inputs[0].value !== checkArr.id){
+        if(inputs[1].value !== checkArr.id){
             alert("Id incorrect. Check your id again please.");
-        }else if(inputs[1].value !== checkArr.pw || inputs[2].value !== checkArr.pw){
+        }else if(inputs[2].value !== checkArr.pw || inputs[3].value !== checkArr.pw){
             alert("Password incorrect. Check your password again please.");
-        }else if(inputs[3].value !== checkArr.nick){
+        }else if(inputs[4].value !== checkArr.nick){
             alert("Nickname incorrect. Check your nickname again please.");
         }else{
-            if(joinInfo == null){
-                window.localStorage.setItem("JoinInfo", `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}"}`);
+            if(joinInfo == "null"){
+                window.localStorage.setItem("JoinInfo", `{"id" : "${inputs[1].value}", "pw" : "${inputs[2].value}", "nick" : "${inputs[4].value}"}`);
+            }else if(joinInfo == null){
+                window.localStorage.setItem("JoinInfo", `{"id" : "${inputs[1].value}", "pw" : "${inputs[2].value}", "nick" : "${inputs[4].value}"}`);
             }else{
-                window.localStorage.setItem("JoinInfo", joinInfo + "|" + `{"id" : "${inputs[0].value}", "pw" : "${inputs[1].value}", "nick" : "${inputs[3].value}"}`);
+                window.localStorage.setItem("JoinInfo", joinInfo + "|" + `{"id" : "${inputs[1].value}", "pw" : "${inputs[2].value}", "nick" : "${inputs[4].value}"}`);
             }
             console.log(window.localStorage.getItem("JoinInfo"));
             

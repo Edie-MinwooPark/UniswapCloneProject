@@ -222,17 +222,26 @@ body{
 }
 
 .login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
     border-radius: 10px;
     width: 80%;
-    height: 80px;
+    height: 90px;
     margin-left: 10px;
+    padding-top: 1px;
     font-weight: bold;
     font-size: large;
     cursor: pointer;
+}
+
+.login ul{
+    display: block;
+}
+
+.login li{
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Home{

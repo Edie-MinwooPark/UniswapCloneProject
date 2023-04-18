@@ -222,16 +222,28 @@ body{
 }
 
 .login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
     border-radius: 10px;
     width: 80%;
-    height: 80px;
+    height: 180px;
     margin-left: 10px;
+    padding-top: 1px;
     font-weight: bold;
     font-size: large;
+}
+
+.login ul{
+    display: block;
+}
+
+.login li{
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login li a{
     cursor: pointer;
 }
 
@@ -582,7 +594,8 @@ body{
 }
 
 .nickname-change,
-.acount-charge{
+.acount-charge,
+.acount-withdraw{
     width: 70px;
     height: 40px;
     position: absolute;
@@ -596,6 +609,12 @@ body{
 
 .acount-charge{
     top: 132px;
+    right: 90px;
+}
+
+.acount-withdraw{
+    top: 132px;
+    right: 10px;
 }
 
 .go-to-main{
