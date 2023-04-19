@@ -568,6 +568,9 @@ function sortTable(column,sort_asc){
         console.log(first_row - second_row);
         return sort_asc ? (first_row - second_row) : (second_row - first_row) ;
     })
+    bb.map(function(i,index){
+      return  i.firstElementChild.innerHTML = index + 1;
+    })
     bb.map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
 };
 
