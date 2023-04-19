@@ -140,7 +140,7 @@ function render(offset){
 
         del.onclick = function() {
             let value = window.localStorage.getItem("list");
-            rocal.splice(index,1);
+            rocal.splice(index + pageNum,1);
             console.log(rocal);
             console.log(rocal.length);
             console.log(rocal.join("|"));
@@ -150,13 +150,14 @@ function render(offset){
             }else{
                 window.localStorage.setItem("list",str);
             }
-            init();
+            render(pageNum/10);
         }; 
         c.onclick = function(){
+            console.log(index)
             let rocal = window.localStorage.getItem("list");
             rocal = rocal.split("|");
             console.log();
-            let obj = JSON.parse(rocal[index]);
+            let obj = JSON.parse(rocal[index +pageNum]);
             // add.onclick()
             box.style.display = "none"
             box2.style.display = "block"
@@ -188,11 +189,11 @@ function render(offset){
             btn.addEventListener("click", () => {
                 obj.writer = input.value;
                 obj.question = text.value;
-                rocal[index] = JSON.stringify(obj);
+                rocal[index + pageNum] = JSON.stringify(obj);
                 let str = rocal.join("|")
                 window.localStorage.setItem("list",str);
                 box2.style.display = "none"
-                init();
+                render(pageNum/10)
                 
 
             });
