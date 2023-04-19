@@ -34,18 +34,18 @@ html{
     font-size: 14px;
 }
 .topBar ul li a{
-    color: white;
+    color: rgb(255, 205, 210);
     text-decoration: none;
     word-break: keep-all;
 }
 
 .dots{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     position: absolute;
-    top: 18px;
+    top: 13px;
     background-color: black;
-    color: white;
+    color: rgb(255, 205, 210);
     border: 1px solid black;
     cursor: pointer;
 }
@@ -103,6 +103,9 @@ html{
     white-space: nowrap;
     padding-bottom: 10px;
 }
+.popfirstdiv:hover{
+    opacity: 0.4;
+}
 .bg{
     width: 100vw;
     height: 100vw;
@@ -119,6 +122,14 @@ html{
     top: 0;
     left: 0;
 }
+.jg{
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
 .popsecond{
     padding-top: 15px;
     color: rgba(255, 205, 210, 0.906);
@@ -126,10 +137,23 @@ html{
     border-top: 1px solid grey;
 }
 .popsecond div{
-    padding-left: 0;
-    padding-bottom: 15px;
+    /* padding-left: 0;
+    padding-bottom: 15px; */
+    padding: 5px 5px 10px 5px ;
+    border-radius: 10px;
 }
-
+.popsecond div:hover{
+  opacity: 0.4;
+}
+.legalinpopup{
+    cursor: pointer;
+}
+.popthree{
+    display: flex;
+}
+.popthree a:hover{
+    opacity: 0.4;
+}
 /* 버튼팝업----------------------------------- */
 .searchBar{
     display: flex;
@@ -193,7 +217,7 @@ html{
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    padding: 20px 0px 0px 17px;
+    padding: 20px 0px 0px 25px;
     color: white;
 }
 .drawer{
@@ -219,6 +243,88 @@ html{
     font-size: large;
     cursor: grab;
 }
+/*  Legal & Privacy Popup */
+.legalContainer{
+    width: 20%;
+    border: 5px solid black;
+    border-radius: 15px;
+    margin: 6% 0% 0% 39%;
+    background-color: rgb(255, 205, 210);
+    padding: 1%;
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+.legalBody{
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 70vh;
+    padding-right: 18px;
+    -ms-overflow-style: none;
+}
+.legalBody::-webkit-scrollbar{
+    display: none;
+}
+
+.legalTitle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* padding-bottom: 20px; */
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.legalPink{
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    background-color: black;
+    color: rgb(255, 205, 210);
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding: 1%;
+}
+.legalPink:hover{
+    opacity: 0.6;
+}
+.legalGray{
+    width: 100%;
+    border-radius: 15px;
+    background-color: black;
+    color: rgb(255, 205, 210);
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    /* padding: 1rem; */
+    padding-bottom: 3%;
+    overflow: auto;
+}
+.legalgrayTop{
+    display: flex;
+    padding: 2%;
+}
+.legalLearn{
+    color: rgb(251, 17, 142);
+    text-decoration: none;
+}
+.legalLearn2{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(251, 17, 142);
+    text-decoration: none;
+    text-align: center;
+}
+.besideInfo{
+    padding-top: 1%;
+    font-weight: bold;
+}
+
+/*  Legal & Privacy Popup */
 .Home{
     width: 100%;
     height: calc(100vh - 52px);

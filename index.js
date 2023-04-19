@@ -307,7 +307,9 @@ celochain.addEventListener('click',function(){
 //   }
 const searchbox = document.querySelector('.searchBar');
 const searchContent = document.querySelector('.searchpopup');
-const dg = document.querySelector(".dg")
+// const content = document.querySelector('.header-token-chain-select-list');
+const dg = document.querySelector(".dg");
+// const jg = document.querySelector('.jg');
 
 searchbox.onclick = function(){
   if(getComputedStyle(searchContent).display == "block"){
@@ -319,9 +321,34 @@ searchbox.onclick = function(){
 dg.onclick = function(){
   searchContent.style.display = "none";
 }
+// jg.onclick = function(){
+//   header-token-chain-select-list.style.display = "none";
+// }
 
 window.onload = function() {
   searchContent.style.display = "none";
 }
+// -----------------legal 버튼 -----------------------------------------
+let legalinpopup = document.querySelector('.legalinpopup');
+let legalBtn = document.querySelector('.legalBtn');
+let legalBox = document.querySelector('.legalContainer');
+let home = document.querySelector('.Home');
 
+legalinpopup.onclick = function(){
+  legalBox.classList.add('active');
+  home.style.backgroundColor = "black";
+  home.style.opacity = "0.9";
+  document.body.style.overflow = "hidden";
+}
+legalBtn.onclick = function(){
+  legalBox.classList.remove('active');
+  home.style.backgroundColor = "rgb(255,205,210)";
+  document.body.style.overflow = "auto";
+}
+
+
+
+
+
+// ---------------------legal 버튼---------------------------------------
 
