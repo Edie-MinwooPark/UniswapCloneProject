@@ -748,9 +748,16 @@ color: rgb(255, 205, 210);
 }
 
 
+/*  체인 리스트 백그라운드 클릭시 사라지게 */
 
-
-
+#bgg{
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
 
 
