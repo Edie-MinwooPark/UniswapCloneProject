@@ -277,6 +277,27 @@ window.onload = function() {
 // 관리자 설정
 
 let listUpBtn = document.querySelector(".list-up");
+let loginValue = window.localStorage.getItem("Login");
+
+console.log("user information : " + window.localStorage.getItem("UserInfo"));
+console.log("join information : " + window.localStorage.getItem("JoinInfo"));
+console.log("login information : " + window.localStorage.getItem("Login"));
+
+function loginInfo(){
+    if(loginValue == null){
+        return;
+    }else if(loginValue == "null"){
+        return;
+    }else{
+        // 사이드바 개인 정보 표기
+        let sideNickText = document.querySelector(".nickname");
+
+        sideNickText.innerHTML = "Nickname : " + JSON.parse(loginValue).nick;        
+    }
+    window.localStorage.setItem("Login", null);
+}
+
+loginInfo();
 
 // 가입 요청 리스트 소환
 listUpBtn.addEventListener("click",function(){
@@ -292,7 +313,26 @@ function render(){
 
     list.innerHTML = ``;  // ul 초기화
     
-    if(joinValue == null){
+    if(joinValue == "null"){
+        let _ul = document.createElement("ul");
+        let _li = document.createElement("li");
+        let _div1 = document.createElement("div");
+        let _div2 = document.createElement("div");
+        let _div3 = document.createElement("div");
+        let _div4 = document.createElement("div");
+        let _div5 = document.createElement("div");
+
+        _div1.innerHTML = "No.";
+        _div2.innerHTML = "Id";
+        _div3.innerHTML = "Nickname";
+        _div4.innerHTML = "Approve";
+        _div5.innerHTML = "Reject";
+        _li.append(_div1, _div2, _div3, _div4, _div5);
+        _ul.append(_li);
+
+        list.append(_ul);
+        return;         // 가입 신청 데이터가 없을 경우 함수 종료
+    }else if(joinValue == null){
         let _ul = document.createElement("ul");
         let _li = document.createElement("li");
         let _div1 = document.createElement("div");
@@ -354,9 +394,9 @@ function render(){
                 let userValue = window.localStorage.getItem("UserInfo");
 
                 if(userValue == null){
-                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : 0, "bit" : 0, "eth" : 0}`);
+                    window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : "0", "bit" : "0", "eth" : "0"}`);
                 }else{
-                    window.localStorage.setItem("UserInfo", userValue + "|" + `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : 0, "bit" : 0, "eth" : 0}`);
+                    window.localStorage.setItem("UserInfo", userValue + "|" + `{"id" : "${JSON.parse(a).id}", "pw" : "${JSON.parse(a).pw}", "nick" : "${JSON.parse(a).nick}", "dollar" : "0", "bit" : "0", "eth" : "0"}`);
                 }
                 
                 _value.splice(i,1);
@@ -376,7 +416,7 @@ function render(){
                 _value.splice(i,1);
                 
                 if(_value.length == 0){
-                    window.localStorage.setItem("JoinInfo", "null");
+                    window.localStorage.setItem("JoinInfo", null);
                 }else{
                     window.localStorage.setItem("JoinInfo", _value.join("|"));
                 }
@@ -391,7 +431,3 @@ function render(){
 
     }
 }
-
-console.log("user information : " + window.localStorage.getItem("UserInfo"));
-console.log("join information : " + window.localStorage.getItem("JoinInfo"));
-console.log("login information : " + window.localStorage.getItem("Login"));
