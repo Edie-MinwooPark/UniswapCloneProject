@@ -8,138 +8,195 @@
     <link rel="stylesheet" href="./header.css">
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
-    <style>
-        .drawer .content {
-            width: 100%;
-            height: 97%;
-            position: absolute;
-            top: 0;
-            background-color: rgb(255, 205, 210);
-            border: 1px solid white;
-            border-radius: 10px;
-            margin: 10px;
-        }
-    </style>
-</head>
-
-<body>
     <div class="container">
-        <div class="topBar">
-            <ul>
-                <li><a href="#HomeBtn">
-                        <img width="35px" height="35px" src="./imgs/unicorn.png" alt="horse">
-                    </a></li>
-                <li><a href="#HomeBtn">스왑</a></li>
-                <li><a href="#aboutBtn">토큰</a></li>
-                <li><a href="#EducationBtn">NFTs</a></li>
-                <li><a href="#ProjectsBtn">Pools</a></li>
-                <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
-            </ul>
-            <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
+      <div class="topBar">
+          <ul>
+              <li><a href="http://127.0.0.1:5501/index.html">
+                      <img width="35px" height="35px" src="../image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
+                  </a></li>
+              <li><a href="#HomeBtn">스왑</a></li>
+              <li><a href="#aboutBtn">토큰</a></li>
+              <li><a href="#EducationBtn">NFTs</a></li>
+              <li><a href="#ProjectsBtn">Pools</a></li>
+              <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
+          </ul>
+          <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
 
-            <div class="searchBar">
-                    <div><img style="width: 16px; height: 16px;" src="./imgs/magnifying-glass.svg" alt="glass"></div>
-    
-                    <div class="inputBox">
-                        <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
-                    </div>
-    
-                    <div class="box3"> / </div>
-            </div>
-            <!-- 지우 작업물에 체인 넣는 기능 추가 -->
-            <div class="iconConnect">
-                <div class="arrowBox">
-                    <div class="ether-img"></div>
-                    <div class="down-arrow">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="15"
-                        viewBox="0 -1 24 20"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </div>
-                    <div class="up-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="18 15 12 9 6 15"></polyline></svg>
-                    </div>
-                    <div></div>
-                </div>
-                <div class="Connect">
-                    <button tabindex="-1" class="drawer-opener">
-                        Connect
-                    </button>
-                    <div class="drawer">
-                        <div class="content">
-                            <h3>Connect a wallet</h3>
-                            <div class="login">LOGIN</div>
-                            <!-- 로그인이 되면 mypage로 바뀌어야함. -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <div class="searchBar">
+                  <div><img style="width: 16px; height: 16px;" src="../image/magnifying-glass-solid.svg" alt="glass"></div>
+  
+                  <div class="inputBox">
+                      <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
+                  </div>
+  
+                  <div class="box3"> / </div>
+          </div>
+          <!-- 지우 작업물에 체인 넣는 기능 추가 -->
+          <div class="iconConnect">
+              <div class="arrowBox">
+                  <div class="ether-img"></div>
+                  <div class="header-up-arrow">
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="15"
+                      viewBox="0 -1 24 20"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="header-down-arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="18 15 12 9 6 15"></polyline></svg>
+                  </div>
+                  <div></div>
+              </div>
+              <div class="Connect">
+                  <button tabindex="-1" class="drawer-opener">
+                      Connect
+                  </button>
+                  <div class="drawer">
+                      <div class="content">
+                          <h3>Connect a wallet</h3>
+                          <div class="login">LOGIN</div>
+                          <!-- 로그인이 되면 mypage로 바뀌어야함. -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-                <!-- ...버튼 팝업 -->
-        <div id="popup" class="popup">
-                <div class="popup-content">
-                    <div class="bg"></div>
-                    <div class="popfirst">
-                        <div class="popfirstdiv" style="display: flex;">
-                            <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="./image/pinkBook.png" alt="doc"></div>
-                            <div>Vote in governance</div>    
-                        </div>
+              <!-- ...버튼 팝업 -->
+      <div id="popup" class="popup">
+              <div class="popup-content">
+                  <div class="bg"></div>
+                  <div class="popfirst">
+                      <div class="popfirstdiv" style="display: flex;">
+                          <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="../image/pinkBook.png" alt="doc"></div>
+                          <div>Vote in governance</div>    
+                      </div>
 
-                        <div class="popfirstdiv" style="display: flex;">
-                            <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="./image/pinkGraph.png" alt="doc"></div>
-                            <div>View more analytics</div>    
-                        </div>
-                    </div>
-                <div class="popsecond">
-                    <div>Help center ↗</div>
-                    <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://docs.uniswap.org/">
-                        <div>Documentation ↗</div>
-                    </a>
-                    <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://uniswap.canny.io/feature-requests">
-                        <div>Feedback ↗</div>
-                    </a>
-                    <div>Legal & Privacy ↗</div>
-                </div>
-                <div style="display: flex;"> 
-                    <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="./image/dis.png" alt="dis2"></div>
-                    <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="./image/tw.png" alt="tw2"></div>
-                    <div><img style="width: 24px; height: 24px;" src="./image/git.bp.png" alt="git2"></div>
-                </div>
-            </div>
-        </div>
-                <!-- ... 버튼 팝업 -->
+                      <div class="popfirstdiv" style="display: flex;">
+                          <div><img style="width: 20px; height: 20px; padding-right: 10px;" src="../image/pinkGraph.png" alt="doc"></div>
+                          <div>View more analytics</div>    
+                      </div>
+                  </div>
+              <div class="popsecond">
+                  <div>Help center ↗</div>
+                  <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://docs.uniswap.org/">
+                      <div>Documentation ↗</div>
+                  </a>
+                  <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://uniswap.canny.io/feature-requests">
+                      <div>Feedback ↗</div>
+                  </a>
+                  <div>Legal & Privacy ↗</div>
+              </div>
+              <div style="display: flex;"> 
+                  <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="../image/dis.png" alt="dis2"></div>
+                  <div><img style="width: 24px; height: 24px; padding-right: 15px;" src="../image/tw.png" alt="tw2"></div>
+                  <div><img style="width: 24px; height: 24px;" src="../image/git.bp.png" alt="git2"></div>
+              </div>
+          </div>
+      </div>
+              <!-- ... 버튼 팝업 -->
+              <!--  ------------------검색창 팝업---------------- -->
+      <div class="searchpopup">
+                  <div class="dg"></div>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;;" src="../image/grayclockImg.png" alt="clock"></div>
+                      <div class="imgnameBox">최근 검색</div>
+                  </div>
+                  <a style="text-decoration: none;" href="https://app.uniswap.org/#/tokens/ethereum/NATIVE">
+                     <!--       ????  검색하기 전에 display:none으로 해둘건지 ????       -->
+                      <div class="imgline">
+                          <div style="display: flex;">
+                              <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                              <div class="imgnameBox">
+                                  <div style="font-weight: 700; color: black;">Ether</div>
+                                  <div style="font-weight: 900; color: gray;">ETH</div>
+                              </div>
+                          </div>
+                          <div>
+                              <div style="color: black;">$2,109.55</div>
+                              <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.58%</div>
+                          </div>
+                      </div>
+                  </a>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;" src="../image/like a graph.png" alt="graph"></div>
+                      <div class="imgnameBox">인기있는 토큰</div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="./topBar_icon.png" alt=""></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Ether</div>
+                              <div style="font-weight: 900; color: gray;">ETH</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div>$2,109.55</div>
+                          <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.97%</div>
+                      </div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/USDcoin_icon.png" alt="usdcoin"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">USD Coin</div>
+                              <div style="font-weight: 900; color: gray; font-size: 14px;">USDC</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div style="padding-left: 16px;">$1,000</div>
+                          <div style="color: red; font-weight: 700;font-size: 14px; padding-left: 8px;">↘ 0.01%</div>
+                      </div>
+                  </div>
+                  <div class="grayline">
+                      <div> <img style="width: 20px;" src="../image/like a graph.png" alt="graph"></div>
+                      <div class="imgnameBox">인기있는 NFT 컬렉션</div>
+                  </div>
 
-        <div id="homeId" class="Home">
-            <div class="homeUp">
-                <div class="homeswap">
-                    <img class="swapImg" src="./SwapImg.png" alt="스왑이미지">
-                </div class>
-                <div class="token-chain-select-list">
-                    <div class="token-chain-select-list-wrap">
-                      <div class="etherchain">
-                        <div class="ether-img"></div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/boredape_icon.avif" alt="boredicon"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Bored Ape Yacht Club</div>
+                              <div style="font-weight: 900; color: gray;"> 9,998 items</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div> 54.99 ETH </div>
+                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;"> Floor</div>
+                      </div>
+                  </div>
+                  <div class="imgline">
+                      <div style="display: flex;">
+                          <div><img style="width: 40px; ;" src="../image/wrapped_icon.avif" alt="wrapicon"></div>
+                          <div class="imgnameBox">
+                              <div style="font-weight: 700;">Wrapped Cryptopunks</div>
+                              <div style="font-weight: 900; color: gray;">783 items</div>
+                          </div>
+                      </div>
+                      <div>
+                          <div>74.83 ETH</div>
+                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;">Floor</div>
+                      </div>
+                  </div>
+      </div>
+              <!--  ------------------검색창 팝업---------------- -->
+              
+        <div class="header-token-chain-select-list">
+                    <div class="header-token-chain-select-list-wrap">
+                      <div class="header-etherchain">
+                        <div class="ether-img-list"></div>
                         <span>Ethereum</span>
                         <svg
-                          class="check ethercheck"
+                          class="headercheck header-ethercheck"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -153,11 +210,11 @@
                           <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                       </div>
-                      <div class="polygonchain">
+                      <div class="header-polygonchain">
                         <div class="polygon-img"></div>
                         <span>Polygon</span>
                         <svg
-                          class="check polygoncheck"
+                          class="headercheck header-polygoncheck"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -171,11 +228,11 @@
                           <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                       </div>
-                      <div class="optimismchain">
+                      <div class="header-optimismchain">
                         <div class="optimism-img"></div>
                         <span>Optimism</span>
                         <svg
-                          class="check optimismcheck"
+                          class="headercheck header-optimismcheck"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -189,11 +246,11 @@
                           <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                       </div>
-                      <div class="arbitrumchain">
+                      <div class="header-arbitrumchain">
                         <div class="arbitrum-img"></div>
                         <span>Arbitrum</span>
                         <svg
-                          class="check arbitrumcheck"
+                          class="headercheck header-arbitrumcheck"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -207,11 +264,11 @@
                           <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                       </div>
-                      <div class="celochain">
+                      <div class="header-celochain">
                         <div class="celo-img"></div>
                         <span>Celo</span>
                         <svg
-                          class="check celocheck"
+                          class="headercheck header-celocheck"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -231,174 +288,8 @@
                         <span class="comingsoon">Coming soon</span>
                       </div>
                     </div>
-                  </div>
-            </div>
-
-            <div class="homeDown">
-                <h1 class="tradecrypto">Trade crypto and NFTs <br> with confidence</h1>
-                <div class="buysell">Buy,sell,and explore tokens and NFTs</div>
-                <div class="startdiv">
-                    <a class="startA" href="#">
-                        <p class="startP">Get started </p>
-                    </a>
-                </div>
-
-                <a href="#opacitybox" style="text-decoration: none;">
-                    <div class="learnmore">
-                        Learn more
-                        <span>
-                            <img style="width: 20px; height: 20px; padding-left: 5px; padding-top: 6px;"
-                                src="./Arrow.png" alt="arrow">
-                        </span>
-                    </div>
-                </a>
-
-            </div>
         </div>
-
-        <div id="opacitybox" class="opacitybox"></div>
-        <!-- learn more 누르면 여기에 고정 -->
-
-        <div id="middle" class="middle">
-            <div class="bigboxes">
-
-                <a href="#homeId" class="boxAtag">
-                    <!-- 일단 대충 태그 넣었음. -->
-                    <div class="swapBox">
-                        <div class="boxtitle">Swap tokens</div>
-                        <div class="boxbody">Buy,sell, and explore tokens on Ethereum,Polygon,Optimism,and more.</div>
-                        <div class="boxTail">Trade Tokens</div>
-                    </div>
-                </a>
-
-                <a href="#homeId" class="box2Atag">
-                    <!-- 일단 대충 태그 넣었음. -->
-                    <div class="nftBox">
-                        <div class="boxtitle">Trade NFTs</div>
-                        <div class="boxbody">Buy and sell NFTs marketplaces to find more listings at better prices.
-                        </div>
-                        <div class="boxTail">Explore NFTs</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="smallboxes">
-                <a class="smallcl"
-                    href="https://support.uniswap.org/hc/en-us/articles/11306574799117-How-to-use-Moon-Pay-on-the-Uniswap-web-app-">
-                    <div class="cryptoBox">
-                        <div class="crytitle">
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Buy crypto</div>
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px;">$
-                            </div>
-                        </div>
-
-                        <div class="crybody">
-                            Buy crypto with your credit card or bank account at the best rates.
-                            <div class="crytail">Buy now</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="smallcl2" href="">
-                    <div class="cryptoBox">
-                        <div class="crytitle">
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Earn</div>
-                            <div
-                                style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px; color: rgb(255,205,210);">
-                                <img src="./like a graph.png" alt="graph">
-                            </div>
-                        </div>
-
-                        <div class="crybody">
-                            Provide liquidity to pools on Uniswap and earn fees on swaps.
-                            <div class="crytail">Provide liquidity</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="smallcl3" href="https://docs.uniswap.org/">
-                    <div class="cryptoBox">
-                        <div class="crytitle">
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600;">Build dApps</div>
-                            <div style="font-size: 28px; line-height: 36px; font-weight: 600; padding-right: 20px;"> >__
-                            </div>
-                        </div>
-
-                        <div class="crybody">
-                            Build apps and tools on the largest DeFi protocol on Ethereum.
-                            <div class="crytail">Developer docs</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="pinkbar">
-                <div>
-                    <div class="pinkTop">Powered by the Uniswap Protocol</div>
-                    <div class="pinkBot">The leading decentralized crypto trading protocol, governed by a global
-                        community.</div>
-                </div>
-
-                <div class="pinkLearn">
-                    <a class="pinkAlink" href="https://uniswap.org/">Learn more</a>
-                </div>
-            </div>
-
-            <div class="lastbox">
-                <div class="last00">
-                    <div>
-                        <a href="https://discord.com/invite/FCfyBSbCU5">
-                            <img class="lastimg" src="./image/dis.png" alt="dis">
-                        </a>
-                        <a href="https://twitter.com/uniswap">
-                            <img class="lastimg" src="./image/tw.png" alt="twitter">
-                        </a>
-                        <a href="https://github.com/Uniswap">
-                            <img class="lastimg" src="./image/git.bp.png" alt="gituni">
-                        </a>
-                    </div>
-                    <div>ⓒ 2023 Uniswap Labs</div>
-                </div>
-
-                <div class="last11">
-                    <div class="box1">
-                        <span class="Appclass">App</span>
-                        <a class="AppAlink" href="">Swap</a>
-                        <a class="AppAlink" href="">Tokens</a>
-                        <a class="AppAlink" href="">NFTs</a>
-                        <a class="AppAlink" href="">Pools</a>
-                    </div>
-
-                    <div class="box1">
-                        <span class="Appclass">Protocol</span>
-                        <a class="AppAlink" href="https://uniswap.org/community">Community</a>
-                        <a class="AppAlink" href="https://uniswap.org/governance">Governance</a>
-                        <a class="AppAlink" href="https://uniswap.org/developers">Developers</a>
-                    </div>
-
-                    <div class="box1">
-                        <span class="Appclass">Company</span>
-                        <a class="AppAlink" href="https://boards.greenhouse.io/uniswaplabs">Careers</a>
-                        <a class="AppAlink" href="https://blog.uniswap.org/">Blog</a>
-                    </div>
-
-                    <div class="box1">
-                        <span class="Appclass">Get Help</span>
-                        <a class="AppAlink" href="https://support.uniswap.org/hc/en-us/requests/new">Contact us</a>
-                        <a class="AppAlink" href="">Help Center</a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</body>
-<script src="./index.js"></script>
-
-</html>
-</body>
+    </div>    
+  </body>
 <script src="./header.js"></script>
 </html>
