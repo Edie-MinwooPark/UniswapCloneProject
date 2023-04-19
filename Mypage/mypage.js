@@ -753,7 +753,7 @@ function changeCoinInfoEth(result){
                 window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${result}"}`);
             }
         }
-        window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(loginValue).bit}"}`);
+        window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${result}"}`);
 
         console.log("login information : " + window.localStorage.getItem("Login"));
         console.log("user information : " + window.localStorage.getItem("UserInfo"));
