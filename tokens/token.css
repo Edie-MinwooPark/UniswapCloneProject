@@ -251,7 +251,8 @@ body{
 .token-week:hover,
 .token-month:hover,
 .token-year:hover{
-    background-color: #D3D3D3;
+    background-color: #6f6e6e;
+
 }
 
 .time-check{
@@ -740,7 +741,7 @@ color: rgb(255, 205, 210);
 /* 체인 리스트 색상 변경 */
 
 .token-chain-select-list,
-.token{
+.token-time-select-list{
     background-color: black;
     color: rgb(255, 205, 210);
 
