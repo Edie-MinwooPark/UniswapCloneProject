@@ -889,7 +889,11 @@ function sortTable(column,sort_asc){
         Number(second_row);
         return sort_asc ? (first_row - second_row) : (second_row - first_row) ;
     })
-    bb.map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
+    //bb의 첫줄을 다시 순서대로
+    bb.map(function(sorted_row,index){
+        sorted_row.firstElementChild.innerHTML = index+1;
+        document.querySelector('tbody').appendChild(sorted_row)
+    });
     
 };
 
