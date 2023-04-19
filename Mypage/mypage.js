@@ -600,9 +600,6 @@ function coinChangeResult(){
 
     let changeCost = parseInt(changeInput);
 
-    console.log(holdingCost)
-    console.log(changeCost)
-
     if(changeInput.length == 0 || isNaN(changeCost) || changeCost > holdingCost || changeCost <= 0){
         return;
     }else{
@@ -628,49 +625,65 @@ changeBtn.addEventListener("click",function(){
     let changeCost = parseInt(changeInput);
     let resultCost = parseInt(changeOutput.innerHTML);
 
-    if(fromCoin == "dollar"){
-        _fromValue = JSON.parse(fromValue).dollar;
-
-        fromChangeResult = parseInt(_fromValue) - changeCost;            
-
-        changeCoinInfoCash(fromChangeResult);
-    }else if(fromCoin == "bitcoin"){
-        _fromValue = JSON.parse(fromValue).bit;
-
-        fromChangeResult = parseInt(_fromValue) - changeCost;
-
-        changeCoinInfoBit(fromChangeResult);
-    }else if(fromCoin == "ethereum"){
-        _fromValue = JSON.parse(fromValue).eth;
-
-        fromChangeResult = parseInt(_fromValue) - changeCost;
-
-        changeCoinInfoEth(fromChangeResult);
-    }else{
+    if(resultCost < 1){
         return;
-    }
+    }else{
+        if(fromCoin == "dollar"){
+            _fromValue = JSON.parse(fromValue).dollar;
     
-    if(toCoin == "dollar"){
-        _toValue = JSON.parse(toValue).dollar;
+            fromChangeResult = parseInt(_fromValue) - changeCost;
 
-        toChangeResult = parseInt(_toValue) + resultCost;
+            if(fromChangeResult <= 0){
+                return;
+            }else{
+                changeCoinInfoCash(fromChangeResult);
+            }
+        }else if(fromCoin == "bitcoin"){
+            _fromValue = JSON.parse(fromValue).bit;
+    
+            fromChangeResult = parseInt(_fromValue) - changeCost;
+            
+            if(fromChangeResult <= 0){
+                return;
+            }else{
+                changeCoinInfoBit(fromChangeResult);
+            }
+        }else if(fromCoin == "ethereum"){
+            _fromValue = JSON.parse(fromValue).eth;
+    
+            fromChangeResult = parseInt(_fromValue) - changeCost;
 
-        changeCoinInfoCash(toChangeResult);
-    }else if(toCoin == "bitcoin"){
-        _toValue = JSON.parse(toValue).bit;
-
-        toChangeResult = parseInt(_toValue) + resultCost;
-
-        console.log(toChangeResult)
-        changeCoinInfoBit(toChangeResult);
-    }else if(toCoin == "ethereum"){
-        _toValue = JSON.parse(toValue).eth;
-
-        toChangeResult = parseInt(_toValue) + resultCost;
-
-        changeCoinInfoEth(toChangeResult);
-    }else{
-        return;
+            if(fromChangeResult <= 0){
+                return;
+            }else{
+                changeCoinInfoEth(fromChangeResult);
+            }
+        }else{
+            return;
+        }
+        
+        if(toCoin == "dollar"){
+            _toValue = JSON.parse(toValue).dollar;
+    
+            toChangeResult = parseInt(_toValue) + resultCost;
+    
+            changeCoinInfoCash(toChangeResult);
+        }else if(toCoin == "bitcoin"){
+            _toValue = JSON.parse(toValue).bit;
+    
+            toChangeResult = parseInt(_toValue) + resultCost;
+    
+            console.log(toChangeResult)
+            changeCoinInfoBit(toChangeResult);
+        }else if(toCoin == "ethereum"){
+            _toValue = JSON.parse(toValue).eth;
+    
+            toChangeResult = parseInt(_toValue) + resultCost;
+    
+            changeCoinInfoEth(toChangeResult);
+        }else{
+            return;
+        }
     }
 })
 
