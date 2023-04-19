@@ -312,6 +312,15 @@ function loginInfo(){
         sideAcountText.innerHTML = "Cash : " + JSON.parse(loginValue).dollar + " $";
         sideBitcoin.innerHTML = "Bitcoin : " + JSON.parse(loginValue).bit;
         sideEthereum.innerHTML = "Ethereum : " + JSON.parse(loginValue).eth;
+
+        // 사이트 하단 부 코인 및 현금 보유 수량 표기
+        let bottomCash = document.querySelector(".afterCash");
+        let bottomBit = document.querySelector(".afterBit");
+        let bottomEth = document.querySelector(".afterEth");
+
+        bottomCash.innerHTML = JSON.parse(loginValue).dollar + " $";
+        bottomBit.innerHTML = JSON.parse(loginValue).bit;
+        bottomEth.innerHTML = JSON.parse(loginValue).eth;
     }
 }
 
@@ -390,6 +399,7 @@ function nickFilter(infomation){
     }
 }
 
+// 설정된 닉네임 변경 함수
 function changeNick(){
     let loginValue = window.localStorage.getItem("Login");
     let userInfo = window.localStorage.getItem("UserInfo");
@@ -402,7 +412,7 @@ function changeNick(){
 
     let _userInfo = userInfo.split("|");
 
-    window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : ${JSON.parse(loginValue).dollar}, "bit" : ${JSON.parse(loginValue).bit}, "eth" : ${JSON.parse(loginValue).eth}}`);
+    window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${userNick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
 
     _userInfo.forEach(function(a,i){
         if(JSON.parse(loginValue).id == JSON.parse(a).id){
@@ -422,21 +432,23 @@ function changeNick(){
 let userCash = document.querySelector(".user-cash");
 let chargeBtn = document.querySelector(".acount-charge");
 
+// 현금 충전 버튼 설정
 chargeBtn.addEventListener("click", function(){
     let chargeDollars = document.querySelector(".charge-acount").value;
     let loginValue = window.localStorage.getItem("Login");
     let userInfo = window.localStorage.getItem("UserInfo");
     let userCash = document.querySelector(".user-cash");  
     let sideAcountText = document.querySelector(".cash");  
+    let bottomCash = document.querySelector(".afterCash");
 
-    let wontCharge = parseInt(chargeDollars);
+    let wantCharge = parseInt(chargeDollars);
     let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
 
-    if(chargeDollars.length == 0 || isNaN(chargeDollars)){
+    if(chargeDollars.length == 0 || isNaN(chargeDollars) || wantCharge <= 0){
         return;
     }else{
             
-        let chargeResult = wontCharge + beforeDollars
+        let chargeResult = wantCharge + beforeDollars
     
         let _userInfo = userInfo.split("|");
     
@@ -459,27 +471,30 @@ chargeBtn.addEventListener("click", function(){
             
             userCash.innerHTML = chargeResult + " $";
             sideAcountText.innerHTML = "Cash : " + chargeResult + " $";
+            bottomCash.innerHTML = chargeResult + " $";
         })
     }
 })
 
 let withdrawBtn = document.querySelector(".acount-withdraw");
 
+// 현금 인출 버튼 설정
 withdrawBtn.addEventListener("click",function(){
     let chargeDollars = document.querySelector(".charge-acount").value;
     let loginValue = window.localStorage.getItem("Login");
     let userInfo = window.localStorage.getItem("UserInfo");
     let userCash = document.querySelector(".user-cash");  
     let sideAcountText = document.querySelector(".cash");  
+    let bottomCash = document.querySelector(".afterCash");
 
-    let wontWithdraw = parseInt(chargeDollars);
+    let wantWithdraw = parseInt(chargeDollars);
     let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
 
-    if(chargeDollars.length == 0 || isNaN(wontWithdraw) || wontWithdraw > beforeDollars){
+    if(chargeDollars.length == 0 || isNaN(wantWithdraw) || wantWithdraw > beforeDollars || wantWithdraw <= 0){
         return;
     }else{
             
-        let withdrawResult = beforeDollars - wontWithdraw;
+        let withdrawResult = beforeDollars - wantWithdraw;
     
         let _userInfo = userInfo.split("|");
     
@@ -502,6 +517,248 @@ withdrawBtn.addEventListener("click",function(){
             
             userCash.innerHTML = withdrawResult + " $";
             sideAcountText.innerHTML = "Cash : " + withdrawResult + " $";
+            bottomCash.innerHTML = withdrawResult + " $";
         })
     }
 })
+
+let totalRate = 0;
+let fromRate = 0;
+let toRate = 0;
+let holdingCost = 0;
+let fromCoin = "";
+let toCoin = "";
+
+// 교환하려는 현금, 코인 선택 함수(from)
+function selectChangeItem(e){    
+    let value = e.value;
+    let target = document.querySelector(".changeTo");
+    let targetArr = [];
+    let loginValue = window.localStorage.getItem("Login");  
+    totalRate = 0;
+    fromRate = 0;
+    toRate = 0;
+    holdingCost = 0;
+    fromCoin = "";
+    toCoin = "";
+
+    target.options.length = 0;
+
+    if(value == "dollar"){
+        targetArr = ["select","bitcoin","ethereum"];
+        holdingCost = parseInt(JSON.parse(loginValue).dollar);        
+        fromRate = 1;
+    }else if(value == "bitcoin"){
+        targetArr = ["select","dollar"];
+        holdingCost = parseInt(JSON.parse(loginValue).bit);
+        fromRate = 5;
+    }else if(value == "ethereum"){
+        targetArr = ["select","dollar"];
+        holdingCost = parseInt(JSON.parse(loginValue).eth);
+        fromRate = 3;
+    }else{
+        return;
+    }
+
+    fromCoin = value;
+
+    for (let i = 0; i < targetArr.length; i++) {
+        let opt = document.createElement("option");
+        opt.value = targetArr[i];
+        opt.innerHTML = targetArr[i];
+        target.appendChild(opt);        
+    }
+}
+
+// 교환하고자 하는 현금, 코인 선택 함수(to), 교환 예정 갯수 확인
+function changeRate(e){
+    let value = e.value;
+
+    switch (value) {
+        case "dollar":
+            toRate = 1;
+            break;
+        case "bitcoin":
+            toRate = 5;
+            break;
+        case "ethereum":
+            toRate = 3;
+            break;    
+        default:
+            return;
+    }
+
+    toCoin = value;
+
+    coinChangeResult();
+}
+
+// 교환 비 감안 교환 수량 계산 함수
+function coinChangeResult(){
+    let changeOutput = document.querySelector(".change-result");
+    let changeInput = document.querySelector(".wanttoChange").value;
+
+    let changeCost = parseInt(changeInput);
+
+    console.log(holdingCost)
+    console.log(changeCost)
+
+    if(changeInput.length == 0 || isNaN(changeCost) || changeCost > holdingCost || changeCost <= 0){
+        return;
+    }else{
+        totalRate = toRate / fromRate;
+        changeOutput.innerHTML = `${parseInt(changeCost * totalRate)}`;
+    }
+}
+
+let changeBtn = document.querySelector(".coin-change");
+
+// 현금, 코인 교환 버튼 함수
+changeBtn.addEventListener("click",function(){
+    let changeOutput = document.querySelector(".change-result");    
+    let changeInput = document.querySelector(".wanttoChange").value;
+    let fromValue = window.localStorage.getItem("Login");
+    let toValue = window.localStorage.getItem("Login");
+    let _fromValue;
+    let _toValue;
+    
+    let fromChangeResult;
+    let toChangeResult;
+
+    let changeCost = parseInt(changeInput);
+    let resultCost = parseInt(changeOutput.innerHTML);
+
+    if(fromCoin == "dollar"){
+        _fromValue = JSON.parse(fromValue).dollar;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;            
+
+        changeCoinInfoCash(fromChangeResult);
+    }else if(fromCoin == "bitcoin"){
+        _fromValue = JSON.parse(fromValue).bit;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;
+
+        changeCoinInfoBit(fromChangeResult);
+    }else if(fromCoin == "ethereum"){
+        _fromValue = JSON.parse(fromValue).eth;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;
+
+        changeCoinInfoEth(fromChangeResult);
+    }else{
+        return;
+    }
+    
+    if(toCoin == "dollar"){
+        _toValue = JSON.parse(toValue).dollar;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        changeCoinInfoCash(toChangeResult);
+    }else if(toCoin == "bitcoin"){
+        _toValue = JSON.parse(toValue).bit;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        console.log(toChangeResult)
+        changeCoinInfoBit(toChangeResult);
+    }else if(toCoin == "ethereum"){
+        _toValue = JSON.parse(toValue).eth;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        changeCoinInfoEth(toChangeResult);
+    }else{
+        return;
+    }
+})
+
+function changeCoinInfoCash(result){
+    let userCash = document.querySelector(".user-cash");  
+    let sideAcountText = document.querySelector(".cash");  
+    let bottomCash = document.querySelector(".afterCash");
+    let loginValue = window.localStorage.getItem("Login");
+    let userInfo = window.localStorage.getItem("UserInfo");  
+    let _userInfo = userInfo.split("|");  
+
+    _userInfo.forEach(function(a,i){
+        if(JSON.parse(loginValue).id == JSON.parse(a).id){
+            
+            _userInfo.splice(i,1);
+
+            if(_userInfo.length == 0){
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+            }else{
+                let userInfo = _userInfo.join("|");
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+            }
+        }
+        window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+
+        console.log("login information : " + window.localStorage.getItem("Login"));
+        console.log("user information : " + window.localStorage.getItem("UserInfo"));
+        
+        userCash.innerHTML = result + " $";
+        sideAcountText.innerHTML = "Cash : " + result + " $";
+        bottomCash.innerHTML = result + " $";
+    })
+}
+
+function changeCoinInfoBit(result){
+    let sideBitText = document.querySelector(".bitcoin");  
+    let bottomBit = document.querySelector(".afterBit");
+    let loginValue = window.localStorage.getItem("Login");
+    let userInfo = window.localStorage.getItem("UserInfo");  
+    let _userInfo = userInfo.split("|");  
+
+    _userInfo.forEach(function(a,i){
+        if(JSON.parse(loginValue).id == JSON.parse(a).id){
+            
+            _userInfo.splice(i,1);
+
+            if(_userInfo.length == 0){
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+            }else{
+                userInfo = _userInfo.join("|");
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+            }
+        }
+        window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(loginValue).eth}"}`);
+
+        console.log("login information : " + window.localStorage.getItem("Login"));
+        console.log("user information : " + window.localStorage.getItem("UserInfo"));
+        
+        sideBitText.innerHTML = "Bitcoin : " + result;
+        bottomBit.innerHTML = result;
+    })
+}
+
+function changeCoinInfoEth(result){
+    let sideEthText = document.querySelector(".ethereum");  
+    let bottomEth = document.querySelector(".afterEth");
+    let loginValue = window.localStorage.getItem("Login");
+    let userInfo = window.localStorage.getItem("UserInfo");  
+    let _userInfo = userInfo.split("|");  
+
+    _userInfo.forEach(function(a,i){
+        if(JSON.parse(loginValue).id == JSON.parse(a).id){
+            
+            _userInfo.splice(i,1);
+
+            if(_userInfo.length == 0){
+                window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${result}"}`);
+            }else{
+                userInfo = _userInfo.join("|");
+                window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${result}"}`);
+            }
+        }
+        window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${JSON.parse(loginValue).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(loginValue).bit}"}`);
+
+        console.log("login information : " + window.localStorage.getItem("Login"));
+        console.log("user information : " + window.localStorage.getItem("UserInfo"));
+        
+        sideEthText.innerHTML = "Ethereum : " + result;
+        bottomEth.innerHTML = result;
+    })
+}
