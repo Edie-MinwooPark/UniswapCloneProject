@@ -222,16 +222,28 @@ body{
 }
 
 .login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
     border-radius: 10px;
     width: 80%;
-    height: 80px;
+    height: 180px;
     margin-left: 10px;
+    padding-top: 1px;
     font-weight: bold;
     font-size: large;
+}
+
+.login ul{
+    display: block;
+}
+
+.login li{
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login li a{
     cursor: pointer;
 }
 
@@ -521,7 +533,7 @@ body{
 
 .my-info{
     width: 700px;
-    height: 400px;
+    height: 640px;
     position: absolute;
     top: 250px;
     left: 50%;
@@ -537,12 +549,31 @@ body{
 
 .my-info div{
     width: 420px;
-    height: 120px;
+    height: 130px;
     display: flex;
     position: relative;
     left: -50px;
     justify-content: space-between;
     align-items: center;
+}
+
+.my-info .change-coin{
+    width: 600px;
+    height: 200px;
+    left: 40px;
+    flex-wrap: wrap;
+}
+
+.my-info .change-coin p{
+    top: 1px;
+    left: 10px;
+    font-size: 16px;
+}
+
+.my-info .change-coin div{
+    width: 300px;
+    top: 20px;
+    left: 0px;
 }
 
 .my-info label{
@@ -581,8 +612,44 @@ body{
     top: 50px;
 }
 
+.change-from div,
+.change-to div{
+    width: 190px;
+}
+
+.change-coin input{
+    width: 155px;
+    position: absolute;
+    top: 48px;
+    left: 10px;
+    text-align: end;
+    padding-right: 5px;
+}
+
+.change-to .change-result{
+    width: 163px;
+    height: 25px;
+    position: absolute;
+    top: 48px;
+    left: 10px;
+    background-color: rgb(201, 201, 201);
+    color: black;
+    text-align: end;
+    padding-right: 5px;
+}
+
+.change-coin select{
+    width: 82px;
+    position: absolute;
+    top: 72px;
+    right: 10px;
+    margin-right: 20px;
+}
+
 .nickname-change,
-.acount-charge{
+.acount-charge,
+.acount-withdraw,
+.coin-change{
     width: 70px;
     height: 40px;
     position: absolute;
@@ -595,7 +662,18 @@ body{
 }
 
 .acount-charge{
-    top: 132px;
+    top: 143px;
+    right: 90px;
+}
+
+.acount-withdraw{
+    top: 143px;
+    right: 10px;
+}
+
+.coin-change{
+    top: 400px;
+    right: 50px;
 }
 
 .go-to-main{

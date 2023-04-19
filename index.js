@@ -307,7 +307,9 @@ celochain.addEventListener('click',function(){
 //   }
 const searchbox = document.querySelector('.searchBar');
 const searchContent = document.querySelector('.searchpopup');
-const dg = document.querySelector(".dg")
+// const content = document.querySelector('.header-token-chain-select-list');
+const dg = document.querySelector(".dg");
+// const jg = document.querySelector('.jg');
 
 searchbox.onclick = function(){
   if(getComputedStyle(searchContent).display == "block"){
@@ -319,9 +321,63 @@ searchbox.onclick = function(){
 dg.onclick = function(){
   searchContent.style.display = "none";
 }
+// jg.onclick = function(){
+//   header-token-chain-select-list.style.display = "none";
+// }
 
 window.onload = function() {
   searchContent.style.display = "none";
 }
+// -----------------legal 버튼 -----------------------------------------
+let legalinpopup = document.querySelector('.legalinpopup');
+let legalBtn = document.querySelector('.legalBtn');
+let legalBox = document.querySelector('.legalContainer');
+let home = document.querySelector('.Home');
+
+legalinpopup.onclick = function(){
+  legalBox.classList.add('active');
+  home.style.backgroundColor = "black";
+  home.style.opacity = "0.9";
+  document.body.style.overflow = "hidden";
+}
+legalBtn.onclick = function(){
+  legalBox.classList.remove('active');
+  home.style.backgroundColor = "rgb(255,205,210)";
+  document.body.style.overflow = "auto";
+}
 
 
+
+// 로그인 유무에 따른 사이드바 표기
+
+let loginValue = window.localStorage.getItem("Login");
+let sideInfo = document.querySelector(".content");
+
+function loginCheck(){
+  if(loginValue == null || loginValue == "null"){
+    return;
+  }else{
+    sideInfo.innerHTML = `<h3>Connect a wallet</h3>
+    <div class="login">
+        <ul>
+            <li class="nickname">Nickname : ${JSON.parse(loginValue).nick}</li>
+            <li class="cash">Cash : ${JSON.parse(loginValue).dollar}</li>
+            <li class="bitcoin">Bitcoin : ${JSON.parse(loginValue).bit}</li>
+            <li class="ethereum">Ethereum : ${JSON.parse(loginValue).eth}</li>
+            <li><a href="/Mypage/mypage.html">My page</a><a href="/index.html" class="logout">Log out</a></li>
+        </ul>
+    </div>`;
+    
+
+// ---------------------legal 버튼---------------------------------------
+
+    let loginBox = document.querySelector(".login");
+    loginBox.style.height = "180px";
+    loginBox.style.paddingTop = "1px";
+    loginBox.style.justifyContent = "none";
+    loginBox.style.alignItems = "none";
+    loginBox.style.cursor = "auto";
+  }
+}
+
+loginCheck();
