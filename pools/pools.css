@@ -387,7 +387,9 @@ td.sortactive{
 html{
     scroll-behavior: smooth;
 }
-
+/* .container{
+    overflow-x: hidden;
+} */
 .topBar{
     width: 100%;
     height: 70px;
@@ -748,142 +750,148 @@ color: rgb(255, 205, 210);
 
 /*  체인 리스트 백그라운드 클릭시 사라지게 */
 
-/* #bgg{
+#bgg{
     z-index: 0;
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-} */
-
-
-
-
-
-
-/* help center 부분 */
-body{
-    background-color: rgb(255, 205, 210);
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 150vh;
-    position: relative;
-    
 }
-.container{
-    position: absolute;
-    left: 0;
-}
-.head{
-    width: 100vw;
-    height: 300px;
-    background-color: black;
-    color: rgb(255, 205, 210);
-    position: relative;
-}
-.head p{
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    font-size: 50px;
-    font-weight: bold;
-    left: 130px;
-    bottom: 15px;
-}
+
+
+/* 페이지 컨텐츠 부분 */
 .contentbox{
-    width: 60vw;
+    width: 100vw;
     height: max-content;
-    border-radius: 30px;
-    margin-top: 50px;
-    padding: 25px;
-    background-color: white;
-}
-.addbox{
-    display: flex;
-    justify-content: flex-end;
-}
-.add{
-    width: 90px;
-    height: 40px;
-    background-color: black;
-    color: white;
-    border-radius: 2em;
-    cursor: pointer;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-#list{
-    width: 60vw;
-    height: max-content;
-    margin-top: 10px;
-    /* border: 1px solid gray ; */
-    /* border-radius: 20px; */
-    border-top: 1px solid gray;
-}
-.write{
-    background-color: aqua;
-}
-.qna{
-    width: 60vw;
-    height: 100px;
-    resize: none;
-    margin-top: 5px;
-}
-.buttonbox{
-    display: flex;
-    justify-content: flex-end;
-}
-.add2{
-    width: 80px;
-    height: 30px;
-    background-color: black;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left: 5px;
-    font-weight: bold;
-}
-.bor{
-    width: 55vw;
-    height: 50px;
-    /* margin: 5px; */
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-.bor > div{
-    width: 250px;
-    height: max-content;
+    position: fixed;
+    top: 70px;
+    background-color: rgb(255, 205, 210);
+    background: linear-gradient(to bottom,rgb(255, 230, 255), white);
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* border: 1px solid; */
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
-.bor > .ind{
-    width: 70px;
+.mainbox{
+    width: 850px;
+    height: max-content;
 }
-.bor > .bt{
-    width: 70px;
-}
-.bor > .qe{
-    width: 450px;
-}
-#bottom{
+.maintop{
+    width: 850px;
+    height: 100px;
     display: flex;
-    justify-content: center
+    justify-content: space-between;
+    align-items: flex-end;
 }
-.pagebtn{
-    font-size: 15px;
-    border: none;
+.pools{
+    font-size: 35px;
+    padding: 0;
+    margin: 0;
+}
+.addbtn{
     background-color: white;
+    width: 60px;
+    height: 32px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
     cursor: pointer;
+}
+.addbtn:hover{
+    background-color: rgb(205, 214, 254);
+    
+}
+.newbtn{
+    background-color: rgb(255, 5, 138);
+    width: 120px;
+    height: 32px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.newbtn:hover{
+    background-color: rgb(241, 7, 132);
+}
+.mainmiddle{
+    width: 850px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 10px 1px rgb(204, 204, 204);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.mainbottom{
+    width: 850px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+.bottonbox{
+    width: 404px;
+    height: 80px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 20px;
+    padding: 15px;
+    padding-bottom: 0;;
+    padding-right: 0;
+    opacity: 0.8;
+}
+.bottonbox:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.boldtext{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.bt{
+    margin: 0;
+}
+.icon8{
+    width: 50px;
+    height: 50px;
+}
+.middletext{
+    width: 270px;
+    height: 50px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.walletbtn{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 19px;
+    background-color: rgb(255, 5, 138);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.walletbtn:hover{
+    background-color: rgb(241, 7, 132);
+}
+.uniswap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: gray;
+}
+.uniswap:hover{
+    color: black;
+}
+.English{
+    color: rgb(255, 5, 138) ;
 }
