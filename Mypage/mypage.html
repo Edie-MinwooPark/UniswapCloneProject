@@ -320,44 +320,9 @@
             <input type="text" class="charge-acount">
             <p class="user-cash">0 $</p>
         </div>
-        <div class="change-coin">
-            <p>Changing cash / coin</p>
-            <div class="change-from">
-                <div>
-                    <label for="">From</label>
-                    <input type="text" class="wanttoChange">
-                </div>
-                <select name="fromChange" onchange="selectChangeItem(this)">
-                    <option>select</option>
-                    <option value="dollar">dollar</option>
-                    <option value="bitcoin">bitcoin</option>
-                    <option value="ethereum">ethereum</option>
-                </select>
-            </div>
-            <div class="change-to">
-                <div>
-                    <p>To</p>
-                    <span class="change-result"></span>
-                </div>
-                <select name="toChange" class="changeTo" onchange="changeRate(this)">
-                    <option>select</option>
-                </select>
-            </div>
-            <div class="changeCoin">
-                <p>Cash / coin holding status</p>
-                <div class="afterChange">
-                    <ul>
-                        <li>Dollar : <span class="afterCash">0</span></li>
-                        <li>Bitcoin : <span class="afterBit">0</span></li>
-                        <li>Ethereum : <span class="afterEth">0</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <button class="nickname-change">Change</button>
         <button class="acount-charge">Charge</button>
         <button class="acount-withdraw">Withdraw</button>
-        <button class="coin-change">Change to Coin</button>
         <a href="/index.html"><button class="go-to-main">To Main</button></a>
     </div>
 </body>

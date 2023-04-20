@@ -533,7 +533,7 @@ body{
 
 .my-info{
     width: 700px;
-    height: 640px;
+    height: 400px;
     position: absolute;
     top: 250px;
     left: 50%;
@@ -612,40 +612,6 @@ body{
     top: 50px;
 }
 
-.change-from div,
-.change-to div{
-    width: 190px;
-}
-
-.change-coin input{
-    width: 155px;
-    position: absolute;
-    top: 48px;
-    left: 10px;
-    text-align: end;
-    padding-right: 5px;
-}
-
-.change-to .change-result{
-    width: 163px;
-    height: 25px;
-    position: absolute;
-    top: 48px;
-    left: 10px;
-    background-color: rgb(201, 201, 201);
-    color: black;
-    text-align: end;
-    padding-right: 5px;
-}
-
-.change-coin select{
-    width: 82px;
-    position: absolute;
-    top: 72px;
-    right: 10px;
-    margin-right: 20px;
-}
-
 .nickname-change,
 .acount-charge,
 .acount-withdraw,
@@ -669,11 +635,6 @@ body{
 .acount-withdraw{
     top: 143px;
     right: 10px;
-}
-
-.coin-change{
-    top: 400px;
-    right: 50px;
 }
 
 .go-to-main{
