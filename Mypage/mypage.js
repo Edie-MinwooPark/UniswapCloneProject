@@ -399,7 +399,7 @@ function changeNick(){
     let sideNickText = document.querySelector(".nickname");
     
     currentNickText.innerHTML = "Current nickname : " + userNick;
-    sideNickText.innerHTML = "Current nickname : " + userNick;
+    sideNickText.innerHTML = "Nickname : " + userNick;
 
     let _userInfo = userInfo.split("|");
 
@@ -430,7 +430,6 @@ chargeBtn.addEventListener("click", function(){
     let userInfo = window.localStorage.getItem("UserInfo");
     let userCash = document.querySelector(".user-cash");  
     let sideAcountText = document.querySelector(".cash");  
-    let bottomCash = document.querySelector(".afterCash");
 
     let wantCharge = parseInt(chargeDollars);
     let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
@@ -456,13 +455,9 @@ chargeBtn.addEventListener("click", function(){
                 }
             }
             window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${chargeResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
-    
-            console.log("login information : " + window.localStorage.getItem("Login"));
-            console.log("user information : " + window.localStorage.getItem("UserInfo"));
             
             userCash.innerHTML = chargeResult + " $";
             sideAcountText.innerHTML = "Cash : " + chargeResult + " $";
-            bottomCash.innerHTML = chargeResult + " $";
         })
     }
 })
@@ -476,7 +471,6 @@ withdrawBtn.addEventListener("click",function(){
     let userInfo = window.localStorage.getItem("UserInfo");
     let userCash = document.querySelector(".user-cash");  
     let sideAcountText = document.querySelector(".cash");  
-    let bottomCash = document.querySelector(".afterCash");
 
     let wantWithdraw = parseInt(chargeDollars);
     let beforeDollars = parseInt(JSON.parse(loginValue).dollar);
@@ -502,13 +496,9 @@ withdrawBtn.addEventListener("click",function(){
                 }
             }
             window.localStorage.setItem("Login", `{"id" : "${JSON.parse(loginValue).id}", "pw" : "${JSON.parse(loginValue).pw}", "nick" : "${JSON.parse(loginValue).nick}", "dollar" : "${withdrawResult}", "bit" : "${JSON.parse(loginValue).bit}", "eth" : "${JSON.parse(loginValue).eth}"}`);
-    
-            console.log("login information : " + window.localStorage.getItem("Login"));
-            console.log("user information : " + window.localStorage.getItem("UserInfo"));
             
             userCash.innerHTML = withdrawResult + " $";
             sideAcountText.innerHTML = "Cash : " + withdrawResult + " $";
-            bottomCash.innerHTML = withdrawResult + " $";
         })
     }
 })
