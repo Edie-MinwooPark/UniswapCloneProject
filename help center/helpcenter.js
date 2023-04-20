@@ -1,4 +1,7 @@
 
+
+// help center 부분
+
 // 로컬스토리시 전역 선언
 let add = document.querySelector(".add");
 let pbox = document.querySelector(".pbox");
@@ -58,6 +61,7 @@ function addlist(){
 
 
     init()
+    render(pageNum/10);
 }
 
 // 작성되면 그리는 함수
@@ -73,12 +77,15 @@ function init(){
 }
 
 function render(offset){
+    // 한 페이지에 10개씩 보이게
     let _offset = offset *10;
     let rocal = window.localStorage.getItem("list");
     list.innerHTML = "";
     rocal = rocal.split("|");
     let _rocal = [...rocal]
     btns.innerHTML ="";
+
+    // 글의 갯수가 10개 넘어가면 버튼이 하나씩 추가되게
     _rocal.forEach((e,i)=>{
         if(i % 10 == 0){
             let btn = document.createElement("button");
@@ -210,22 +217,7 @@ function render(offset){
 }
 
 
-// 페이지네이션
 
-// 글의 갯수가 10개 넘어가면 버튼이 하나씩 추가되게
-// btn();
-// function btn(){
-  
-// }
-
-// // 한 페이지에 10개씩 보이게
-// function page(rocal,offset){
-//     page.innerHTML = "";
-//     let _offset = offset *10;
-//     rocal = rocal.slice(_offset,_offset + 10);
-//     console.log(rocal);
-// }
-// page(rocal,1)
 
 
 

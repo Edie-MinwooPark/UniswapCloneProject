@@ -1,3 +1,5 @@
+
+/* help center 부분 */
 body{
     background-color: rgb(255, 205, 210);
     margin: 0;
@@ -35,12 +37,14 @@ body{
     justify-content: flex-end;
 }
 .add{
-    width: 80px;
-    height: 30px;
+    width: 90px;
+    height: 40px;
     background-color: black;
     color: white;
-    border-radius: 20px;
+    border-radius: 2em;
     cursor: pointer;
+    font-size: 19px;
+    font-weight: bold;
 }
 
 #list{
@@ -72,6 +76,7 @@ body{
     border-radius: 20px;
     cursor: pointer;
     margin-left: 5px;
+    font-weight: bold;
 }
 li{
     width: 55vw;
@@ -99,7 +104,7 @@ li > .bt{
     width: 70px;
 }
 li > .qe{
-    width: 400px;
+    width: 450px;
 }
 #bottom{
     display: flex;
