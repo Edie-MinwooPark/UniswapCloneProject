@@ -367,9 +367,6 @@ function loginCheck(){
             <li><a href="/Mypage/mypage.html">My page</a><a href="/index.html" class="logout">Log out</a></li>
         </ul>
     </div>`;
-    
-
-// ---------------------legal 버튼---------------------------------------
 
     let loginBox = document.querySelector(".login");
     loginBox.style.height = "180px";
@@ -378,6 +375,18 @@ function loginCheck(){
     loginBox.style.alignItems = "none";
     loginBox.style.cursor = "auto";
   }
+
+  let logoutBtn = document.querySelector(".logout");
+
+  logoutBtn.addEventListener("click", function(){
+    let loginValue = window.localStorage.getItem("Login");
+    
+    if(loginValue == null){
+        return;
+    }else{
+        window.localStorage.setItem("Login", null);
+    }
+  })
 }
 
 loginCheck();
