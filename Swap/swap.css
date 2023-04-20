@@ -1040,3 +1040,8 @@ color: rgb(255, 205, 210);
     top: 4%;
     z-index: 1;
 }
+
+.swap-arrow{
+    margin-left: 190px;
+    margin-top: 10px;
+}
