@@ -949,8 +949,8 @@ body{
 .left-btn svg{
     transform: translateY(230px);
 }
-.right-btn {
-    transform: rotate(180deg) translateY(230px);
+.right-btn svg{
+    transform: rotate(180deg) translateY(-230px);
 }
 
 /* 스와이퍼 div 여러개 만들기 */
