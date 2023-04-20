@@ -10,12 +10,12 @@
     border-radius: 10px;
     margin: 10px;
 }
-body{
+/* body{
     padding: 0;
     border: 0;
     margin: 0;
     height: 150vh;
-}
+} */
 .token-main-wrap{
     width: 100%;
     height: 180vh;
@@ -380,10 +380,10 @@ td.sortactive{
 
 /*  헤더 병합 */
 
-body{
+/* body{
     margin: 0;
     padding: 0;
-}
+} */
 html{
     scroll-behavior: smooth;
 }
