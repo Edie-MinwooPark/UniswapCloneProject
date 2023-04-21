@@ -378,6 +378,8 @@ legalBtn.onclick = function(){
 }
 // legal & privacy Popup
   
+
+
 //   pools 부분
 
 let addbtn = document.querySelector(".addbtn")
@@ -385,13 +387,7 @@ let addwrap = document.querySelector(".addwrap")
 
 addbtn.addEventListener("click", function(){
     console.log("추가")
-    // // let div01 = document.createElement("div")
-    // // div01.className = "addlist"
-    // div01.innerHTML = `<div><span>마이 그레이션</span><span>>></span></div>
-    // <div><span>V2 유동성</span><span><img width="30px" height="30px" src="https://img.icons8.com/external-outline-design-circle/66/null/external-Layers-web-design-and-development-outline-design-circle-2.png"/></span></div>
-    // <div><span>학습</span><span><img width="30px" height="30px" src="https://img.icons8.com/windows/32/null/open-book.png"/></span></div>`
-    // addbtnbox.append(div01)
-    
+
     if(addwrap.classList.contains("is-active")){
         addwrap.classList.remove("is-active")
     }else{
@@ -399,8 +395,19 @@ addbtn.addEventListener("click", function(){
     }
 
 })
-  
-  
+
+let walletbtn = document.querySelector(".walletbtn")
+let content = document.querySelector(".content")
+walletbtn.addEventListener("click", function(){
+    if (!sideMenu.isOpen) {
+        sideMenu.open();
+        let content = document.querySelector(".content")
+        content.classList.add(".walletopen")
+
+    } else{ 
+        sideMenu.close();
+    }
+})
   
   
   

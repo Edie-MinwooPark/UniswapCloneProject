@@ -897,6 +897,10 @@ color: rgb(255, 205, 210);
     padding: 0;
     margin: 0;
 }
+.btnbox{
+    display: flex;
+}
+
 .addbtn{
     background-color: white;
     width: 60px;
@@ -911,28 +915,38 @@ color: rgb(255, 205, 210);
     background-color: rgb(205, 214, 254);
     
 }
+.addbtnbox{
+    position: relative;
+}
 .addwrap{
-    width: 200px;
-    height: 130px;
-    background-color: rgb(237, 237, 237);
+    width: 220px;
+    height: 150px;
+    background-color: rgb(245, 246, 252);
+    box-shadow: 2px 2px 10px 1px rgb(226, 226, 226);
     /* position: absolute;*/
-    position: fixed;
-    top: 200px;
+    position: absolute;
+    top: 47px;
+    left: -153px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     display: none;
 }
 .addwrap.is-active{
     display: block;
     
 }
-.flex{
+.inaddbtn{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
+    margin: 15px;
+    margin-top: 17px;
+    font-size: 21px;
+    color: #808080;
+    cursor: pointer;
+}
+.inaddbtn:hover{
+    color: black;
 }
 .newbtn{
     background-color: rgb(255, 5, 138);
@@ -944,6 +958,7 @@ color: rgb(255, 205, 210);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    margin-left: 10px;
 }
 .newbtn:hover{
     background-color: rgb(241, 7, 132);
@@ -955,7 +970,7 @@ color: rgb(255, 205, 210);
     border: 1px solid rgb(196, 196, 196);
     border-radius: 15px;
     margin-top: 20px;
-    box-shadow: 2px 2px 10px 1px rgb(204, 204, 204);
+    box-shadow: 0px 0px 10px 1px rgb(204, 204, 204);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1028,4 +1043,14 @@ color: rgb(255, 205, 210);
 }
 .English{
     color: rgb(255, 5, 138) ;
+}
+.walletopen{
+    width: 100%;
+    height: 97%;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
 }
