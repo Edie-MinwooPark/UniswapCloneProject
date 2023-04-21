@@ -296,7 +296,7 @@
     <div class="swap-wrap">
         <div class="swap">
             <div class="swap-box-top">
-                <input type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input type="text" placeholder="0">
                 <button class="swap-coin-select topselect">
                     <span>ETH</span>
                     <svg
@@ -315,7 +315,7 @@
                 </button>
             </div>
             <div class="swap-box-btm">
-                <input type="text" placeholder="0" disabled oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
+                <p class="change-result" disabled>0</p>
                 <button class="swap-coin-select btmselect">
                     <span>ETH</span>
                     <svg

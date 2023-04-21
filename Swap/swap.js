@@ -484,7 +484,7 @@ function loginCheck(){
     <div class="login">
         <ul>
             <li class="nickname">Nickname : ${JSON.parse(loginValue).nick}</li>
-            <li class="cash">Cash : ${JSON.parse(loginValue).dollar}</li>
+            <li class="cash">Cash : ${JSON.parse(loginValue).dollar} $</li>
             <li class="bitcoin">Bitcoin : ${JSON.parse(loginValue).bit}</li>
             <li class="ethereum">Ethereum : ${JSON.parse(loginValue).eth}</li>
             <li><a href="/Mypage/mypage.html">My page</a><a href="/index.html" class="logout">Log out</a></li>
@@ -520,13 +520,18 @@ let toRate = 0;
 let holdingCost = 0;
 let fromCoin = "";
 let toCoin = "";
-let swapBtn = document.querySelector(".swap-btn");
+let changeInput = document.querySelector(".swap-box-top input");
 
-swapBtn.addEventListener("click",function(){
-  let loginValue = window.localStorage.getItem("Login");
-  let userInfo = window.localStorage.getItem("UserInfo");
-  let fromInput = document.querySelector(".swap-box-top input");
-  let toInput = document.querySelector(".swap-box-btm input");
+// 교환값으로 숫자만 허용하는 함수
+changeInput.addEventListener("input",function(event){
+  return this.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+})
+
+// 교환 값 입력 시 비율 계산
+changeInput.addEventListener("input",function(event){
+  let login = window.localStorage.getItem("Login");
+  let fromInput = event.target.value;
+  let toInput = document.querySelector(".change-result");
   let fromCost = parseInt(fromInput);
 
   totalRate = 0;
@@ -539,11 +544,11 @@ swapBtn.addEventListener("click",function(){
   if(topspan.innerHTML == "ETH"){
     fromCoin = "ethereum";
     fromRate = 3;
-    holdingCost = parseInt(JSON.parse(loginValue).eth);
+    holdingCost = parseInt(JSON.parse(login).eth);
   }else if(topspan.innerHTML == "USDC"){
     fromCoin = "dollar";
     fromRate = 1;
-    holdingCost = parseInt(JSON.parse(loginValue).dollar);
+    holdingCost = parseInt(JSON.parse(login).dollar);
   }else{
     fromCoin = "bitcoin";
     fromRate = 5;
@@ -561,15 +566,175 @@ swapBtn.addEventListener("click",function(){
     toRate = 5;
   }
 
-  console.log(fromCoin);
-  console.log(toCoin);
-  console.log(fromCost);
-  if(fromInput.length == 0 || isNaN(fromCost) || fromCost > holdingCost || fromCost <= 0){
-      return;
+  if(fromInput.length == 0){
+    return;
+  }else if(fromCost > holdingCost){
+    alert(`the coin which you got is less than ${fromCost}. (You got ${holdingCost}.)\nCalculate maximum coin.`);
+    fromCost = holdingCost;
+    totalRate = toRate / fromRate;
+    toInput.innerHTML = `${parseInt(fromCost * totalRate)}`;
   }else{
-      totalRate = toRate / fromRate;
-      console.log(totalRate);
-      toInput.innerHTML = `${parseInt(fromCost * totalRate)}`;
-      console.log(toInput);
+    totalRate = toRate / fromRate;
+    toInput.innerHTML = `${parseInt(fromCost * totalRate)}`;
   }
 })
+
+let swapBtn = document.querySelector(".swap-btn");
+
+// 클릭 시 코인 교환 진행 함수
+swapBtn.addEventListener("click",function(){
+  let toInput = document.querySelector(".change-result");
+
+  let fromValue = window.localStorage.getItem("Login");
+  let toValue = window.localStorage.getItem("Login");
+  let _fromValue;
+  let _toValue;
+
+  let fromChangeResult;
+  let toChangeResult;
+
+  let resultCost = parseInt(toInput.innerHTML);
+  let changeCost = resultCost / totalRate;
+
+  if(resultCost < 1){
+    return;
+  }else{
+    if(fromCoin == "dollar"){
+        _fromValue = JSON.parse(fromValue).dollar;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;
+
+        if(fromChangeResult < 0){
+            return;
+        }else{
+            changeCoinInfoCash(fromChangeResult);
+        }
+    }else if(fromCoin == "bitcoin"){
+        _fromValue = JSON.parse(fromValue).bit;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;
+        
+        if(fromChangeResult < 0){
+            return;
+        }else{
+            changeCoinInfoBit(fromChangeResult);
+        }
+    }else if(fromCoin == "ethereum"){
+        _fromValue = JSON.parse(fromValue).eth;
+
+        fromChangeResult = parseInt(_fromValue) - changeCost;
+
+        if(fromChangeResult < 0){
+            return;
+        }else{
+            changeCoinInfoEth(fromChangeResult);
+        }
+    }else{
+        return;
+    }
+    
+    if(toCoin == "dollar"){
+        _toValue = JSON.parse(toValue).dollar;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        changeCoinInfoCash(toChangeResult);
+    }else if(toCoin == "bitcoin"){
+        _toValue = JSON.parse(toValue).bit;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        console.log(toChangeResult)
+        changeCoinInfoBit(toChangeResult);
+    }else if(toCoin == "ethereum"){
+        _toValue = JSON.parse(toValue).eth;
+
+        toChangeResult = parseInt(_toValue) + resultCost;
+
+        changeCoinInfoEth(toChangeResult);
+    }else{
+        return;
+    }
+  }
+})
+
+function changeCoinInfoCash(result){
+  let sideAcountText = document.querySelector(".cash");  
+  let login = window.localStorage.getItem("Login");
+  let userInfo = window.localStorage.getItem("UserInfo");  
+  let _userInfo = userInfo.split("|");  
+
+  _userInfo.forEach(function(a,i){
+      if(JSON.parse(login).id == JSON.parse(a).id){
+          
+          _userInfo.splice(i,1);
+
+          if(_userInfo.length == 0){
+              window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(login).bit}", "eth" : "${JSON.parse(login).eth}"}`);
+          }else{
+              let userInfo = _userInfo.join("|");
+              window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(login).bit}", "eth" : "${JSON.parse(login).eth}"}`);
+          }
+      }
+      window.localStorage.setItem("Login", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${result}", "bit" : "${JSON.parse(login).bit}", "eth" : "${JSON.parse(login).eth}"}`);
+
+      console.log("login information : " + window.localStorage.getItem("Login"));
+      console.log("user information : " + window.localStorage.getItem("UserInfo"));
+      
+      sideAcountText.innerHTML = "Cash : " + result + " $";
+  })
+}
+
+function changeCoinInfoBit(result){
+  let sideBitText = document.querySelector(".bitcoin");  
+  let login = window.localStorage.getItem("Login");
+  let userInfo = window.localStorage.getItem("UserInfo");  
+  let _userInfo = userInfo.split("|");  
+
+  _userInfo.forEach(function(a,i){
+      if(JSON.parse(login).id == JSON.parse(a).id){
+          
+          _userInfo.splice(i,1);
+
+          if(_userInfo.length == 0){
+              window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(login).eth}"}`);
+          }else{
+              userInfo = _userInfo.join("|");
+              window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(login).eth}"}`);
+          }
+      }
+      window.localStorage.setItem("Login", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${result}", "eth" : "${JSON.parse(login).eth}"}`);
+
+      console.log("login information : " + window.localStorage.getItem("Login"));
+      console.log("user information : " + window.localStorage.getItem("UserInfo"));
+      
+      sideBitText.innerHTML = "Bitcoin : " + result;
+  })
+}
+
+function changeCoinInfoEth(result){
+  let sideEthText = document.querySelector(".ethereum");  
+  let login = window.localStorage.getItem("Login");
+  let userInfo = window.localStorage.getItem("UserInfo");  
+  let _userInfo = userInfo.split("|");  
+
+  _userInfo.forEach(function(a,i){
+      if(JSON.parse(login).id == JSON.parse(a).id){
+          
+          _userInfo.splice(i,1);
+
+          if(_userInfo.length == 0){
+              window.localStorage.setItem("UserInfo", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${JSON.parse(login).bit}", "eth" : "${result}"}`);
+          }else{
+              userInfo = _userInfo.join("|");
+              window.localStorage.setItem("UserInfo", userInfo + "|" + `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${JSON.parse(login).bit}", "eth" : "${result}"}`);
+          }
+      }
+      window.localStorage.setItem("Login", `{"id" : "${JSON.parse(login).id}", "pw" : "${JSON.parse(login).pw}", "nick" : "${JSON.parse(login).nick}", "dollar" : "${JSON.parse(login).dollar}", "bit" : "${JSON.parse(login).bit}", "eth" : "${result}"}`);
+
+      console.log("login information : " + window.localStorage.getItem("Login"));
+      console.log("user information : " + window.localStorage.getItem("UserInfo"));
+      
+      sideEthText.innerHTML = "Ethereum : " + result;
+  })
+}
