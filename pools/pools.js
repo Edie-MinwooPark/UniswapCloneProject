@@ -35,6 +35,7 @@ function drawer(el, open = false) {
     // closeButton 프로퍼티 초기화
     this.closeButton = document.createElement("div");
     this.closeButton.innerText = ">>";
+    this.closeButton.className = "colosebtn"
     Object.assign(this.closeButton.style, {
       position: "absolute",
       top: "27px",
@@ -397,17 +398,47 @@ addbtn.addEventListener("click", function(){
 })
 
 let walletbtn = document.querySelector(".walletbtn")
+let drawer01 = document.querySelector(".drawer")
 let content = document.querySelector(".content")
+let div = document.createElement("div")
+
 walletbtn.addEventListener("click", function(){
     if (!sideMenu.isOpen) {
         sideMenu.open();
-        let content = document.querySelector(".content")
-        content.classList.add(".walletopen")
+        // drawer01.classList.remove("drawer")
+        // content.classList.remove("content")
+        // content.innerHTML = "";
+        // drawer01.classList.add("walletopen")
+        // div.className = "walletconnect"
+        // drawer01.append(div);
+
 
     } else{ 
         sideMenu.close();
+        // setTimeout(() => {
+        //     drawer01.classList.add("drawer")
+        //     content.classList.add("content")
+        //     content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
+        //     drawer01.classList.remove("walletopen")
+        //     div.classList.remove("walletconnect")
+        // }, 500);
     }
 })
+
+// let colosebtn = document.querySelector(".colosebtn")
+// colosebtn.addEventListener("click", function(){
+//     console.log("클로즈")
+//     sideMenu.close();
+//     setTimeout(() => {
+//         drawer01.classList.add("drawer")
+//         content.classList.add("content")
+//         content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
+//         drawer01.classList.remove("walletopen")
+//         div.classList.remove("walletconnect")
+
+        
+//     }, 500);
+// })
   
   
   
