@@ -795,9 +795,20 @@ color: rgb(255, 205, 210);
     border: none;
     font-size: 15px;
     cursor: pointer;
+    position: relative;
 }
 .addbtn:hover{
     background-color: rgb(205, 214, 254);
+    
+}
+.addlist{
+    width: 200px;
+    height: 130px;
+    background-color: rgb(237, 237, 237);
+    position: absolute;
+    top: 107px;
+    right: 160px;
+    border-radius: 10px;
     
 }
 .newbtn{

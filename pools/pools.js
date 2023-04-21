@@ -357,7 +357,17 @@ function drawer(el, open = false) {
   });
   
   
-  
+//   pools 부분
+let addbtn = document.querySelector(".addbtn")
+let addbtnbox = document.querySelector(".addbtnbox")
+
+addbtn.addEventListener("click", function(){
+    console.log("추가")
+    let div01 = document.createElement("div")
+    div01.className = "addlist"
+    addbtnbox.append(div01)
+
+})
   
   
   
