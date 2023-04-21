@@ -356,7 +356,7 @@ function drawer(el, open = false) {
   
   // }); //오류나서 주석처리해놓을게요
 
-  // legal & privacy Popup
+// legal & privacy Popup
 let legalinpopup = document.querySelector('.legalinpopup');
 let legalBtn = document.querySelector('.legalBtn');
 let legalBox = document.querySelector('.legalContainer');
