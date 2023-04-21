@@ -85,7 +85,7 @@ function render(offset){
     rocal = rocal.split("|");
     let _rocal = [...rocal]
     btns.innerHTML ="";
-
+    
     // 글의 갯수가 10개 넘어가면 버튼이 하나씩 추가되게
     _rocal.forEach((e,i)=>{
         if(i % 10 == 0){
@@ -95,9 +95,14 @@ function render(offset){
             btn.onclick = function(){
                 pageNum = i;
                 render(i/10)
+                console.log(btn)
+                console.log(pageNum);
+                console.log(pageNum/10);
+                console.log((pageNum-10)/10);
                 
             }
             btns.append(btn);
+          
         }
 
     })
@@ -165,11 +170,27 @@ function render(offset){
             }
             render(pageNum/10);
 
-            if(rocal.length == 10){
-                render(0)
+            if(rocal.length%10 == 0){
+                console.log("1개")
+                // location.reload();
+                console.log(pageNum);
+                console.log(pageNum/10);
+                console.log((pageNum-10)/10);
+                // render(pageNum/10)
+                pageNum = pageNum-10;       
+                render((pageNum-10)/10) 
+                if(pageNum/10 == 0){
+                location.reload();
+                }
             }
-
-        }; 
+            
+            // console.log(rocal.length);
+            // // if(rocal.length < ){
+                // //     render(rocal.length/10)
+                // //     console.log("10개개")
+                // // }
+                
+            }; 
         c.onclick = function(){
             console.log(index)
             let rocal = window.localStorage.getItem("list");
