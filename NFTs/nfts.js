@@ -593,8 +593,6 @@ legalBtn.onclick = function(){
   home.style.opacity = "1";
   document.body.style.overflow = "auto";
 }
-
-
 // legal & privacy Popup
 
 // 로그인 유무에 따른 사이드바 표기

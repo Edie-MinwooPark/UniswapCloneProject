@@ -58,76 +58,181 @@ body{
 }
 /* 버튼팝업----------------------------------- */
 .popup {
- display: none;
- position: fixed;
- z-index: 1060;
- left: 140px;
- top: 50px;
- overflow: auto;
- background-color: rgba(0,0,0,0);
-}
-
-.popup-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  width: 80%;
-  border-radius: 20px;
-  background-color: black;
-}
-
-/* 닫기 버튼 스타일 */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.popfirst{
-    border-bottom: 1px solid black;
-    padding-bottom: 15px;
-    color: rgb(255, 205, 210);
-    word-break: keep-all;
-}
-.popfirstdiv{
-    white-space: nowrap;
-    padding-bottom: 10px;
-}
-.bg{
-    width: 100vw;
-    height: 100vw;
+    display: none;
     position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
-.dg{
-    width: 100vw;
-    height: 100vw;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
-.popsecond{
-    padding-top: 15px;
-    color: rgba(255, 205, 210, 0.906);
-    font-weight: 600;
-    border-top: 1px solid grey;
-}
-.popsecond div{
-    padding-left: 0;
-    padding-bottom: 15px;
-}
-
-/* 버튼팝업----------------------------------- */
+    z-index: 1060;
+    left: 140px;
+    top: 50px;
+    overflow: auto;
+    background-color: rgba(0,0,0,0);
+   }
+   
+   .popup-content {
+     background-color: #fefefe;
+     margin: 10% auto;
+     padding: 20px;
+     width: 80%;
+     border-radius: 20px;
+     background-color: black;
+   }
+   
+   /* 닫기 버튼 스타일 */
+   .close {
+     color: #aaa;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+   }
+   
+   .close:hover,
+   .close:focus {
+     color: black;
+     text-decoration: none;
+     cursor: pointer;
+   }
+   .popfirst{
+       border-bottom: 1px solid black;
+       padding-bottom: 15px;
+       color: rgb(255, 205, 210);
+       word-break: keep-all;
+   }
+   .popfirstdiv{
+       white-space: nowrap;
+       padding-bottom: 10px;
+   }
+   .popfirstdiv:hover{
+       opacity: 0.4;
+   }
+   .bg{
+       width: 100vw;
+       height: 100vw;
+       position: fixed;
+       z-index: -1;
+       top: 0;
+       left: 0;
+   }
+   .dg{
+       width: 100vw;
+       height: 100vw;
+       position: fixed;
+       z-index: -1;
+       top: -80px;
+       left: -491px;
+   }
+   .popsecond{
+       padding-top: 15px;
+       color: rgba(255, 205, 210, 0.906);
+       font-weight: 600;
+       border-top: 1px solid grey;
+   }
+   .popsecond div{
+       padding : 5px 5px 10px 5px;
+       border-radius: 10px;
+   }
+   .popsecond div:hover{
+       opacity: 0.4;
+   }
+   .popthree{
+       display: flex;
+   }
+   .popthree a:hover{
+       opacity: 0.4;
+   }
+   .legalinpopup{
+       cursor: pointer;
+   }
+   /* 버튼팝업----------------------------------- */
+   
+   /* legal & privacy popup */
+   .legalContainer{
+       width: 22%;
+       border: 5px solid black;
+       border-radius: 15px;
+       margin: 6% 0% 0% 39%;
+       background-color: rgb(255, 205, 210);
+       padding: 1%;
+       display: none;
+       position: absolute;
+       z-index: 2;
+   }
+   .legalContainer.active{
+       display: block;
+   }
+   .legalBody{
+       width: 100%;
+       overflow: auto;
+       overflow-x: hidden;
+       max-height: 70vh;
+       padding-right: 18px;
+       -ms-overflow-style: none;
+   }
+   .legalBody::-webkit-scrollbar{
+       display: none;
+   }
+   
+   .legalTitle{
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       /* padding-bottom: 20px; */
+       margin-bottom: 20px;
+       font-size: 20px;
+       font-weight: bold;
+   }
+   .legalBtn{
+       cursor: pointer;
+       width: 18px;
+       font-size: 20px;
+   }
+   .legalPink{
+       width: 100%;
+       display: flex;
+       border-radius: 20px;
+       background-color: black;
+       color: rgb(255, 205, 210);
+       justify-content: space-between;
+       font-weight: 600;
+       margin-bottom: 5px;
+       padding: 1%;
+       font-size: 14px;
+   }
+   .legalPink:hover{
+       opacity: 0.6;
+   }
+   .legalGray{
+       width: 100%;
+       border-radius: 15px;
+       background-color: black;
+       color: rgb(255, 205, 210);
+       font-size: 14px;
+       margin-bottom: 20px;
+       font-weight: 500;
+       /* padding: 1rem; */
+       padding-bottom: 3%;
+       overflow: auto;
+   }
+   .legalgrayTop{
+       display: flex;
+       padding: 2%;
+   }
+   .legalLearn{
+       color: rgb(251, 17, 142);
+       text-decoration: none;
+   }
+   .legalLearn2{
+       display: flex;
+       justify-content: space-around;
+       font-weight: bold;
+       font-size: 18px;
+       color: rgb(251, 17, 142);
+       text-decoration: none;
+       text-align: center;
+   }
+   .besideInfo{
+       padding-top: 1%;
+       font-weight: bold;
+   }
+   /* legal & privacy popup */
 .searchBar{
     display: flex;
     justify-content: flex-start;
@@ -197,12 +302,17 @@ body{
     background-color: black;
     color: black;
 }
-
-
 .arrowBox{
     display: flex;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid white;
+    border-radius: 5px;
+    height: 33px;
+    margin-top: 3px;
+}
+.arrowBox:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .drawer .content {
@@ -333,18 +443,18 @@ body{
     margin-left: 45%;
 }
 .searchpopup{
-    border: 1px solid rgb(196, 186, 186);
-    border-radius: 10px;
-    width: 525px;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translate(-50%,0);
+    border-bottom: 1px solid rgb(196, 186, 186);
+    border-top: 1px solid rgb(196, 186, 186);
+    border-left: 1px solid rgb(196, 186, 186);
+    border-top: none;
+    border-radius: 0px 0px 10px 0px;
+    width: 512px;
+    margin: 35px 0px 0px 394px;
     background-color: white;
     position: fixed;
-    z-index: 101;
+    z-index: 110;
+    transform: translate(50px,-60px);
     /* display: none; */
-    
 }
 .imgnameBox{
     padding-left: 10px;

@@ -472,6 +472,7 @@ html{
    .popfirstdiv{
        white-space: nowrap;
        padding-bottom: 10px;
+       cursor: pointer;
    }
    .popfirstdiv:hover{
     opacity: 0.4;
@@ -729,8 +730,8 @@ html{
 }
 
 .arrowBox:hover{
-cursor: pointer;
-border: 2px solid gray;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .login{
