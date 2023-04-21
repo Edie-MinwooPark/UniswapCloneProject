@@ -35,6 +35,9 @@ add.onclick = function(){
     label01.innerHTML = "작성자";
     input01.className = "input01"
 
+    // 로그인시 작성자를 닉네임으로 자동 변경
+    input01.value = JSON.parse(loginValue).nick;
+
     div01.append(label01, input01);
     div02.append(text);
     div03.append(cen, btn)
