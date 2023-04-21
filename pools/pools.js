@@ -405,40 +405,40 @@ let div = document.createElement("div")
 walletbtn.addEventListener("click", function(){
     if (!sideMenu.isOpen) {
         sideMenu.open();
-        drawer01.classList.remove("drawer")
-        content.classList.remove("content")
-        content.innerHTML = "";
-        drawer01.classList.add("walletopen")
-        div.className = "walletconnect"
-        drawer01.append(div);
+        // drawer01.classList.remove("drawer")
+        // content.classList.remove("content")
+        // content.innerHTML = "";
+        // drawer01.classList.add("walletopen")
+        // div.className = "walletconnect"
+        // drawer01.append(div);
 
 
     } else{ 
         sideMenu.close();
-        setTimeout(() => {
-            drawer01.classList.add("drawer")
-            content.classList.add("content")
-            content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
-            drawer01.classList.remove("walletopen")
-            div.classList.remove("walletconnect")
-        }, 500);
+        // setTimeout(() => {
+        //     drawer01.classList.add("drawer")
+        //     content.classList.add("content")
+        //     content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
+        //     drawer01.classList.remove("walletopen")
+        //     div.classList.remove("walletconnect")
+        // }, 500);
     }
 })
 
-let colosebtn = document.querySelector(".colosebtn")
-colosebtn.addEventListener("click", function(){
-    console.log("클로즈")
-    sideMenu.close();
-    setTimeout(() => {
-        drawer01.classList.add("drawer")
-        content.classList.add("content")
-        content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
-        drawer01.classList.remove("walletopen")
-        div.classList.remove("walletconnect")
+// let colosebtn = document.querySelector(".colosebtn")
+// colosebtn.addEventListener("click", function(){
+//     console.log("클로즈")
+//     sideMenu.close();
+//     setTimeout(() => {
+//         drawer01.classList.add("drawer")
+//         content.classList.add("content")
+//         content.innerHTML = `<h3>Connect a wallet</h3> <div class="login">LOGIN</div>`;
+//         drawer01.classList.remove("walletopen")
+//         div.classList.remove("walletconnect")
 
         
-    }, 500);
-})
+//     }, 500);
+// })
   
   
   
