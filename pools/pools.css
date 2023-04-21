@@ -698,7 +698,7 @@ html{
 
    .arrowBox:hover{
     cursor: pointer;
-    border: 2px solid gray;
+    opacity: 0.8;
    }
    
    .login{
