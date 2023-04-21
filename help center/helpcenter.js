@@ -53,7 +53,7 @@ function addlist(){
     let value = window.localStorage.getItem("list");
     let textarea = document.querySelector("textarea");
     if(window.localStorage.getItem("list") == null){
-    window.localStorage.setItem("list", `{"index" : ${window.localStorage.length + 1}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
+    window.localStorage.setItem("list", `{"index" : ${window.localStorage.length}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
     }else{
     let index = window.localStorage.getItem("list").split("|").length + 1;
     window.localStorage.setItem("list", value + "|" + `{"index" : ${index}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
@@ -99,7 +99,9 @@ function render(offset){
             }
             btns.append(btn);
         }
+
     })
+    
     _rocal = _rocal.slice(_offset,_offset + 10);
 
     let _ul = document.createElement("ul");
@@ -162,6 +164,11 @@ function render(offset){
                 window.localStorage.setItem("list",str);
             }
             render(pageNum/10);
+
+            if(rocal.length == 10){
+                render(0)
+            }
+
         }; 
         c.onclick = function(){
             console.log(index)
