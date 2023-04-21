@@ -35,8 +35,11 @@ add.onclick = function(){
     label01.innerHTML = "작성자";
     input01.className = "input01"
 
-    // 로그인시 작성자를 닉네임으로 자동 변경
-    input01.value = JSON.parse(loginValue).nick;
+    // 로그인시 작성자를 닉네임으로 자동 변경, 고정
+    if(JSON.parse(loginValue) !== null){
+      input01.value = JSON.parse(loginValue).nick;
+      input01.setAttribute("readonly","true"); 
+    }
 
     div01.append(label01, input01);
     div02.append(text);
@@ -47,6 +50,9 @@ add.onclick = function(){
 
     cen.onclick = function(){
         box.style.display = "none"
+        if(JSON.parse(loginValue) !== null){
+          input01.removeAttribute("readonly","true"); 
+        }
     }
 }
 
@@ -63,6 +69,12 @@ function addlist(){
     }
     console.log(window.localStorage.getItem("list"));
 
+
+    // 등록시 input 수정 못하게 하는 기능 삭제
+    let input01 = document.createElement("input");
+    if(JSON.parse(loginValue) !== null){
+      input01.removeAttribute("readonly","true"); 
+    }
 
     init()
     render(pageNum/10);
@@ -202,11 +214,18 @@ function render(offset){
             label01.innerHTML = "작성자";
             text.className = "in";
             text.className = "qna";
+            
 
             div01.append(label01,input);
             div02.append(text);
             div03.append(cen, btn)
             box2.append(div01, div02, div03);
+
+            // 수정시 닉네임 고정
+            if(JSON.parse(loginValue) !== null){
+              input.value = JSON.parse(loginValue).nick;
+              input.setAttribute("readonly","true"); 
+            }
             btn.addEventListener("click", () => {
                 obj.writer = input.value;
                 obj.question = text.value;
