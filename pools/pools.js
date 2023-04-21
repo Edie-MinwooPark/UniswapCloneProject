@@ -345,17 +345,38 @@ function drawer(el, open = false) {
     }
   })
   
-  // 체인 선택 팝업 백그라운드 클릭하면 사라지는 효과
+  // // 체인 선택 팝업 백그라운드 클릭하면 사라지는 효과
   
-  let bgg = document.getElementById('bgg');
+  // let bgg = document.getElementById('bgg');
   
-  bgg.addEventListener('click',function(){
-  headertokenChainSelectlist.classList.remove('active');
-  headertokenChainSelectlist.style.display = 'none';
-  searchContent.style.display = "none";
+  // bgg.addEventListener('click',function(){
+  // headertokenChainSelectlist.classList.remove('active');
+  // headertokenChainSelectlist.style.display = 'none';
+  // searchContent.style.display = "none";
   
-  });
-  
+  // }); //오류나서 주석처리해놓을게요
+
+  // legal & privacy Popup
+let legalinpopup = document.querySelector('.legalinpopup');
+let legalBtn = document.querySelector('.legalBtn');
+let legalBox = document.querySelector('.legalContainer');
+let contentbox = document.querySelector('.contentbox');
+
+
+legalinpopup.onclick = function(){
+  legalBox.classList.add('active');
+  contentbox.style.backgroundColor = "white";
+  contentbox.style.opacity = "0.7";
+  document.body.style.overflow = "hidden";
+}
+
+legalBtn.onclick = function(){
+  legalBox.classList.remove('active');
+  contentbox.style.backgroundColor = "rgb(255,205,210)";
+  contentbox.style.opacity = "1";
+  document.body.style.overflow = "auto";
+}
+// legal & privacy Popup
   
 //   pools 부분
 let addbtn = document.querySelector(".addbtn")

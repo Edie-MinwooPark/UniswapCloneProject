@@ -731,7 +731,7 @@ html{
    /* 헤더부분 체인 리스트 */
 .header-token-chain-select-list{
 right: 8.3%;
-top: 7%;
+top: 70px;
 background-color: black;
 color: rgb(255, 205, 210);
 }

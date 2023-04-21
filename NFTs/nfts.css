@@ -472,6 +472,7 @@ html{
    .popfirstdiv{
        white-space: nowrap;
        padding-bottom: 10px;
+       cursor: pointer;
    }
    .popfirstdiv:hover{
     opacity: 0.4;
@@ -729,8 +730,8 @@ html{
 }
 
 .arrowBox:hover{
-cursor: pointer;
-border: 2px solid gray;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .login{
@@ -949,8 +950,8 @@ body{
 .left-btn svg{
     transform: translateY(230px);
 }
-.right-btn {
-    transform: rotate(180deg) translateY(230px);
+.right-btn svg{
+    transform: rotate(180deg) translateY(-230px);
 }
 
 /* 스와이퍼 div 여러개 만들기 */
