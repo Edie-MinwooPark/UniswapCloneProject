@@ -358,7 +358,46 @@ searchContent.style.display = "none";
 
 
 
+    // 이더리움 실시간 block 호출하는 API
+    // const xhr = new XMLHttpRequest();
+    // const url =
+    //   "https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=9A7WWYQNTUEW2W6DD437M3HIK2N1PR9TVW";
 
+    // xhr.open("GET", url, true);
+    // xhr.onload = function () {
+    //   if (xhr.status === 200) {
+    //     console.log(typeof xhr.responseText);
+    //   let response =JSON.parse(xhr.responseText);
+    //     let ethblock = parseInt(response.result);
+    //     console.log(ethblock);
+
+    //   } else {
+    //     console.error(xhr.statusText);
+    //   }
+    // };
+    // xhr.onerror = function () {
+    //   console.error(xhr.statusText);
+    // };
+    // xhr.send();
+
+
+  // 이더리움 실시간 가격 호출 API
+
+  // const ethprice = new XMLHttpRequest();
+  //   const url =
+  //   "https://api.etherscan.io/api?module=stats&action=ethprice&apikey=9A7WWYQNTUEW2W6DD437M3HIK2N1PR9TVW";
+
+  //   ethprice.open("GET", url, true);
+  //   ethprice.onload = function () {
+  //     if (ethprice.status === 200) {
+  //       console.log(ethprice.responseText);
+  //       let eth =JSON.parse(ethprice.responseText);
+  //       console.log(eth.result.ethusd);
+  //     } else {
+  //       console.error(ethprice.statusText);
+  //     }
+  //   };
+  //   ethprice.send();
 
 
 
