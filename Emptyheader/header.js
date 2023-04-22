@@ -399,7 +399,7 @@ searchContent.style.display = "none";
   //   };
   //   ethprice.send();
 
-
+    // swap페이지에 실시간 가격 보여주는 div 만들고 , setInterval()함수로 30초에 한번씩 가격 보여주기
 
 
 
