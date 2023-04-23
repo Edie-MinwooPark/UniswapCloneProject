@@ -1081,3 +1081,21 @@ color: rgb(255, 205, 210);
     margin-left: 190px;
     margin-top: 10px;
 }
+
+.blocklevel{
+    width: 100px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    color: green;
+}
+
+.greendot{
+    width: 13px;
+    height: 13px;
+    background-color: green;
+    border-radius: 50%;
+    position: fixed;
+    right: 61px;
+    bottom: 69px;
+}

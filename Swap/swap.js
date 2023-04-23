@@ -757,3 +757,38 @@ function changeCoinInfoEth(result){
       sideEthText.innerHTML = "Ethereum : " + result;
   })
 }
+
+
+//이더리움 실시간 가격/ 블록높이 오른쪽 아래에 보여주는 함수
+
+let ethBlock = document.getElementById('ethblock');
+
+//이더리움 실시간 block 호출하는 API
+    const xhr = new XMLHttpRequest();
+    const url =
+      "https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=9A7WWYQNTUEW2W6DD437M3HIK2N1PR9TVW";
+
+    xhr.open("GET", url, true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        console.log(typeof xhr.responseText);
+      let response =JSON.parse(xhr.responseText);
+        let ethblock = parseInt(response.result);
+        console.log(ethblock);
+        ethBlock.innerHTML = ethblock;
+
+      } else {
+        console.error(xhr.statusText);
+      }
+    };
+    xhr.onerror = function () {
+      console.error(xhr.statusText);
+    };
+    
+// 30초에 한번씩 API 호출    
+    
+
+setInterval(xhr.send(),30000);
+
+
+    
