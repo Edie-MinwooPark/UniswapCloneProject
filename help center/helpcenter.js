@@ -35,8 +35,11 @@ add.onclick = function(){
     label01.innerHTML = "작성자";
     input01.className = "input01"
 
-    // 로그인시 작성자를 닉네임으로 자동 변경
-    input01.value = JSON.parse(loginValue).nick;
+    // 로그인시 작성자를 닉네임으로 자동 변경, 고정
+    if(JSON.parse(loginValue) !== null){
+      input01.value = JSON.parse(loginValue).nick;
+      input01.setAttribute("readonly","true"); 
+    }
 
     div01.append(label01, input01);
     div02.append(text);
@@ -47,6 +50,9 @@ add.onclick = function(){
 
     cen.onclick = function(){
         box.style.display = "none"
+        if(JSON.parse(loginValue) !== null){
+          input01.removeAttribute("readonly","true"); 
+        }
     }
 }
 
@@ -56,13 +62,19 @@ function addlist(){
     let value = window.localStorage.getItem("list");
     let textarea = document.querySelector("textarea");
     if(window.localStorage.getItem("list") == null){
-    window.localStorage.setItem("list", `{"index" : ${window.localStorage.length + 1}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
+    window.localStorage.setItem("list", `{"index" : ${window.localStorage.length}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
     }else{
     let index = window.localStorage.getItem("list").split("|").length + 1;
     window.localStorage.setItem("list", value + "|" + `{"index" : ${index}, "writer" : "${input.value}", "question" : "${textarea.value}"}`);
     }
     console.log(window.localStorage.getItem("list"));
 
+
+    // 등록시 input 수정 못하게 하는 기능 삭제
+    let input01 = document.createElement("input");
+    if(JSON.parse(loginValue) !== null){
+      input01.removeAttribute("readonly","true"); 
+    }
 
     init()
     render(pageNum/10);
@@ -88,7 +100,7 @@ function render(offset){
     rocal = rocal.split("|");
     let _rocal = [...rocal]
     btns.innerHTML ="";
-
+    
     // 글의 갯수가 10개 넘어가면 버튼이 하나씩 추가되게
     _rocal.forEach((e,i)=>{
         if(i % 10 == 0){
@@ -98,11 +110,18 @@ function render(offset){
             btn.onclick = function(){
                 pageNum = i;
                 render(i/10)
+                console.log(btn)
+                console.log(pageNum);
+                console.log(pageNum/10);
+                console.log((pageNum-10)/10);
                 
             }
             btns.append(btn);
+          
         }
+
     })
+    
     _rocal = _rocal.slice(_offset,_offset + 10);
 
     let _ul = document.createElement("ul");
@@ -165,7 +184,28 @@ function render(offset){
                 window.localStorage.setItem("list",str);
             }
             render(pageNum/10);
-        }; 
+
+            if(rocal.length%10 == 0){
+                console.log("1개")
+                // location.reload();
+                console.log(pageNum);
+                console.log(pageNum/10);
+                console.log((pageNum-10)/10);
+                // render(pageNum/10)
+                pageNum = pageNum-10;       
+                render((pageNum-10)/10) 
+                if(pageNum/10 == 0){
+                location.reload();
+                }
+            }
+            
+            // console.log(rocal.length);
+            // // if(rocal.length < ){
+                // //     render(rocal.length/10)
+                // //     console.log("10개개")
+                // // }
+                
+            }; 
         c.onclick = function(){
             console.log(index)
             let rocal = window.localStorage.getItem("list");
@@ -195,11 +235,18 @@ function render(offset){
             label01.innerHTML = "작성자";
             text.className = "in";
             text.className = "qna";
+            
 
             div01.append(label01,input);
             div02.append(text);
             div03.append(cen, btn)
             box2.append(div01, div02, div03);
+
+            // 수정시 닉네임 고정
+            if(JSON.parse(loginValue) !== null){
+              input.value = JSON.parse(loginValue).nick;
+              input.setAttribute("readonly","true"); 
+            }
             btn.addEventListener("click", () => {
                 obj.writer = input.value;
                 obj.question = text.value;
