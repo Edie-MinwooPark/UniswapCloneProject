@@ -1,7 +1,10 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 205, 210);
+    width: 100vw; 
+    height: 100vh; 
+    transform: unset; 
+    background: radial-gradient(100% 100% at 50% 30%, rgba(255, 205, 210, 1) 0%, rgba(200, 168, 255, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%), rgb(255, 255, 255);
 }
 
 /* topbar 설정 */
@@ -37,10 +40,10 @@ body{
 }
 
 .dots{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     position: absolute;
-    top: 18px;
+    top: 13px;
     background-color: black;
     color: white;
     border: 1px solid black;
@@ -54,7 +57,6 @@ body{
     -webkit-box-align: center;
     align-items: center;
     z-index: 1;
-    margin-top: 70px;
 }
 /* 버튼팝업----------------------------------- */
 .popup {
@@ -252,7 +254,6 @@ body{
     -webkit-box-align: center;
     align-items: center;
     z-index: 1;
-    background-color: rgb(255, 205, 210);
     color: black;
 }
 .homeUp{

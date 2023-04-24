@@ -44,7 +44,7 @@ html{
     position: absolute;
     top: 13px;
     background-color: black;
-    color: rgb(255, 205, 210);
+    color: white;
     border: 1px solid black;
     cursor: pointer;
 }
@@ -358,7 +358,6 @@ html{
     -webkit-box-align: center;
     align-items: center;
     z-index: 1;
-    background-color: rgb(255, 205, 210);
     color: black;
 }
 .homeUp{
@@ -411,7 +410,7 @@ html{
     text-align: center;
     max-width: 600px;
     margin:  0px 0px 32px;
-    padding-left: 30%;
+    padding-left: 32%;
 }
 .startdiv{
     display: flex;
@@ -423,7 +422,7 @@ html{
     pointer-events: auto;
     border: 3px solid white;
     border-radius: 25px;
-    margin-left: 39%;
+    margin-left: 40%;
     background-color: black;
 }
 .startA{
@@ -631,7 +630,7 @@ html{
 .pinkbar{
     border-radius: 32px;
     width: 90%;
-    max-width: 1440px;
+    max-width: 1291px;
     margin: 80px 40px 0px 0px;
     display: flex;
     height: 140px;
