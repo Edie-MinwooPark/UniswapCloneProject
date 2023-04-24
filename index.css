@@ -44,7 +44,7 @@ html{
     position: absolute;
     top: 13px;
     background-color: black;
-    color: rgb(255, 205, 210);
+    color: white;
     border: 1px solid black;
     cursor: pointer;
 }
@@ -208,6 +208,10 @@ html{
     margin-left: 15px;
     margin-right: 10px;
 }
+.Connect:hover{
+    cursor: pointer;
+    /* opacity: 0.4; */
+}
 .drawer-opener{
     background-color: transparent;
     border: none;
@@ -231,8 +235,9 @@ html{
 
 .arrowBox{
     display: flex;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid white;
+    border-radius: 30px;
 }
 .arrowBox:hover{
     cursor: pointer;
@@ -410,7 +415,7 @@ html{
     text-align: center;
     max-width: 600px;
     margin:  0px 0px 32px;
-    padding-left: 30%;
+    padding-left: 33%;
 }
 .startdiv{
     display: flex;
@@ -422,8 +427,11 @@ html{
     pointer-events: auto;
     border: 3px solid white;
     border-radius: 25px;
-    margin-left: 39%;
+    margin-left: 41%;
     background-color: black;
+}
+.startdiv:hover{
+    opacity: 0.8;
 }
 .startA{
     text-decoration: none;
@@ -442,22 +450,27 @@ html{
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
-    margin: 36px 0px 0px;
+    margin: 100px 0px 0px;
     display: flex;
     pointer-events: auto;
     transition: opacity 250ms ease 0s;
-    margin-left: 45%;
+    margin-left: 45.5%;
+}
+.learnmore:hover{
+    opacity: 0.4;
 }
 .searchpopup{
-    border: 1px solid rgb(196, 186, 186);
-    border-radius: 10px;
-    width: 525px;
-    margin: 69px 0px 0px 440px;
+    border-right: 1px solid rgba(128, 128, 128, 0.45);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    border-left: 1px solid rgba(128, 128, 128, 0.45);
+    border-radius: 0px 0px 10px 10px;
+    width: 44.19%;
+    margin: 5.8% 0% 0% 22.6% ;
     background-color: white;
     position: fixed;
-    z-index: 10;
+    z-index: 101;
+    transform: translate(50px,-60px);
     /* display: none; */
-    
 }
 .imgnameBox{
     padding-left: 10px;
@@ -626,7 +639,7 @@ html{
 .pinkbar{
     border-radius: 32px;
     width: 90%;
-    max-width: 1440px;
+    max-width: 1291px;
     margin: 80px 40px 0px 0px;
     display: flex;
     height: 140px;

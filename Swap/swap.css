@@ -180,7 +180,7 @@ body{
 }
 
 .bnb-sector{
-    opacity: .4;
+    opacity: 0.6;
 }
 
 /* 호버링 효과 */
@@ -535,7 +535,7 @@ opacity: 0.4;
     width: 20%;
     border: 5px solid black;
     border-radius: 15px;
-    margin: 6% 0% 0% 39%;
+    margin: 9% 0% 0% 39%;
     background-color: rgb(255, 205, 210);
     padding: 1%;
     display: none;
@@ -623,17 +623,18 @@ opacity: 0.4;
     border-right: 1px solid rgba(128, 128, 128, 0.45);
     border-bottom: 1px solid rgba(128, 128, 128, 0.45);
     border-left: 1px solid rgba(128, 128, 128, 0.45);
-    border-radius: 0px 0px 10px 0px;
-    width: 512px;
-    margin: 107px 0px 0px 394px;
+    border-radius: 0px 0px 10px 10px;
+    width: 45.99%;
+    margin: 5.8% 0% 0% 22.57% ;
     background-color: white;
     position: fixed;
     z-index: 101;
     transform: translate(50px,-60px);
     /* display: none; */
-    
 }
-
+.imgnameBox{
+    padding-left: 10px;
+}
 .grayline{
     display: flex;
     color: rgb(182, 178, 178);
@@ -708,7 +709,7 @@ opacity: 0.4;
 .Connect{
     border: 1px solid white;
     border-radius: 30px;
-    width: 120px;
+    width: 100px;
     margin-left: 15px;
     margin-right: 10px;
 }
@@ -734,7 +735,7 @@ opacity: 0.4;
 }
 .arrowBox{
     display: flex;
-    padding: 10px;
+    padding: 9px;
     border: 1px solid white;
     border-radius: 5px;
     height: 25px;
