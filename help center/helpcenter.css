@@ -684,6 +684,10 @@ html{
        background-color: black;
        color: black;
    }
+   .drawer .content a {
+    color: black;
+    text-decoration: none;
+}
    .arrowBox{
        display: flex;
        padding: 10px;
@@ -693,24 +697,35 @@ html{
        margin-top: 7px;
    }
 
-   .arrowBox:hover{
+.arrowBox:hover{
     cursor: pointer;
     opacity: 0.8;
    }
    
    .login{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       background-color: white;
-       border-radius: 10px;
-       width: 80%;
-       height: 80px;
-       margin-left: 10px;
-       font-weight: bold;
-       font-size: large;
-       cursor: grab;
-   }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    height: 80px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+}
+
+.login ul{
+    display: block;
+}
+
+.login li{
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+}
    .searchpopup{
     border-bottom: 1px solid rgb(196, 186, 186);
     border-top: 1px solid rgb(196, 186, 186);
