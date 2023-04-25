@@ -3,6 +3,7 @@ body{
     border: 0;
     margin: 0;
     height: 150vh;
+    overflow: hidden;
 }
 .token-main-wrap{
     width: 100%;
@@ -618,13 +619,15 @@ html{
 /* legal & privacy popup */
 
 .searchpopup{
-    border: 1px solid rgb(196, 186, 186);
-    border-radius: 10px;
-    width: 525px;
-    margin: 69px 0px 0px 440px;
+    border-right: 1px solid rgba(128, 128, 128, 0.45);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    border-left: 1px solid rgba(128, 128, 128, 0.45);
+    border-radius: 0px 0px 10px 10px;
+    width: 45.8%;
+    margin: 2% 0% 0% 22.6% ;
     background-color: white;
     position: fixed;
-    z-index: 10;
+    z-index: 101;
     transform: translate(50px,-60px);
     /* display: none; */
     
@@ -706,7 +709,7 @@ html{
 .Connect{
     border: 1px solid white;
     border-radius: 30px;
-    width: 120px;
+    width: 100px;
     margin-left: 15px;
     margin-right: 10px;
 }
@@ -777,7 +780,7 @@ html{
     -webkit-box-align: center;
     align-items: center;
     z-index: 1;
-    background-color: rgb(255, 205, 210);
+    /* background-color: rgb(255, 205, 210); */
     color: black;
 }
 .homeUp{

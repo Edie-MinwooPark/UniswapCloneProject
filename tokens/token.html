@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Token - UNISWAP</title>
+    <title>Token-UNISWAP</title>
     <link rel="stylesheet" href="token.css" />
     <style>
               .drawer .content {
@@ -21,7 +21,7 @@
   </head>
   <body>
     <!--  이 위치에 헤더 붙이면 됨 -->
-    <div class="container">
+    <div class="container" style= "width: 100vw; height: 100vh; transform: unset; background: radial-gradient(100% 100% at 50% 30%, rgba(255, 205, 210, 1) 0%, rgba(200, 168, 255, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%), rgb(255, 255, 255);">
       <div class="topBar">
           <ul>
               <li><a href="http://127.0.0.1:5501/index.html">
@@ -30,7 +30,7 @@
               <li><a href="/Swap/swap.html">스왑</a></li>
               <li><a href="/tokens/token.html">토큰</a></li>
               <li><a href="/NFTs/nfts.html">NFTs</a></li>
-              <li><a href="#ProjectsBtn">Pools</a></li>
+              <li><a href="/pools/pools.html">Pools</a></li>
               <li><button id="popupButton" class="dots" href="#ContactBtn">...</button></li>
           </ul>
           <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
@@ -128,94 +128,105 @@
               <!-- ... 버튼 팝업 -->
 
               <!--  ------------------검색창 팝업---------------- -->
-              <div class="searchpopup">
-                <div class="dg"></div>
-                <div class="grayline">
-                    <div> <img style="width: 20px;" src="/image/grayclockImg.png" alt="clock"></div>
-                    <div class="imgnameBox">최근 검색</div>
-                </div>
-                <a style="text-decoration: none;" href="https://app.uniswap.org/#/tokens/ethereum/NATIVE">
-                   <!--       ????  검색하기 전에 display:none으로 해둘건지 ????       -->
-                    <div class="imgline">
-                        <div style="display: flex;">
-                            <div><img style="width: 40px;" src="/image/topBar_icon.png" alt=""></div>
-                            <div class="imgnameBox">
-                                <div style="font-weight: 700; color: black;">Ether</div>
-                                <div style="font-weight: 900; color: gray;">ETH</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div style="color: black;">$2,109.55</div>
-                            <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.58%</div>
-                        </div>
-                    </div>
-                </a>
-                <div class="grayline">
-                    <div> <img style="width: 20px;" src="/image/like a graph.png" alt="graph"></div>
-                    <div class="imgnameBox">인기있는 토큰</div>
-                </div>
-                <div class="imgline">
-                    <div style="display: flex;">
-                        <div><img style="width: 40px; ;" src="/image/topBar_icon.png" alt=""></div>
-                        <div class="imgnameBox">
-                            <div style="font-weight: 700;">Ether</div>
-                            <div style="font-weight: 900; color: gray;">ETH</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>$2,109.55</div>
-                        <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.97%</div>
-                    </div>
-                </div>
-                <div class="imgline">
-                    <div style="display: flex;">
-                        <div><img style="width: 40px; ;" src="/image/USDcoin_icon.png" alt="usdcoin"></div>
-                        <div class="imgnameBox">
-                            <div style="font-weight: 700;">USD Coin</div>
-                            <div style="font-weight: 900; color: gray; font-size: 14px;">USDC</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="padding-left: 16px;">$1,000</div>
-                        <div style="color: red; font-weight: 700;font-size: 14px; padding-left: 8px;">↘ 0.01%</div>
-                    </div>
-                </div>
-                <div class="grayline">
-                    <div> <img style="width: 20px;" src="/image/like a graph.png" alt="graph"></div>
-                    <div class="imgnameBox">인기있는 NFT 컬렉션</div>
-                </div>
-
-                <div class="imgline">
-                    <div style="display: flex;">
-                        <div><img style="width: 40px; ;" src="/image/boredape_icon.avif" alt="boredicon"></div>
-                        <div class="imgnameBox">
-                            <div style="font-weight: 700;">Bored Ape Yacht Club</div>
-                            <div style="font-weight: 900; color: gray;"> 9,998 items</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div> 54.99 ETH </div>
-                        <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;"> Floor</div>
-                    </div>
-                </div>
-                <div class="imgline">
-                    <div style="display: flex;">
-                        <div><img style="width: 40px; ;" src="/image/wrapped_icon.avif" alt="wrapicon"></div>
-                        <div class="imgnameBox">
-                            <div style="font-weight: 700;">Wrapped Cryptopunks</div>
-                            <div style="font-weight: 900; color: gray;">783 items</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>74.83 ETH</div>
-                        <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;">Floor</div>
-                    </div>
-                </div>
-            </div>
-
-
-
+                  <div class="searchpopup">
+                              <div class="dg"></div>
+                              <div class="grayline">
+                                  <div> <img style="width: 20px;;" src="/image/grayclockImg.png" alt="clock"></div>
+                                  <div class="imgnameBox">최근 검색</div>
+                              </div>
+                              <a style="text-decoration: none;" href="https://app.uniswap.org/#/tokens/ethereum/NATIVE">
+                                 <!--       ????  검색하기 전에 display:none으로 해둘건지 ????       -->
+                                  <div class="imgline">
+                                      <div style="display: flex;">
+                                          <div><img style="width: 40px; ;" src="/image/topBar_icon.png" alt=""></div>
+                                          <div class="imgnameBox">
+                                              <div style="font-weight: 700; color: black;">Ether</div>
+                                              <div style="font-weight: 900; color: gray;">ETH</div>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <div style="color: black;">$2,109.55</div>
+                                          <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.58%</div>
+                                      </div>
+                                  </div>
+                              </a>
+                              <div class="grayline">
+                                  <div> <img style="width: 20px;" src="/image/like a graph.png" alt="graph"></div>
+                                  <div class="imgnameBox">인기있는 토큰</div>
+                              </div>
+          
+                              <a href="https://app.uniswap.org/#/tokens/ethereum/NATIVE" style="text-decoration: none;">
+                                  <div class="imgline">
+                                      <div style="display: flex;">
+                                          <div><img style="width: 40px; ;" src="/image/topBar_icon.png" alt=""></div>
+                                          <div class="imgnameBox">
+                                              <div style="font-weight: 700; color: black;">Ether</div>
+                                              <div style="font-weight: 900; color: gray;">ETH</div>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <div style="color: black;">$2,109.55</div>
+                                          <div style="color: green; font-weight: 700; padding-left: 8px; font-size: 14px;">↗ 0.97%</div>
+                                      </div>
+                                  </div>
+                              </a>
+          
+                              <a href="https://app.uniswap.org/#/tokens/ethereum/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" style="text-decoration: none;">
+                                  <div class="imgline">
+                                      <div style="display: flex;">
+                                          <div><img style="width: 40px; ;" src="/image/USDcoin_icon.png" alt="usdcoin"></div>
+                                          <div class="imgnameBox">
+                                              <div style="font-weight: 700; color: black;">USD Coin</div>
+                                              <div style="font-weight: 900; color: gray; font-size: 14px;">USDC</div>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <div style="padding-left: 16px; color: black;">$1,000</div>
+                                          <div style="color: red; font-weight: 700;font-size: 14px; padding-left: 8px;">↘ 0.01%</div>
+                                      </div>
+                                  </div>
+                              </a>
+          
+                              <div class="grayline">
+                                  <div> <img style="width: 20px;" src="/image/like a graph.png" alt="graph"></div>
+                                  <div class="imgnameBox">인기있는 NFT 컬렉션</div>
+                              </div>
+          
+                              <a href="https://app.uniswap.org/#/nfts/collection/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d" style="text-decoration: none;">
+                                  <div class="imgline">
+                                      <div style="display: flex;">
+                                          <div><img style="width: 40px; ;" src="/image/boredape_icon.avif" alt="boredicon"></div>
+                                          <div class="imgnameBox">
+                                              <div style="font-weight: 700; color: black;">Bored Ape Yacht Club</div>
+                                              <div style="font-weight: 900; color: gray;"> 9,998 items</div>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <div style="color: black;"> 54.99 ETH </div>
+                                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;"> Floor</div>
+                                      </div>
+                                  </div>
+                              </a>
+          
+                              <a href="https://app.uniswap.org/#/nfts/collection/0xb7f7f6c52f2e2fdb1963eab30438024864c313f6" style="text-decoration: none;">
+                                  <div class="imgline">
+                                      <div style="display: flex;">
+                                          <div><img style="width: 40px; ;" src="/image/wrapped_icon.avif" alt="wrapicon"></div>
+                                          <div class="imgnameBox">
+                                              <div style="font-weight: 700; color: black;">Wrapped Cryptopunks</div>
+                                              <div style="font-weight: 900; color: gray;">783 items</div>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <div style="color: black;">74.83 ETH</div>
+                                          <div style="color: gray; font-weight: 700; font-size: 15px; padding-left: 33px;">Floor</div>
+                                      </div>
+                                  </div>
+                              </a>
+          
+                  </div>
               <!--  ------------------검색창 팝업---------------- -->
+
             <!-- Legal & Privacy Popup -->
             <div class="legalContainer">
               <div class="legalTitle">
@@ -226,9 +237,9 @@
               <div class="legalBody">
                   <a style="text-decoration: none;" href="https://uniswap.org/terms-of-service">
                       <div class="legalPink">
-                          <div> <img style="width: 20px; height: 20px; padding-left: 5px;" src="/image/pinkinfo.icon.png" alt="pinkinfo"> </div>
-                          <div style="padding-right: 5%; white-space: nowrap;"> Uniswap Labs'Terms of Service</div>    
-                          <div style="font-weight: bold; font-size: 18px; color: rgb(251, 17, 142); padding-right: 8px;"> ↗ </div>                          
+                        <div> <img style="width: 20px; padding-left: 5px;" src="/image/pinkinfo.icon.png" alt="pinkinfo"> </div>
+                        <div style="padding-right: 14%; white-space: nowrap;"> Uniswap Labs'Terms of Service</div>    
+                        <div style="font-weight: bold; font-size: 18px; color: rgb(251, 17, 142); padding-right: 8px;"> ↗ </div>                          
                       </div>
                   </a>
                   <a style="text-decoration: none;" href="https://uniswap.org/privacy-policy">
@@ -261,7 +272,7 @@
                           <div class="besideInfo">TRM labs</div>
                       </div>
                       <div style="padding-left: 5%; color: rgb(255,205,210); font-weight: 500;">The app securely collects your wallet address and shares it with TRM Labs Inc. for risk and compliance reasons.
-                          <a class="legalLearn" href="helpcenter">
+                          <a class="legalLearn" href="/help center/helpcenter.html">
                               Learn more
                           </a>
                       </div>
@@ -281,7 +292,7 @@
                       <div style="padding-left: 5%; color: rgb(255,205,210); font-weight: 500;">The app fetches blockchain data from The Graph's hosted service.</div>
                   </div> 
 
-                  <div><a class="legalLearn2" href="">Learn more</a></div>
+                  <div><a class="legalLearn2" href="/help center/helpcenter.html">Learn more</a></div>
                  
 
               </div>
