@@ -383,11 +383,14 @@ legalBtn.onclick = function(){
 
 let loginValue = window.localStorage.getItem("Login");
 let sideInfo = document.querySelector(".content");
+let walletbtn = document.querySelector(".walletbtn")
+
 
 function loginCheck(){
   if(loginValue == null || loginValue == "null"){
     return;
   }else{
+    walletbtn.style.display = "none"
     sideInfo.innerHTML = `<h3>Connect a wallet</h3>
     <div class="login">
         <ul>
@@ -439,7 +442,6 @@ addbtn.addEventListener("click", function(){
 
 })
 
-let walletbtn = document.querySelector(".walletbtn")
 let drawer01 = document.querySelector(".drawer")
 let content = document.querySelector(".content")
 let div = document.createElement("div")

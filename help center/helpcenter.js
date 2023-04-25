@@ -7,16 +7,6 @@ let add = document.querySelector(".add");
 let pbox = document.querySelector(".pbox");
 let pageNum = 0;
 
-
-let happyNewYear = new Date();
-    const year = happyNewYear.getFullYear();
-    const month = happyNewYear.getMonth() + 1;
-    const date = happyNewYear.getDate();
-    console.log(`${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`)
-    let listdate = `${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`
-
-
-
 // 작성 버튼 클릭 시 작성 창 등장
 add.onclick = function(){
     box.style.display = "block";
@@ -57,12 +47,16 @@ add.onclick = function(){
 
 // 작성 창에 내용 입력 시 게시판에 추가
 function addlist(){
+    let happyNewYear = new Date();
+    const year = happyNewYear.getFullYear();
+    const month = happyNewYear.getMonth() + 1;
+    const date = happyNewYear.getDate();
+    console.log(`${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`)
+    let listdate = `${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`
 
     let input = document.querySelector(".input01");
     let value = window.localStorage.getItem("list");
     let textarea = document.querySelector("textarea");
-
-    
 
     if(window.localStorage.getItem("list") == null){
     window.localStorage.setItem("list", `{"index" : ${window.localStorage.length}, "date" : "${listdate}", "writer" : "${input.value}", "question" : "${textarea.value}"}`);
@@ -92,6 +86,13 @@ function init(){
 
 function render(offset){
     // 한 페이지에 10개씩 보이게
+    let happyNewYear = new Date();
+    const year = happyNewYear.getFullYear();
+    const month = happyNewYear.getMonth() + 1;
+    const date2 = happyNewYear.getDate();
+    console.log(`${year}-${month >= 10 ? month : '0' + month}-${date2 >= 10 ? date2 : '0' + date2}`)
+    let listdate = `${year}-${month >= 10 ? month : '0' + month}-${date2 >= 10 ? date2 : '0' + date2}`
+
     let _offset = offset *10;
     let rocal = window.localStorage.getItem("list");
     list.innerHTML = "";
@@ -129,7 +130,7 @@ function render(offset){
     let ind = document.createElement("div");
     let div = document.createElement("div")
     let div2 = document.createElement("div")
-    let date = document.createElement("div")
+    let date3 = document.createElement("div")
 
     ind.innerHTML = "번호"
     ind.className = "ind"
@@ -141,9 +142,9 @@ function render(offset){
     div2.innerHTML = "수정";
     div2.className = "bt"
     _li.className = "bor"
-    date.innerHTML = "날짜"
+    date3.innerHTML = "날짜"
 
-    _li.append(ind, date, list01, list02, div, div2)
+    _li.append(ind, date3, list01, list02, div, div2)
     _ul.append(_li)
 
     _rocal.forEach(function(i, index, item) {
@@ -155,8 +156,8 @@ function render(offset){
         let div = document.createElement("div")
         let c = document.createElement("button");
         let div2 = document.createElement("div")
-        let date = document.createElement("div")
-        date.innerHTML = listdate
+        let date3 = document.createElement("div")
+        date3.innerHTML = JSON.parse(i).date
         list01.innerHTML = JSON.parse(i).writer;
         list02.innerHTML = JSON.parse(i).question;
         list02.className = "qe";
@@ -259,7 +260,7 @@ function render(offset){
         }
         
 
-        _li.append(ind, date, list01, list02, div, div2)
+        _li.append(ind, date3, list01, list02, div, div2)
         _ul.append(_li)
     });
     list.append(_ul);
