@@ -12,7 +12,7 @@
       <div class="topBar">
           <ul>
               <li><a href="http://127.0.0.1:5501/index.html">
-                      <img width="35px" height="35px" src="../image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
+                      <img width="35px" height="35px" src="/image/KakaoTalk_Photo_2023-04-12-16-08-07.png" alt="horse">
                   </a></li>
               <li><a href="/Swap/swap.html">스왑</a></li>
               <li><a href="/tokens/token.html">토큰</a></li>
@@ -23,7 +23,7 @@
           <!-- id이름 따온 거라 수정해야해요, a태그 씌우고 hover하기! -->
 
           <div class="searchBar">
-                  <div><img style="width: 16px; height: 16px;" src="../image/magnifying-glass-solid.svg" alt="glass"></div>
+                  <div><img style="width: 16px; height: 16px;" src="/image/magnifying-glass-solid.svg" alt="glass"></div>
   
                   <div class="inputBox">
                       <input class="inputclass" type="text" placeholder="Search tokens and NFT collections">
@@ -62,7 +62,7 @@
                   <div class="drawer">
                       <div class="content">
                           <h3>Connect a wallet</h3>
-                          <div class="login">LOGIN</div>
+                          <a href="/Login/login.html"><div class="login">LOGIN</div></a>
                           <!-- 로그인이 되면 mypage로 바뀌어야함. -->
                       </div>
                   </div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 <div class="popsecond">
-                    <a style="text-decoration: none; color: rgb(255, 205, 210);" href="./help center/helpcenter.html">
+                    <a style="text-decoration: none; color: rgb(255, 205, 210);" href="/help center/helpcenter.html">
                         <div>Help center ↗</div>
                     </a>
                     <a style="text-decoration: none; color: rgb(255, 205, 210);" href="https://docs.uniswap.org/">
@@ -394,7 +394,7 @@
     <div class="swap-wrap">
         <div class="swap">
             <div class="swap-box-top">
-                <input type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input type="text" placeholder="0">
                 <button class="swap-coin-select topselect">
                     <span>ETH</span>
                     <svg
@@ -417,7 +417,7 @@
                 </svg>
             </div>
             <div class="swap-box-btm">
-                <input type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
+                <input type="text" placeholder="0" disabled>
                 <button class="swap-coin-select btmselect">
                     <span>ETH</span>
                     <svg
@@ -445,17 +445,21 @@
         <div class="closebox"></div>
         <div class="swap-tokens swap-eth">
             <div>Ethereum</div>
-            <div>보유수량 :</div>
+            <div>보유수량 : <span class="get-eth">0</span></div>
         </div>
         <div class="swap-tokens swap-wbtc">
             <div>WBTC</div>
-            <div>보유수량 :</div>
+            <div>보유수량 : <span class="get-bit">0</span></div>
 
         </div>
         <div class="swap-tokens swap-usdc">
             <div>USDC</div>
-            <div>보유수량 :</div>
+            <div>보유수량 : <span class="get-dollar">0</span></div>
         </div>
+    </div>
+    <div class="blocklevel">
+        <p id="ethblock">이더리움 가격/ 블록높이</p>
+        <div class="greendot"></div>
     </div>
   </body>
 <script src="./swap.js"></script>

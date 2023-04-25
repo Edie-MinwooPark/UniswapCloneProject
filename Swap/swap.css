@@ -893,14 +893,14 @@ color: rgb(255, 205, 210);
 /* 스왑페이지 구현 css 시작 */
 .swap-wrap{
     width: 600px;
-    height: 350px;
+    height: 400px;
     border: 1px solid;
     border-radius: 20px;
     border-color: gray;
     position: absolute;
-    top: 300px;
+    top: 150px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,0);
     background-color: #fefefe;
 }
 /* 스왑페이지 구현 css 끝 */
@@ -929,7 +929,7 @@ color: rgb(255, 205, 210);
     height: 15%;
     border: 1px solid gray;
     position: absolute;
-    top: -60px;
+    top: 0px;
     border-radius: 15px;
     margin: auto;
     margin-top: 4vh;
@@ -944,20 +944,6 @@ color: rgb(255, 205, 210);
     border: none;
     outline: 1px solid rgb(208, 208, 208 );    
     color: black;
-}
-
-.swap .change-result{
-    width: 325px;
-    height: 82px;
-    position: absolute;
-    top: 68px;
-    left: 44px;
-    border: 1px solid rgb(208, 208, 208 );
-    color: rgb(138, 138, 138);;
-    display: flex;
-    align-items: flex-end;
-    font-size: 70px;
-    padding: 1px 2px;
 }
 
 .swap-coin-select{
@@ -980,7 +966,7 @@ color: rgb(255, 205, 210);
 
 .swap-coin-select.btmselect{
     position: absolute;
-    top: 146px;
+    top: 206px;
     right: 46px;
 }
 
@@ -1013,9 +999,9 @@ color: rgb(255, 205, 210);
     border: 4px solid black;
     border-radius: 15px;
     position: absolute;
-    top: 300px;
+    top: 160px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,0);
     background-color: rgb(255, 205, 210);
     display: none;
 }
@@ -1081,4 +1067,22 @@ color: rgb(255, 205, 210);
 .swap-arrow{
     margin-left: 190px;
     margin-top: 10px;
+}
+
+.blocklevel{
+    width: 100px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    color: green;
+}
+
+.greendot{
+    width: 13px;
+    height: 13px;
+    background-color: green;
+    border-radius: 50%;
+    position: fixed;
+    right: 61px;
+    bottom: 69px;
 }
