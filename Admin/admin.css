@@ -6,14 +6,16 @@ body{
     transform: unset; 
     background: radial-gradient(100% 100% at 50% 30%, rgba(255, 205, 210, 1) 0%, rgba(200, 168, 255, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%), rgb(255, 255, 255);
 }
-
+html{
+    scroll-behavior: smooth;
+}
 /* topbar 설정 */
 
 .topBar{
     width: 100%;
     height: 70px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     top: 0;
     position: fixed;
@@ -102,6 +104,9 @@ body{
     white-space: nowrap;
     padding-bottom: 10px;
 }
+.popfirstdiv:hover{
+    opacity: 0.4;
+}
 .bg{
     width: 100vw;
     height: 100vw;
@@ -118,6 +123,14 @@ body{
     top: 0;
     left: 0;
 }
+.jg{
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
 .popsecond{
     padding-top: 15px;
     color: rgba(255, 205, 210, 0.906);
@@ -125,23 +138,38 @@ body{
     border-top: 1px solid grey;
 }
 .popsecond div{
-    padding-left: 0;
-    padding-bottom: 15px;
+    /* padding-left: 0;
+    padding-bottom: 15px; */
+    padding: 5px 5px 10px 5px ;
+    border-radius: 10px;
 }
+.popsecond div:hover{
+    opacity: 0.4;
+  }
+  .legalinpopup{
+      cursor: pointer;
+  }
+  .popthree{
+      display: flex;
+  }
+  .popthree a:hover{
+      opacity: 0.4;
+  }
 
 /* 버튼팝업----------------------------------- */
 .searchBar{
     display: flex;
     justify-content: flex-start;
-    width: 100%;
+    width: 700px;
     background-color: white;
     border-radius: 10px;
     color: gray;
-    margin-left: 8%;
+    /* margin-left: 8%;s */
     justify-content: flex-start;
     border: 1px solid transparent;
     padding: 2px;
     transition: border 0.2s ease;
+    margin-right: 130px;
 }
 .searchBar div{
     margin: 10px;
@@ -174,7 +202,7 @@ body{
 .iconConnect{
     display: flex;
     justify-content: center;
-    padding-left: 19%;
+    /* padding-left: 19%; */
     height: 80%;
 }
 .Connect{
@@ -184,6 +212,10 @@ body{
     margin-left: 15px;
     margin-right: 10px;
 }
+.Connect:hover{
+    cursor: pointer;
+    /* opacity: 0.4; */
+}
 .drawer-opener{
     background-color: transparent;
     border: none;
@@ -192,7 +224,7 @@ body{
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    padding: 20px 0px 0px 17px;
+    padding: 20px 0px 0px 25px;
     color: white;
 }
 .drawer{
@@ -200,36 +232,30 @@ body{
     color: black;
 }
 
-
-.arrowBox{
-    display: flex;
-    padding: 10px;
-    border: 1px solid white;
-}
-
-.drawer .content {
-    width: 100%;
-    height: 97%;
-    position: absolute;
-    top: 0;
-    background-color: rgb(255, 205, 210);
-    border: 1px solid white;
-    border-radius: 10px;
-    margin: 10px;
-}
-
 .drawer .content a{
     color: black;
     text-decoration: none;
 }
 
+.arrowBox{
+    display: flex;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+.arrowBox:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
 .login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
     width: 80%;
-    height: 60px;
+    height: 80px;
     margin-left: 10px;
-    padding-top: 1px;
     font-weight: bold;
     font-size: large;
     cursor: pointer;
@@ -244,6 +270,91 @@ body{
     height: 15px;
     display: flex;
     justify-content: space-between;
+}
+/*  Legal & Privacy Popup */
+.legalContainer{
+    width: 20%;
+    border: 5px solid black;
+    border-radius: 15px;
+    margin: 6% 0% 0% 39%;
+    background-color: rgb(255, 205, 210);
+    padding: 1%;
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+.legalBody{
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 70vh;
+    padding-right: 18px;
+    -ms-overflow-style: none;
+}
+.legalBody::-webkit-scrollbar{
+    display: none;
+}
+
+.legalTitle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* padding-bottom: 20px; */
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.legalBtn{
+    cursor: pointer;
+    width: 18px;
+    font-size: 20px;
+}
+.legalPink{
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    background-color: black;
+    color: rgb(255, 205, 210);
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding: 1%;
+}
+.legalPink:hover{
+    opacity: 0.6;
+}
+.legalGray{
+    width: 100%;
+    border-radius: 15px;
+    background-color: black;
+    color: rgb(255, 205, 210);
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    /* padding: 1rem; */
+    padding-bottom: 3%;
+    overflow: auto;
+}
+.legalgrayTop{
+    display: flex;
+    padding: 2%;
+}
+.legalLearn{
+    color: rgb(251, 17, 142);
+    text-decoration: none;
+}
+.legalLearn2{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(251, 17, 142);
+    text-decoration: none;
+    text-align: center;
+}
+.besideInfo{
+    padding-top: 1%;
+    font-weight: bold;
 }
 
 .Home{
@@ -287,6 +398,8 @@ body{
 }
 .swapImg:hover{
     border: 1px solid rgb(251, 17, 142);
+    transform: translateY(-5px);
+    transition: transform 250ms ease 0s;
 }
 .tradecrypto{
     color: black;
@@ -304,7 +417,7 @@ body{
     text-align: center;
     max-width: 600px;
     margin:  0px 0px 32px;
-    padding-left: 30%;
+    padding-left: 33%;
 }
 .startdiv{
     display: flex;
@@ -316,8 +429,11 @@ body{
     pointer-events: auto;
     border: 3px solid white;
     border-radius: 25px;
-    margin-left: 39%;
+    margin-left: 41%;
     background-color: black;
+}
+.startdiv:hover{
+    opacity: 0.8;
 }
 .startA{
     text-decoration: none;
@@ -336,25 +452,27 @@ body{
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
-    margin: 36px 0px 0px;
+    margin: 100px 0px 0px;
     display: flex;
     pointer-events: auto;
     transition: opacity 250ms ease 0s;
-    margin-left: 45%;
+    margin-left: 45.5%;
+}
+.learnmore:hover{
+    opacity: 0.4;
 }
 .searchpopup{
-    border: 1px solid rgb(196, 186, 186);
-    border-radius: 10px;
-    width: 525px;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translate(-50%,0);
+    border-right: 1px solid rgba(128, 128, 128, 0.45);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    border-left: 1px solid rgba(128, 128, 128, 0.45);
+    border-radius: 0px 0px 10px 10px;
+    width: 44.19%;
+    margin: 5.8% 0% 0% 22.6% ;
     background-color: white;
     position: fixed;
     z-index: 101;
+    transform: translate(50px,-60px);
     /* display: none; */
-    
 }
 .imgnameBox{
     padding-left: 10px;

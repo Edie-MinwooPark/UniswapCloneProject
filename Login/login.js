@@ -330,13 +330,13 @@ let home = document.querySelector('.Home');
 
 legalinpopup.onclick = function(){
   legalBox.classList.add('active');
-  home.style.backgroundColor = "white";
+//   home.style.backgroundColor = "white";
   home.style.opacity = "0.7";
   document.body.style.overflow = "hidden";
 }
 legalBtn.onclick = function(){
   legalBox.classList.remove('active');
-  home.style.backgroundColor = "rgb(255,205,210)";
+//   home.style.backgroundColor = "rgb(255,205,210)";
   home.style.opacity = "1";
   document.body.style.overflow = "auto";
 }
