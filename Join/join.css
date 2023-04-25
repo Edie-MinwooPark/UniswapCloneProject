@@ -659,7 +659,8 @@ body{
     height: 20px;
     position: absolute;
     top: 20px;
-    left: 10px;
+    left: -34px;
+    font-weight: bold;
 }
 
 .join-list input{
@@ -689,6 +690,13 @@ body{
     position: absolute;
     right: 50px;
     border-radius: 10px;
+    font-size: 12px;
+}
+.id-check:hover,
+.pw-check:hover,
+.pw-samecheck:hover,
+.nickname-check:hover{
+    opacity: .9;
 }
 
 .id-check{
@@ -717,8 +725,17 @@ body{
     font-size: 24px;
 }
 
+.join-btn:hover{
+    opacity: .9;
+}
+
 .join-list button{
     box-shadow: 2px 2px 0 0;
     cursor: pointer;
     background-color: rgb(255, 205, 210);
 }
+
+.join-list div p {
+    font-size: 16px;
+}
+

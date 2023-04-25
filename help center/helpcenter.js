@@ -321,7 +321,8 @@ function drawer(el, open = false) {
   drawer.prototype.addCloseButton = function () {
     // closeButton 프로퍼티 초기화
     this.closeButton = document.createElement("div");
-    this.closeButton.innerText = ">>";
+    this.closeButton.innerText = "▶"
+    
     Object.assign(this.closeButton.style, {
       position: "absolute",
       top: "27px",
