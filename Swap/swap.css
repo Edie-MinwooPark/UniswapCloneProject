@@ -1002,8 +1002,8 @@ color: rgb(255, 205, 210);
     top: 160px;
     left: 50%;
     transform: translate(-50%,0);
-    background-color: rgb(255, 205, 210);
     display: none;
+    background: linear-gradient( rgba(255,192,203,1) 0%, rgba(230,230,230,1) 100%);
 }
 
 .swap-coin-select-list:after{
@@ -1083,6 +1083,19 @@ color: rgb(255, 205, 210);
     background-color: green;
     border-radius: 50%;
     position: fixed;
-    right: 61px;
-    bottom: 69px;
+    right: 55px;
+    bottom: 67px;
+}
+.greendot1{
+    width: 13px;
+    height: 13px;
+    background-color: green;
+    border-radius: 50%;
+    position: fixed;
+    right: 55px;
+    bottom: 107px;
+}
+
+.swap-tokens:hover{
+    border: 4px solid;
 }
