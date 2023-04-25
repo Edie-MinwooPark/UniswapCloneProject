@@ -418,23 +418,22 @@ function drawer(el, open = false) {
 let legalinpopup = document.querySelector('.legalinpopup');
 let legalBtn = document.querySelector('.legalBtn');
 let legalBox = document.querySelector('.legalContainer');
-let divhead = document.querySelector('.head');
+let helphead = document.querySelector('.helphead');
 
 
 legalinpopup.onclick = function(){
   legalBox.classList.add('active');
-  divhead.style.backgroundColor = "white";
-  document.body.style.backgroundColor = "white";
-  divhead.style.opacity = "0.7";
+  helphead.style.opacity = "0.6";
+  // document.body.style.opacity = "0.6";
+  // legalBox.style.opacity = "1";
   document.body.style.overflow = "hidden";
   console.log(legalBox);
 }
 
 legalBtn.onclick = function(){
   legalBox.classList.remove('active');
-  divhead.style.backgroundColor = "rgb(255,205,210)";
-  document.body.style.backgroundColor = "rgb(255,205,210)";
-  divhead.style.opacity = "1";
+  helphead.style.opacity = "1";
+  document.body.style.opacity = "1";
   document.body.style.overflow = "auto";
 }
 // legal & privacy Popup

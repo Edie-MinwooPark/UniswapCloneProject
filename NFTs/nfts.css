@@ -611,7 +611,7 @@ html{
     border-bottom: 1px solid rgba(128, 128, 128, 0.45);
     border-left: 1px solid rgba(128, 128, 128, 0.45);
     border-radius: 0px 0px 10px 10px;
-    width: 46%;
+    width: 45.5%;
     margin: 2.2% 0% 0% 22.6% ;
     background-color: white;
     position: fixed;
@@ -723,11 +723,9 @@ html{
 
 .arrowBox{
     display: flex;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid white;
-    border-radius: 5px;
-    height: 40px;
-    margin-top: 7px;
+    border-radius: 30px;
 }
 
 .arrowBox:hover{

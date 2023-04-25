@@ -487,19 +487,17 @@ if(swapList.classList.contains('top')){
 let legalinpopup = document.querySelector('.legalinpopup');
 let legalBtn = document.querySelector('.legalBtn');
 let legalBox = document.querySelector('.legalContainer');
-let home = document.querySelector('.Home');
+let Bgg = document.querySelector('.bgg');
 
 
 legalinpopup.onclick = function(){
   legalBox.classList.add('active');
-//   home.style.backgroundColor = "black";
-  home.style.opacity = "0.1";
+  Bgg.style.opacity = "0.4";
   document.body.style.overflow = "hidden";
 }
 legalBtn.onclick = function(){
   legalBox.classList.remove('active');
-//   home.style.backgroundColor = "rgb(255,205,210)";
-  home.style.opacity = "1";
+  Bgg.style.opacity = "1";
   document.body.style.overflow = "auto";
 }
 // legal & privacy Popup
