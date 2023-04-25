@@ -273,8 +273,8 @@ body{
 .token-list{
     width: 100%;
     height: auto;
-    border: 4px solid black;
-    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
     margin-top: 10%;
 }
 table{
@@ -356,7 +356,8 @@ td img{
 
 /* 리스트 호버시 백그라운드 색 바뀌게 */
 tbody tr:hover{
-    background-color: rgb(232, 228, 228);
+    /* background-color: rgb(232, 228, 228); */
+    opacity: 0.3;
 }
 
 
