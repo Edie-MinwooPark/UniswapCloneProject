@@ -278,7 +278,7 @@ td{
     width: 5%;
 }
 #listname{
-    width: 35%;
+    width: 20%;
 }
 #listname:hover{
     font-size: 20px;
@@ -314,7 +314,7 @@ td{
     width: 15%;
 }
 #listvolume{
-    width: 30%;
+    width: 10%;
 }
 
 /* 리스트 안 이미지 크기 조절 */
@@ -1097,28 +1097,32 @@ table{
 th{
     border-bottom: 3px solid;
     height: 30px;
+    padding-left: 20px;
 }
 td{
     height: 50px;
+    padding-left: 20px;
+
 }
 
 #listnum{
     width: 5%;
+    padding-left: 55px;
 }
 #listname{
-    width: 30%;
+    width: 24%;
 }
 #listprice{
     width: 15%;
 }
 #listchange{
-    width: 20%;
+    width: 17%;
 }
 #listtvl{
     width: 15%;
 }
 #listvolume{
-    width: 30%;
+    width: 11%;
 }
 
 /* 리스트 안 이미지 크기 조절 */
@@ -1131,6 +1135,7 @@ td img{
 
 .tokenlistnumber{
     color: #919191;
+    padding-left: 55px;
 }
 
 .changeup svg,
