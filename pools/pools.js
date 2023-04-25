@@ -379,6 +379,51 @@ legalBtn.onclick = function(){
 }
 // legal & privacy Popup
   
+// 로그인 유무에 따른 사이드바 표기
+
+let loginValue = window.localStorage.getItem("Login");
+let sideInfo = document.querySelector(".content");
+let walletbtn = document.querySelector(".walletbtn")
+
+
+function loginCheck(){
+  if(loginValue == null || loginValue == "null"){
+    return;
+  }else{
+    walletbtn.style.display = "none"
+    sideInfo.innerHTML = `<h3>Connect a wallet</h3>
+    <div class="login">
+        <ul>
+            <li class="nickname">Nickname : ${JSON.parse(loginValue).nick}</li>
+            <li class="cash">Cash : ${JSON.parse(loginValue).dollar}</li>
+            <li class="bitcoin">Bitcoin : ${JSON.parse(loginValue).bit}</li>
+            <li class="ethereum">Ethereum : ${JSON.parse(loginValue).eth}</li>
+            <li><a href="/Mypage/mypage.html">My page</a><a href="/index.html" class="logout">Log out</a></li>
+        </ul>
+    </div>`;
+
+    let loginBox = document.querySelector(".login");
+    loginBox.style.height = "180px";
+    loginBox.style.paddingTop = "1px";
+    loginBox.style.justifyContent = "none";
+    loginBox.style.alignItems = "none";
+    loginBox.style.cursor = "auto";
+  }
+
+  let logoutBtn = document.querySelector(".logout");
+
+  logoutBtn.addEventListener("click", function(){
+    let loginValue = window.localStorage.getItem("Login");
+    
+    if(loginValue == null){
+        return;
+    }else{
+        window.localStorage.setItem("Login", null);
+    }
+  })
+}
+
+loginCheck();
 
 
 //   pools 부분
@@ -397,7 +442,6 @@ addbtn.addEventListener("click", function(){
 
 })
 
-let walletbtn = document.querySelector(".walletbtn")
 let drawer01 = document.querySelector(".drawer")
 let content = document.querySelector(".content")
 let div = document.createElement("div")

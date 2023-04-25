@@ -366,6 +366,7 @@ bgg.addEventListener('click',function(){
 
 });
 
+
 // 헤더 끝
 
 
