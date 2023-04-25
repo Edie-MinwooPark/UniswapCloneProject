@@ -2,9 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: rgb(255, 205, 210);
-}
-html{
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 .container{
     overflow-x: hidden;
@@ -64,7 +62,7 @@ html{
  position: fixed;
  z-index: 1060;
  left: 140px;
- top: 50px;
+ top: 55px;
  overflow: auto;
  background-color: rgba(0,0,0,0);
 }
@@ -205,13 +203,12 @@ html{
 .Connect{
     border: 1px solid white;
     border-radius: 30px;
-    width: 120px;
+    width: 100px;
     margin-left: 15px;
     margin-right: 10px;
 }
 .Connect:hover{
     cursor: pointer;
-    /* opacity: 0.4; */
 }
 .drawer-opener{
     background-color: transparent;
@@ -221,7 +218,7 @@ html{
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    padding: 20px 0px 0px 25px;
+    padding: 20px 0px 0px 18px;
     color: white;
 }
 .drawer{

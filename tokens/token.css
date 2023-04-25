@@ -623,7 +623,7 @@ html{
     border-bottom: 1px solid rgba(128, 128, 128, 0.45);
     border-left: 1px solid rgba(128, 128, 128, 0.45);
     border-radius: 0px 0px 10px 10px;
-    width: 45.8%;
+    width: 45.2%;
     margin: 2% 0% 0% 22.6% ;
     background-color: white;
     position: fixed;
@@ -693,7 +693,7 @@ html{
     border-radius: 5px;
     font-weight: bold;
     color: black;
-    width: 5%;
+    width: 3%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -736,11 +736,9 @@ html{
 
 .arrowBox{
     display: flex;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid white;
-    border-radius: 5px;
-    height: 20px;
-    margin-top: 7px;
+    border-radius: 30px;
 }
 
 .arrowBox:hover{

@@ -288,7 +288,7 @@ let logoutBtn = document.querySelector(".logout");
 function loginInfo(){
     let loginValue = window.localStorage.getItem("Login");
 
-    if(loginValue == null){
+    if(loginValue == null || loginValue == "null"){
         return;
     }else{
         let loginValue = window.localStorage.getItem("Login");
@@ -511,6 +511,7 @@ let home = document.querySelector('.Home');
 
 legalinpopup.onclick = function(){
   legalBox.classList.add('active');
+  console.log();
 //   home.style.backgroundColor = "black";
   home.style.opacity = "0.4";
   document.body.style.overflow = "hidden";

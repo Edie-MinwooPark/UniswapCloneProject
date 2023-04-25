@@ -63,7 +63,7 @@ body{
  position: fixed;
  z-index: 1060;
  left: 140px;
- top: 50px;
+ top: 55px;
  overflow: auto;
  background-color: rgba(0,0,0,0);
 }
@@ -269,7 +269,7 @@ body{
     border-radius: 5px;
     font-weight: bold;
     color: black;
-    width: 5%;
+    width: 3%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -285,7 +285,7 @@ body{
 .Connect{
     border: 1px solid white;
     border-radius: 30px;
-    width: 120px;
+    width: 100px;
     margin-left: 15px;
     margin-right: 10px;
 }
@@ -308,11 +308,9 @@ body{
 
 .arrowBox{
     display: flex;
-    padding: 8px;
+    padding: 15px;
     border: 1px solid white;
-    border-radius: 5px;
-    height: 33px;
-    margin-top: 3px;
+    border-radius: 30px;
 }
 .arrowBox:hover{
     cursor: pointer;
@@ -446,16 +444,15 @@ body{
     margin-left: 45%;
 }
 .searchpopup{
-    border-bottom: 1px solid rgb(196, 186, 186);
-    border-top: 1px solid rgb(196, 186, 186);
-    border-left: 1px solid rgb(196, 186, 186);
-    border-top: none;
-    border-radius: 0px 0px 10px 0px;
-    width: 512px;
-    margin: 35px 0px 0px 394px;
+    border-right: 1px solid rgba(128, 128, 128, 0.45);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    border-left: 1px solid rgba(128, 128, 128, 0.45);
+    border-radius: 0px 0px 10px 10px;
+    width: 45.4%;
+    margin: 5.8% 0% 0% 22.5% ;
     background-color: white;
     position: fixed;
-    z-index: 110;
+    z-index: 101;
     transform: translate(50px,-60px);
     /* display: none; */
 }
