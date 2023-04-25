@@ -119,7 +119,7 @@ html{
     position: fixed;
     z-index: -1;
     top: 0;
-    left: 0;
+    left: -480px;
 }
 .jg{
     width: 100vw;
@@ -171,7 +171,7 @@ html{
     margin: 10px;
 }
 .inputBox{
-    width: 100%;
+    width: 100%; 
 }
 .searchBar:hover{
     border: 2px solid grey;
@@ -188,7 +188,7 @@ html{
     border-radius: 5px;
     font-weight: bold;
     color: black;
-    width: 5%;
+    width: 3%;
     text-align: center;
     display: flex;
     justify-content: center;
