@@ -834,7 +834,7 @@ let ethPrice = document.getElementById('ethprice');
     
 // 30초에 한번씩 API 호출    
     
-setInterval(Blockxhr.send(),30000);
+Blockxhr.send(),30000;
 
 
 //이더리움 실시간 가격 호출하는 API
@@ -849,7 +849,7 @@ setInterval(Blockxhr.send(),30000);
       if (ethprice.status === 200) {
         let eth =JSON.parse(ethprice.responseText);
         ethPrice.innerHTML = `$  ${eth.result.ethusd}`;
-        ethCurrent = Number(eth.result.ethusd);
+        ethCurrent = Math.floor(eth.result.ethusd);
       } else {
         console.error(ethprice.statusText);
       }

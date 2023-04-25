@@ -3,10 +3,11 @@ body{
     padding: 0;
     background-color: rgb(255, 205, 210);
     height: 100vh;
-    /* scroll-behavior: smooth; */
 }
 .container{
     overflow-x: hidden;
+    scroll-behavior: smooth;
+
 }
 .topBar{
     width: 100%;
@@ -462,8 +463,8 @@ body{
     border-bottom: 1px solid rgba(128, 128, 128, 0.45);
     border-left: 1px solid rgba(128, 128, 128, 0.45);
     border-radius: 0px 0px 10px 10px;
-    width: 44.19%;
-    margin: 5.8% 0% 0% 22.6% ;
+    width: 41.3%;
+    margin: 6.5% 0% 0% 26.73% ;
     background-color: white;
     position: fixed;
     z-index: 101;

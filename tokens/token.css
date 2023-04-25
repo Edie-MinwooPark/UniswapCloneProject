@@ -623,14 +623,13 @@ html{
     border-bottom: 1px solid rgba(128, 128, 128, 0.45);
     border-left: 1px solid rgba(128, 128, 128, 0.45);
     border-radius: 0px 0px 10px 10px;
-    width: 45.2%;
-    margin: 2% 0% 0% 22.6% ;
+    width: 41.5%;
+    margin: 2.4% 0% 0% 24.9% ;
     background-color: white;
     position: fixed;
     z-index: 101;
     transform: translate(50px,-60px);
     /* display: none; */
-    
 }
 .imgnameBox{
     padding-left: 10px;
